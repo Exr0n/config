@@ -1,7 +1,7 @@
-# /Users/albhuan/.config/tmuxinator/20cs321.yml
+# /Users/albhuan/.config/tmuxinator/gen.yml
 
-name: 20cs321
-root: ~/Desktop/projects/20cs321projects/
+name: gen
+root: ~/
 
 # Optional tmux socket
 # socket_name: foo
@@ -40,13 +40,10 @@ tmux_options: -f ~/.config/tmux/tmux.conf
 # attach: false
 
 windows:
-  - editor:
-      layout: main-vertical
-      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
-      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
-      # synchronize: after
-      panes:
-        - vim
-        - guard
-  - server: bundle exec rails s
-  - logs: tail -f log/development.log
+    - editor:
+        layout: main-vertical
+        # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+        # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+        # synchronize: after
+
+

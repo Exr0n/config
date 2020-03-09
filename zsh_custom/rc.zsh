@@ -52,7 +52,7 @@ alias sl='screen -ls'
 alias ss='screen -S '
 alias s='trf'
 #    tmuxinator
-alias tntor='tmuxinator'
+alias mux='tmuxinator'
 
 # rust/cargo things
 [[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
