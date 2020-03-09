@@ -1,0 +1,2 @@
+ZSH_AUTOSUGGEST_STRATEGY=(match_prev_cmd history completion)
+ZSH_AUTOSUGGEST_USE_ASYNC=1

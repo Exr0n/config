@@ -1,3 +1,12 @@
 [submodule ".oh-my-zsh"]
 	path = .oh-my-zsh
-	url = https://github.com/Exr0n/ohmyzsh.git
+	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule "zsh_custom/themes/powerlevel10k"]
+	path = zsh_custom/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+[submodule "zsh_custom/plugins/zsh-autosuggestions"]
+	path = zsh_custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "zsh_custom/tmux/plugins/tpm"]
+	path = zsh_custom/tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm.git
