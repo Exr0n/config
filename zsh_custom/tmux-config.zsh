@@ -1,5 +1,5 @@
 export TMUX_DEFAULT_SESSION='gen'
-export TMUX_CONFIG="$ZSH_CUSTOM/tmux/tmux.conf"
+export TMUX_CONFIG="$CONFIG/tmux/tmux.conf"
 
 # aliases
 alias tmux="\tmux -f $TMUX_CONFIG"
