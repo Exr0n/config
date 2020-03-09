@@ -1,6 +1,7 @@
-# Added by Canopy installer on 2015-11-14
-# VIRTUAL_ENV_DISABLE_PROMPT can be set to '' to make bashprompt show that Canopy is active, otherwise 1
-#VIRTUAL_ENV_DISABLE_PROMPT='' source '/Users/lamnguyen/Library/Enthought/Canopy_64bit/User/bin/activate'
+#!/bin/zsh
+
+# zsh syntax highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # added by Anaconda3 4.0.0 installer
 export PATH="$HOME/anaconda/bin:$PATH"
