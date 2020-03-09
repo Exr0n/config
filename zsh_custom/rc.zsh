@@ -22,10 +22,11 @@ export PATH="$ZSH_CUSTOM/bin:$PATH"
 # shouldn't need this with zsh-autosuggest # fpath=(/usr/local/share/zsh-completions $fpath)
 
 # env variables
-export ZSH_CUSTOM="$ZSH_CUSTOM"
+export CONFIG="$HOME/.config"
+export ZSH_CUSTOM="$CONFIG/zsh_custom"
 export EDITOR="nvim"
 #   vim stuff
-export VIMROOT="$ZSH_CUSTOM/vim"
+export VIMROOT="$CONFIG/nvim"
 export VIMCONFIG="$VIMROOT"
 export MYVIMRC="$VIMCONFIG/vimrc"
 export VIMINIT='source $MYVIMRC'
