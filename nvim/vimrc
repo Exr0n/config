@@ -196,8 +196,14 @@ nnoremap <Leader>h :noh<return>
 " nerd commenter
 nmap <Leader>t <Plug>NERDCommenterInvert
 xmap <Leader>t <Plug>NERDCommenterInvert
-"no escape key (escape pressing escape)
 
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+
+"no escape key (escape pressing escape)
 inoremap jh <Esc>
 inoremap jt <Esc>:w<return>
 " movement in insert mode

@@ -61,7 +61,7 @@ alias cr='cargo run'
 
 # functions
 #    cd to parent directory of file, https://askubuntu.com/a/316632
-function fcd () { [[ -n "$1" ]] && { [ -f "$1" ] && { \cd "$(dirname "$1")"; } || { \cd "$1"; } ; } || { \cd $HOME; } ; }
+function fcd () { [[ -n "$1" ]] && { [ -f "$1" ] && { \cd "$(dirname "$1")"; } || { \cd "$1"; } ; return; } || { \cd $HOME; } ; }
 alias cd='fcd'
 
 #    Alias to auto open files with vim
