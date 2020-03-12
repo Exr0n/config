@@ -4,6 +4,9 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 "   Completion window
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"   Coc Snippets
+imap <C-o> <Plug>(coc-snippets-expand)
+
 "   Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
