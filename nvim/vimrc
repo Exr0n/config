@@ -217,7 +217,9 @@ let g:NERDDefaultAlign = 'left'
 
 " git gutter jump to next hunk
 nmap <Leader>hn <Plug>(GitGutterNextHunk)
+nmap ghn <Plug>(GitGutterNextHunk)
 nmap <Leader>hN <Plug>(GitGutterPrevHunk)
+nmap ghN <Plug>(GitGutterPrevHunk)
 nmap <Leader>HN <Plug>(GitGutterPrevHunk)
 
 "no escape key (escape pressing escape)
