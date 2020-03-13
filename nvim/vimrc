@@ -38,9 +38,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'ervandew/supertab'
 " Plug 'SirVer/ultisnips'
 let g:UltiSnipsSnippetDirectories = [$CONFIG . '/coc/UltiSnips', 'UltiSnips']
-let g:UltiSnipsExpandTrigger="<C-o>"
-let g:UltiSnipsJumpForwardTrigger="j"
-let g:UltiSnipsJumpBackwardTrigger="k"
+let g:UltiSnipsExpandTrigger="jn"
+let g:UltiSnipsJumpForwardTrigger="jk"
+let g:UltiSnipsJumpBackwardTrigger="kj"
 " LSP / Linting
 " command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " CoC options
@@ -92,6 +92,9 @@ let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_paragraph_span = 1
 
 let g:rainbow_active=1 "set to 0 if you want to enable it later via :RainbowToggle
+
+let g:gitgutter_highlight_linenrs = 1 " auto highlight change line numbers
+let g:gitgutter_preview_win_floating = 0 " Disable floating/popup window for <Leader>hp
 
 " Rednering
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
@@ -177,6 +180,7 @@ set cursorline
 
 " background and performance
 set lazyredraw " don't redraw when executing macros
+set updatetime=100
 
 " Delete trailing white space on save, useful for some filetypes ;)
 " Stolen from https://github.com/nickmahd/.vim/blob/master/vimrc in Jan 2020
@@ -196,6 +200,9 @@ endif
 " custom keymaps
 let mapleader = " "
 set timeoutlen=500
+
+nnoremap q: <Nop>
+
 nnoremap <Leader>h :noh<return>
 " nerd commenter
 nmap <Leader>t <Plug>NERDCommenterInvert
@@ -206,12 +213,16 @@ let g:NERDSpaceDelims = 1
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
 
+" git gutter jump to next hunk
+nmap <Leader>hn <Plug>(GitGutterNextHunk)
+nmap <Leader>hN <Plug>(GitGutterPrevHunk)
+nmap <Leader>HN <Plug>(GitGutterPrevHunk)
 
 "no escape key (escape pressing escape)
 inoremap jh <Esc>
 inoremap jt <Esc>:w<return>
 " movement in insert mode
-inoremap <C-h> <Left>
+inoremap <C-h> <left>
 inoremap <C-l> <right>
 
 " clipboard https://coderwall.com/p/v-st8w/vim-copy-to-system-clipboard-on-a-mac
