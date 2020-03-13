@@ -45,6 +45,7 @@ alias gpl='git pull'
 alias gp='nohup git push > /dev/null &'
 #    python stuff
 alias py='python3'
+alias p='python3'
 alias pip='python3 -m pip'
 alias pym='python3 -m'
 #    screen stuff
@@ -53,6 +54,9 @@ alias ss='screen -S '
 alias s='trf'
 #    tmuxinator
 alias mux='tmuxinator'
+
+#    makefile
+alias m='make'
 
 # rust/cargo things
 [[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
@@ -63,6 +67,7 @@ alias cr='cargo run'
 #    cd to parent directory of file, https://askubuntu.com/a/316632
 function fcd () { [[ -n "$1" ]] && { [ -f "$1" ] && { \cd "$(dirname "$1")"; } || { \cd "$1"; } ; return; } || { \cd $HOME; } ; }
 alias cd='fcd'
+alias c='fcd'
 
 #    Alias to auto open files with vim
 alias -s {txt,md,cpp,rs,py,properties,yml,yaml}=nvim

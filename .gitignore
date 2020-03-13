@@ -2,3 +2,4 @@
 *cache*
 coc/extensions/db.json
 coc/history.json
+coc/snippets-mru
