@@ -1,6 +1,9 @@
 {
     "diagnostic.signOffset": 9999999,
     "diagnostic.checkCurrentLine": true,
+    "snippets": {
+        "userSnippetsDirectory": "$CONFIG/coc/UltiSnips"
+    },
     "languageserver": {
         "ccls": {
             "command": "ccls",

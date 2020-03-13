@@ -6,6 +6,8 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 "   Coc Snippets
 imap <C-o> <Plug>(coc-snippets-expand)
+let g:coc_snippet_next = 'jn'
+let g:coc_snippet_prev = 'jh'
 
 "   Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)

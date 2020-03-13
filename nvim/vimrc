@@ -34,13 +34,15 @@ Plug 'rickhowe/diffchar.vim'
 " Editing
 Plug 'preservim/nerdcommenter'
 Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'ervandew/supertab'
 " Plug 'SirVer/ultisnips'
-let g:UltiSnipsSnippetDirectories = [$CONFIG . '/coc/UltiSnips', 'UltiSnips']
-let g:UltiSnipsExpandTrigger="jn"
-let g:UltiSnipsJumpForwardTrigger="jk"
-let g:UltiSnipsJumpBackwardTrigger="kj"
+" let g:UltiSnipsSnippetDirectories = [$CONFIG . '/coc/UltiSnips', 'UltiSnips']
+" let g:UltiSnipsExpandTrigger="jn"
+" let g:UltiSnipsJumpForwardTrigger="jk"
+" let g:UltiSnipsJumpBackwardTrigger="kj"
 " LSP / Linting
 " command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " CoC options
@@ -219,7 +221,7 @@ nmap <Leader>hN <Plug>(GitGutterPrevHunk)
 nmap <Leader>HN <Plug>(GitGutterPrevHunk)
 
 "no escape key (escape pressing escape)
-inoremap jh <Esc>
+inoremap jc <Esc>
 inoremap jt <Esc>:w<return>
 " movement in insert mode
 inoremap <C-h> <left>
