@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+alias italics='echo -e "\e[3mitalics?\e[0m"' # TODO: REMOVE
+
 # zsh syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
