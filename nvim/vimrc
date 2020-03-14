@@ -46,7 +46,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " LSP / Linting
 " command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " CoC options
-source $VIMCONFIG/coc-config.vim
 
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
@@ -258,6 +257,7 @@ nmap <Leader>yy :%w !pbcopy<CR><CR>
 set splitbelow
 set splitright
 
+source $VIMCONFIG/coc-config.vim
 " janky performance hacks
 "command! MyAsyncLoad echom "AsyncLoaded"
 "autocmd vimenter * MyAsyncLoad
