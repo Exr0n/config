@@ -8,7 +8,7 @@ set nocompatible
 exe 'set rtp+=' . $VIMCONFIG
 
 " source vimrc twice... TODO: this is really jank
-autocmd vimenter * source $MYVIMRC
+" autocmd vimenter * source $MYVIMRC
 
 call plug#begin($VIMCONFIG.'/plugged')
 
@@ -135,6 +135,23 @@ set list
 
 
 " colors
+" fix neovim's weird highlight (https://github.com/neovim/neovim/issues/9019#issuecomment-521532103)
+function! s:CustomizeColors()
+	if has('guirunning') || has('termguicolors')
+		let cursorline_gui=''
+		let cursorline_cterm='ctermfg=white'
+	else
+		let cursorline_gui='guifg=white'
+		let cursorline_cterm=''
+	endif
+	exec 'hi CursorLine ' . cursorline_gui . ' ' . cursorline_cterm
+endfunction
+
+augroup OnColorScheme
+	autocmd!
+	autocmd ColorScheme,BufEnter,BufWinEnter * call s:CustomizeColors()
+augroup END
+
 set termguicolors
 "colo darkspace
 "colo material | let g:material_theme_style = 'ocean'
