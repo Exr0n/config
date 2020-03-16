@@ -66,6 +66,7 @@ Plug 'vim-scripts/pink'
 Plug 'ntk148v/vim-horizon'
 Plug 'victorze/foo'
 Plug 'sainnhe/edge'
+Plug 'jdsimcoe/abstract.vim'
 "Decent 
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'wadackel/vim-dogrun'
@@ -240,6 +241,10 @@ nmap ghn <Plug>(GitGutterNextHunk)
 nmap <Leader>hN <Plug>(GitGutterPrevHunk)
 nmap ghN <Plug>(GitGutterPrevHunk)
 nmap <Leader>HN <Plug>(GitGutterPrevHunk)
+
+" git gutter stage/revert hunk because the default seems to be broken...
+nmap <Leader>hs <Plug>(GitGutterStageHunk)
+nmap <Leader>hr <Plug>(GitGutterRevertHunk)
 
 "no escape key (escape pressing escape)
 inoremap jc <Esc>
