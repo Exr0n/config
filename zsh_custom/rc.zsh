@@ -36,9 +36,6 @@ export MYVIMRC="$VIMCONFIG/vimrc"
 export VIMINIT='source $MYVIMRC'
 
 
-# update submodules
-cd $CONFIG && gsu && cd -
-
 # Custom Aliases
 alias tsn='ts-node'
 alias trf='ssh exr0n@hop.exr0n.com -p 2222'
