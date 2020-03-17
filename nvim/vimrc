@@ -96,7 +96,7 @@ let g:limelight_paragraph_span = 1
 
 let g:rainbow_active=1 "set to 0 if you want to enable it later via :RainbowToggle
 let g:rainbow_conf = {
-\	'guifgs': ['magenta', 'cyan', 'purple', 'lightblue'],
+\	'guifgs': ['magenta', 'cyan', 'orange', 'green', 'yellow'],
 \}
 
 let g:gitgutter_highlight_linenrs = 1 " auto highlight change line numbers
