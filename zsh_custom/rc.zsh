@@ -2,6 +2,7 @@
 
 alias italics='echo -e "\e[3mitalics?\e[0m"' # TODO: REMOVE
 
+
 # zsh syntax highlighting
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -33,6 +34,10 @@ export VIMROOT="$CONFIG/nvim"
 export VIMCONFIG="$VIMROOT"
 export MYVIMRC="$VIMCONFIG/vimrc"
 export VIMINIT='source $MYVIMRC'
+
+
+# update submodules
+cd $CONFIG && gsu && cd -
 
 # Custom Aliases
 alias tsn='ts-node'
