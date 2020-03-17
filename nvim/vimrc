@@ -125,6 +125,10 @@ set ttyfast " speed up scrolling
 set scrolloff=5 " display 8 lines above and below cursor at all times
 set matchpairs+=<:>
 
+" autoread (https://vi.stackexchange.com/a/13092)
+set autoread
+au FocusGained,BufEnter * :checktime
+
 " passive and HUD
 autocmd VimEnter * AirlineRefresh " TODO: cuz it doesn't work sometimes:
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
