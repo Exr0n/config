@@ -1,6 +1,7 @@
 #!/bin/zsh
 # Update submodules
-gsu
+git submodule foreach git pull
+
 # Brew
 brew install tig flake8 node yarn ripgrep ack gnupg gcc gmp rustup ffmpeg tmux tmuxinator cmake fzf neovim go coreutils
 brew upgrade
