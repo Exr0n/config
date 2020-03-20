@@ -47,6 +47,7 @@ alias v='nvim'
 alias gg='gsu && git add -A && git commit; gp'
 alias gpl='git pull'
 alias gp='nohup git push > /dev/null &'
+alias grsh='git remote show'
 #    python stuff
 alias py='python3'
 alias p='python3'
