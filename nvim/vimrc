@@ -200,6 +200,12 @@ set wrapmargin=0
 set foldmethod=indent
 set foldlevelstart=5
 set nofoldenable
+"   persistent folds (https://til.hashrocket.com/posts/17c44eda91-persistent-folds-between-vim-sessions)
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
 
 " cursor stuff
 set mouse=a
