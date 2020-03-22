@@ -27,6 +27,8 @@ export PATH="$ZSH_CUSTOM/bin:$PATH"
 
 # env variables
 export CONFIG="$HOME/.config"
+export XDG_CONFIG_HOME="$CONFIG"
+export XDG_DATA_HOME="$HOME/.data"
 export ZSH_CUSTOM="$CONFIG/zsh_custom"
 export EDITOR="nvim"
 #   vim stuff
