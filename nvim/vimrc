@@ -81,6 +81,9 @@ Plug 'luochen1990/rainbow'
 Plug 'airblade/vim-gitgutter'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Yggdroot/indentLine'
+let g:indentLine_char = '▏'
+let g:indentLine_conceallevel = 1
+let g:indentLine_concealcursor = 'nv'
 "   tmux integration
 "Plug 'edkolev/tmuxline.vim' | source $VIMCONFIG/tmuxline-config.vim
 Plug 'christoomey/vim-tmux-navigator'
@@ -203,7 +206,7 @@ set nofoldenable
 "   persistent folds (https://til.hashrocket.com/posts/17c44eda91-persistent-folds-between-vim-sessions)
 augroup AutoSaveFolds
   autocmd!
-  autocmd BufWinLeave * mkview
+  autocmd BufWinLeave * silent! mkview
   autocmd BufWinEnter * silent! loadview
 augroup END
 
