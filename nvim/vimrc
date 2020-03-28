@@ -282,6 +282,3 @@ set splitright
 
 source $VIMCONFIG/coc-config.vim
 noh
-" janky performance hacks
-"command! MyAsyncLoad echom "AsyncLoaded"
-"autocmd vimenter * MyAsyncLoad
