@@ -3,4 +3,8 @@ set shiftwidth=4
 
 inoremap jt <Esc>:w<Return>
 
+call plug#begin($VIMCONFIG.'/plugged')
+Plug 'christoomey/vim-tmux-navigator'
+call plug#end()
+
 command IDE source $VIMCONFIG/idemode.vim
