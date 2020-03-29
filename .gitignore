@@ -3,5 +3,6 @@
 */.DS_Store
 coc/extensions/db.json
 coc/extensions/node_modules/
+coc/extensions/node_modules
 coc/history.json
 coc/snippets-mru
