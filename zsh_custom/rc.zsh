@@ -37,6 +37,8 @@ export VIMCONFIG="$VIMROOT"
 export MYVIMRC="$VIMCONFIG/vimrc"
 export VIMINIT='source $MYVIMRC'
 
+export IDEMODE=1
+
 
 # Custom Aliases
 alias tsn='ts-node'
