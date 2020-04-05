@@ -1,8 +1,11 @@
-set smartindent
-set shiftwidth=4
+set si      " smart indent
+set sw=4    " shift width
+set mouse=a " mouse mode
 
 inoremap jt <Esc>:w<Return>
 
+
+" IDE mode
 command IDE source $VIMCONFIG/idemode.vim
 
 let idemode=$IDEMODE
