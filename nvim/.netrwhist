@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =3
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/lamnguyen/Dropbox/XJOI cs class/problems/oj/pid/x11584'
+let g:netrw_dirhist_4='/Users/lamnguyen/Dropbox/XJOI cs class/problems/oj/pid/x1629down'
 let g:netrw_dirhist_3='/Users/lamnguyen/.config/tmux'
 let g:netrw_dirhist_2='/Users/lamnguyen/Desktop/projects/neural_net_cpp/$VIMCONFIG'
 let g:netrw_dirhist_1='/Users/lamnguyen/Desktop/projects/neural_net_cpp'
