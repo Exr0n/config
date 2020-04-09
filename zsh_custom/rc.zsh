@@ -19,6 +19,9 @@ export PATH="$HOME/Library/Python/3.7/bin:${PATH}"
 # brew ncurses for updated terminfo that includes tmux
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
 
+# brew llvm 10.0.0 (clangd)
+export PATH="/usr/local/Cellar/llvm/10.0.0_1/bin:$PATH"
+
 # custom bin
 export PATH="$ZSH_CUSTOM/bin:$PATH"
 
@@ -67,6 +70,7 @@ alias mux='tmuxinator'
 
 #    makefile
 alias m='make'
+alias bm='bear make'
 
 # rust/cargo things
 [[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
