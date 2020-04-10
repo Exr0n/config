@@ -40,12 +40,15 @@ tmux_options: -f ~/.config/tmux/tmux.conf
 # attach: false
 
 windows:
-    - editor:
+    - general:
         panes:
-            vim
+            echo "General"
     - monitor:
         layout: tiled
         panes:
-            - top
+            - gotop
+    - config:
+        panes:
+            cd $XDG_CONFIG_HOME
 
 
