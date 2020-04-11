@@ -89,3 +89,4 @@ alias -s {txt,md,cpp,rs,py,properties,yml,yaml}=nvim
 #    One off aliases (like config commands)
 #alias set_right_alt='cd $ZSH_CUSTOM/keymap_util && hidutil property --set $(./map) && -'
 hidutil property --set "$($ZSH_CUSTOM/keymap_util/map)" > /dev/null
+defaults write -g KeyRepeat -int 1 # https://apple.stackexchange.com/a/83923
