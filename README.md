@@ -9,5 +9,8 @@ brew upgrade
 # Go things
 go get github.com/cjbassi/gotop
 
+# other tools
+make -C ../scripts/wabt
+
 # vim plugins
 v -c "PlugInstall | qa"

@@ -10,3 +10,6 @@
 [submodule "zsh_custom/tmux/plugins/tpm"]
 	path = zsh_custom/tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm.git
+[submodule "scripts/wabt"]
+	path = scripts/wabt
+	url = https://github.com/webassembly/wabt
