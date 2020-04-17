@@ -22,6 +22,8 @@ export PATH="/usr/local/opt/ncurses/bin:$PATH"
 # brew llvm 10.0.0 (clangd)
 export PATH="/usr/local/Cellar/llvm/10.0.0_1/bin:$PATH"
 
+export PATH="$ZSH_CUSTOM/../scripts/wabt/bin:$PATH"
+
 # custom bin
 export PATH="$ZSH_CUSTOM/bin:$PATH"
 
