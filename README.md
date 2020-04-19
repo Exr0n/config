@@ -3,7 +3,7 @@ git submodule foreach git pull
 
 # Brew
 brew tap cjbassi/ytop
-brew install ytop gotop libcairo2 tig flake8 node yarn ripgrep ack gnupg gcc gmp rustup ffmpeg tree wget tmux tmuxinator cmake fzf neovim go coreutils
+brew install git-secret ytop gotop libcairo2 tig flake8 node yarn ripgrep ack gnupg gcc gmp rustup ffmpeg tree wget tmux tmuxinator cmake fzf neovim go coreutils
 brew upgrade
 
 # Go things
