@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/lamnguyen/Dropbox/XJOI cs class/.git'
 let g:netrw_dirhist_6='/Users/lamnguyen/Dropbox/XJOI cs class/problems/contests/dated/2020_04_07/x2'
 let g:netrw_dirhist_5='/Users/lamnguyen/Dropbox/XJOI cs class/problems/oj/pid/x11584'
 let g:netrw_dirhist_4='/Users/lamnguyen/Dropbox/XJOI cs class/problems/oj/pid/x1629down'
