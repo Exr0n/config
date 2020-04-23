@@ -29,7 +29,6 @@ Plug 'rickhowe/diffchar.vim'
 
 " Editing
 Plug 'preservim/nerdcommenter'
-Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -49,21 +48,21 @@ imap <C-f> <Plug>(fzf-complete-line)
 nmap <C-f> :Lines<return>
 
 " Colors
-Plug 'cocopon/pgmnt.vim'
-Plug 'keith/parsec.vim'
-Plug 'niklas-8/vim-darkspace'
-Plug 'cocopon/iceberg.vim'
-Plug 'joshdick/onedark.vim'
-Plug 'kaicataldo/material.vim'
-Plug 'pgavlin/pulumi.vim'
-Plug 'Badacadabra/vim-archery'
-Plug 'ayu-theme/ayu-vim' " rec
-Plug 'vim-scripts/pink'
-Plug 'ntk148v/vim-horizon'
-Plug 'victorze/foo'
-Plug 'sainnhe/edge'
-Plug 'jdsimcoe/abstract.vim'
-Plug 'rainglow/vim'
+" Plug 'cocopon/pgmnt.vim'
+" Plug 'keith/parsec.vim'
+" Plug 'niklas-8/vim-darkspace'
+" Plug 'cocopon/iceberg.vim'
+" Plug 'joshdick/onedark.vim'
+" Plug 'kaicataldo/material.vim'
+" Plug 'pgavlin/pulumi.vim'
+" Plug 'Badacadabra/vim-archery'
+" Plug 'ayu-theme/ayu-vim' " rec
+" Plug 'vim-scripts/pink'
+" Plug 'ntk148v/vim-horizon'
+" Plug 'victorze/foo'
+" Plug 'sainnhe/edge'
+" Plug 'jdsimcoe/abstract.vim'
+" Plug 'rainglow/vim'
 "Decent 
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'wadackel/vim-dogrun'
@@ -211,7 +210,6 @@ augroup END
 
 " cursor stuff
 set mouse=a
-set cursorline
 
 " background and performance
 set lazyredraw " don't redraw when executing macros
