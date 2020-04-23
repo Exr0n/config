@@ -6,7 +6,7 @@ inoremap jt <Esc>:w<Return>
 
 
 " IDE mode
-command IDE source $VIMCONFIG/idemode.vim
+command IDE source $VIMCONFIG/idemode_unbork.vim
 
 let idemode=$IDEMODE
 if idemode == '1'
