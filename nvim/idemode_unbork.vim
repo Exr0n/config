@@ -34,7 +34,6 @@ let g:indentLine_concealcursor = 'nv'
 Plug 'christoomey/vim-tmux-navigator'
 
 " HUD Toggles
-
 let g:rainbow_active=1 "set to 0 if you want to enable it later via :RainbowToggle
 let g:rainbow_conf = {
 \	'guifgs': ['magenta', 'cyan', 'orange', 'green', 'yellow'],
@@ -171,8 +170,8 @@ xmap <Leader>T <Plug>NERDCommenterUncomment
 let g:NERDDefaultAlign = 'left'
 
 "map cn to NERDTreeToggle
-nmap <Leader>d :NERDTreeToggle<CR>
-xmap <Leader>d :NERDTreeToggle<CR>
+nnoremap <Leader>d :NERDTreeToggle<CR>
+xnoremap <Leader>d :NERDTreeToggle<CR>
 
 " git gutter jump to next hunk
 nmap <Leader>hn <Plug>(GitGutterNextHunk)
