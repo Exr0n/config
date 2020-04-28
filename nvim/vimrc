@@ -1,5 +1,6 @@
 set si      " smart indent
 set sw=4    " shift width
+set ts=4    " tab stop (indenting after the beginning of the line)
 set mouse=a " mouse mode
 
 inoremap jt <Esc>:w<Return>
