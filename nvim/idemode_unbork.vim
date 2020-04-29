@@ -14,7 +14,7 @@ call plug#begin($VIMCONFIG.'/plugged')
 Plug 'preservim/nerdcommenter'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-"Decent 
+"Decent
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'wadackel/vim-dogrun'
 "Favorite so far:
@@ -183,10 +183,6 @@ nmap <Leader>HN <Plug>(GitGutterPrevHunk)
 " git gutter stage/revert hunk because the default seems to be broken...
 nmap <Leader>hs <Plug>(GitGutterStageHunk)
 nmap <Leader>hr <Plug>(GitGutterRevertHunk)
-
-"no escape key (escape pressing escape)
-inoremap jc <Esc>
-inoremap jt <Esc>:w<return>
 
 " clipboard https://coderwall.com/p/v-st8w/vim-copy-to-system-clipboard-on-a-mac
 xmap <Leader>y :w !pbcopy<CR><CR>
