@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =0
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/Users/exr0n/Desktop/projects/learn_cpp/problems/oj/pid/12661'
 let g:netrw_dirhist_0='/Users/exr0n/Desktop/projects/Condution/js'
 let g:netrw_dirhist_9='/Users/exr0n/Desktop/projects/learn_cpp/problems/usaco/gold/2020jan/boards'
 let g:netrw_dirhist_8='/Users/exr0n/.config/configstore'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_5='/Users/lamnguyen/Dropbox/XJOI cs class/problems/oj/pid/x1
 let g:netrw_dirhist_4='/Users/lamnguyen/Dropbox/XJOI cs class/problems/oj/pid/x1629down'
 let g:netrw_dirhist_3='/Users/lamnguyen/.config/tmux'
 let g:netrw_dirhist_2='/Users/lamnguyen/Desktop/projects/neural_net_cpp/$VIMCONFIG'
-let g:netrw_dirhist_1='/Users/lamnguyen/Desktop/projects/neural_net_cpp'
