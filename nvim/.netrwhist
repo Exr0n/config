@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/Users/exr0n/Desktop/projects/Condution/js'
 let g:netrw_dirhist_9='/Users/exr0n/Desktop/projects/learn_cpp/problems/usaco/gold/2020jan/boards'
 let g:netrw_dirhist_8='/Users/exr0n/.config/configstore'
 let g:netrw_dirhist_7='/Users/lamnguyen/Dropbox/XJOI cs class/.git'

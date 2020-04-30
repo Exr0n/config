@@ -56,7 +56,7 @@ alias v='nvim'
 alias GG='gpl && gsu && git add -A && git commit; gp'
 alias gg='gpl && git add . && git commit; gp'
 alias gpl='git pull'
-alias gp='nohup git push > /dev/null &'
+alias gp='nohup git push "$@" > /dev/null &'
 alias grsh='git remote show'
 #    python stuff
 alias py='python3'
@@ -81,8 +81,15 @@ alias cr='cargo run'
 
 # functions
 #    cd to parent directory of file, https://askubuntu.com/a/316632
-function fcd () { [[ -n "$1" ]] && { [ -f "$1" ] && { \cd "$(dirname "$1")"; } || { \cd "$1"; } ; return; } || { \cd $HOME; } ; }
-alias cd='fcd'
+function fcd () {
+    [[ -n "$1" ]] && {
+	[ -f "$1" ] && {
+	    \cd "$(dirname "$1")";
+	}\
+	|| { \cd "$1"; } ;
+    return; }\
+    || { \cd $HOME; } ;
+}
 alias c='fcd'
 
 #    Alias to auto open files with vim
