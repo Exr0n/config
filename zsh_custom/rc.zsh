@@ -49,7 +49,7 @@ export VIMINIT='source $MYVIMRC'
 alias tsn='ts-node'
 alias trf='ssh exr0n@hop.exr0n.com -p 2222'
 alias pls='sudo'
-alias u='mkdir -p "$NOTEROOT" && v "$NOTEROOT/$(date +"%Y_%m_%d").md"'
+alias u='mkdir -p "$CAPSULEROOT/notes" && v "$CAPSULEROOT/notes/$(date +"%Y_%m_%d").md"'
 #    editing
 alias vim='nvim'
 alias v='nvim'
