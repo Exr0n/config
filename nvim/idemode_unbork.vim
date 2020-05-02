@@ -23,6 +23,7 @@ Plug 'arzg/vim-colors-xcode'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 "   HUD
+Plug 'cespare/vim-toml'		" .toml syntax highlighting
 Plug 'luochen1990/rainbow'
 Plug 'airblade/vim-gitgutter'
 Plug 'rickhowe/diffchar.vim'
