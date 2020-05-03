@@ -12,6 +12,7 @@ call plug#begin($VIMCONFIG.'/plugged')
 
 " Editing
 Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "Decent
