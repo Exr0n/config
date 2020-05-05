@@ -54,8 +54,8 @@ alias u='mkdir -p "$CAPSULEROOT/notes" && v "$CAPSULEROOT/notes/$(date +"%Y_%m_%
 alias vim='nvim'
 alias v='nvim'
 #    git
-alias GG='gpl && gsu && git add -A && git commit; gp'
-alias gg='gpl && git add . && git commit; gp'
+alias GG='gpl && gsu && git add -A && git commit -v; gp'
+alias gg='gpl; git add . && git commit -v; gp'
 alias gpl='git pull'
 alias gp='nohup git push "$@" > /dev/null &'
 alias grsh='git remote show'
