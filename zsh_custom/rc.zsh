@@ -54,11 +54,19 @@ alias u='mkdir -p "$CAPSULEROOT/notes" && v "$CAPSULEROOT/notes/$(date +"%Y_%m_%
 alias vim='nvim'
 alias v='nvim'
 #    git
-alias GG='gpl && gsu && git add -A && git commit -v; gp'
-alias gg='gpl; git add . && git commit -v; gp'
 alias gpl='git pull'
-alias gp='nohup git push "$@" > /dev/null &'
+function gpext {
+    nohup git push "$@" > /dev/null &
+}
+alias gp='gpext'
 alias grsh='git remote show'
+function gutil {
+    gpl
+    git add ${1:-"."} && git commit -v
+    gp
+}
+alias gg='gutil'
+alias GG='gutil -A'
 #    python stuff
 alias py='python3'
 alias p='python3'
