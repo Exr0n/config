@@ -1,0 +1,14 @@
+
+window:
+    decorations: buttonless
+    startup_mode: Maximized
+scrolling:
+    history: 100000
+font:
+    size: 14
+    use_thin_strokes: false
+colors:
+    cursor:
+        text: '#000000'
+        cursor: '#eaea00'
+

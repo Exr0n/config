@@ -24,6 +24,7 @@ Plug 'arzg/vim-colors-xcode'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 "   HUD
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'cespare/vim-toml'		" .toml syntax highlighting
 Plug 'luochen1990/rainbow'
 Plug 'airblade/vim-gitgutter'
