@@ -6,7 +6,9 @@ scrolling:
     history: 100000
 font:
     size: 14
-    use_thin_strokes: false
+    normal:
+        #family: iMWritingMonoS
+        family: iMWritingMonospace
 colors:
     cursor:
         text: '#000000'
