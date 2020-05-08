@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/Users/exr0n/Desktop/projects/learn_cpp/algorithms/classics/floyd'
 let g:netrw_dirhist_4='/Users/exr0n/Desktop/projects/learn_cpp/problems/contests/dated/2020_04_27/poj1330'
 let g:netrw_dirhist_3='/Users/exr0n/Desktop/projects/learn_cpp/problems/contests/dated/2020_04_27/xuva10226'
 let g:netrw_dirhist_2='/Users/exr0n/Desktop/projects/learn_cpp'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_9='/Users/exr0n/Desktop/projects/learn_cpp/problems/usaco/go
 let g:netrw_dirhist_8='/Users/exr0n/.config/configstore'
 let g:netrw_dirhist_7='/Users/lamnguyen/Dropbox/XJOI cs class/.git'
 let g:netrw_dirhist_6='/Users/lamnguyen/Dropbox/XJOI cs class/problems/contests/dated/2020_04_07/x2'
-let g:netrw_dirhist_5='/Users/lamnguyen/Dropbox/XJOI cs class/problems/oj/pid/x11584'
