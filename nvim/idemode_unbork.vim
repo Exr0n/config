@@ -164,10 +164,8 @@ set timeoutlen=500
 nnoremap q: <Nop>
 
 " nerd commenter
-nmap <Leader>t <Plug>NERDCommenterComment
-xmap <Leader>t <Plug>NERDCommenterComment
-nmap <Leader>T <Plug>NERDCommenterUncomment
-xmap <Leader>T <Plug>NERDCommenterUncomment
+nmap <Leader>t <Plug>NERDCommenterInvert
+xmap <Leader>t <Plug>NERDCommenterInvert
 
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
