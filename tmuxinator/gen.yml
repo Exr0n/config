@@ -43,10 +43,6 @@ windows:
     - general:
         panes:
             echo "General"
-    - monitor:
-        layout: tiled
-        panes:
-            - gotop
     - config:
         panes:
             cd $XDG_CONFIG_HOME

@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/exr0n/Desktop/projects/learn_cpp/algorithms/classics/pointer_preorder'
+let g:netrw_dirhist_6='/Users/exr0n/Desktop/projects/learn_cpp/algorithms/classics/pointer_tree'
 let g:netrw_dirhist_5='/Users/exr0n/Desktop/projects/learn_cpp/algorithms/classics/floyd'
 let g:netrw_dirhist_4='/Users/exr0n/Desktop/projects/learn_cpp/problems/contests/dated/2020_04_27/poj1330'
 let g:netrw_dirhist_3='/Users/exr0n/Desktop/projects/learn_cpp/problems/contests/dated/2020_04_27/xuva10226'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_1='/Users/exr0n/Desktop/projects/learn_cpp/problems/contests
 let g:netrw_dirhist_0='/Users/exr0n/Desktop/projects/Condution/js'
 let g:netrw_dirhist_9='/Users/exr0n/Desktop/projects/learn_cpp/problems/usaco/gold/2020jan/boards'
 let g:netrw_dirhist_8='/Users/exr0n/.config/configstore'
-let g:netrw_dirhist_7='/Users/lamnguyen/Dropbox/XJOI cs class/.git'
-let g:netrw_dirhist_6='/Users/lamnguyen/Dropbox/XJOI cs class/problems/contests/dated/2020_04_07/x2'
