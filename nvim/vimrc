@@ -5,6 +5,8 @@ set mat=0   " don't flash match
 set number  " line numbers
 set mouse=a " mouse mode
 
+set diffopt+=algorithm:patience
+
 " IDE mode
 command IDE source $VIMCONFIG/idemode_unbork.vim
 

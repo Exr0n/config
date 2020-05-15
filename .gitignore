@@ -6,4 +6,4 @@ coc/extensions/node_modules/
 coc/extensions/node_modules
 coc/history.json
 coc/snippets-mru
-.nvim/.netrwhist
+nvim/.netrwhist
