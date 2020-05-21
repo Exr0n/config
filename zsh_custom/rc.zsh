@@ -50,6 +50,7 @@ alias tsn='ts-node'
 alias trf='ssh exr0n@hop.exr0n.com -p 2222'
 alias pls='sudo'
 alias u='mkdir -p "$CAPSULEROOT/notes" && v "$CAPSULEROOT/notes/$(date +"%Y_%m_%d").md"'
+alias :q='tmux kill-pane' # when you forget what's vim and what's tmux
 #    editing
 alias vim='nvim'
 alias v='nvim'

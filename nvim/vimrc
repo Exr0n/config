@@ -6,6 +6,7 @@ set number  " line numbers
 set mouse=a " mouse mode
 
 set diffopt+=algorithm:patience
+command W w
 
 " IDE mode
 command IDE source $VIMCONFIG/idemode_unbork.vim

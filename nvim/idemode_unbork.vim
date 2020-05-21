@@ -14,6 +14,10 @@ call plug#begin($VIMCONFIG.'/plugged')
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'honza/vim-snippets' " https://github.com/neoclide/coc-snippets/issues/126
+
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf.vim'
 
 "Decent
 Plug 'dracula/vim', { 'as': 'dracula' }
