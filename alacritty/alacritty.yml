@@ -7,8 +7,7 @@ scrolling:
 font:
     size: 14
     normal:
-        #family: iMWritingMonoS
-        family: iMWritingMonospace
+        family: Hack Nerd Font
 colors:
     cursor:
         text: '#000000'
