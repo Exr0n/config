@@ -41,9 +41,7 @@ export VIMROOT="$CONFIG/nvim"
 export VIMCONFIG="$VIMROOT"
 export MYVIMRC="$VIMCONFIG/vimrc"
 export VIMINIT='source $MYVIMRC'
-
-[[ -z "$IDEMODE" ]] && export IDEMODE=1
-
+export IDEMODE=1
 
 # Custom Aliases
 alias tsn='ts-node'
