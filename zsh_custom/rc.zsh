@@ -48,7 +48,10 @@ alias tsn='ts-node'
 alias trf='ssh exr0n@hop.exr0n.com -p 2222'
 alias pls='sudo'
 alias u='mkdir -p "$CAPSULEROOT/notes" && v "$CAPSULEROOT/notes/$(date +"%Y_%m_%d").md"'
-alias :q='tmux kill-pane' # when you forget what's vim and what's tmux
+#    vim tmux integration
+#        that moment when you forget what's vim and what's tmux
+alias :q='tmux kill-pane'
+alias :qa='tmux kill-window'
 #    editing
 alias vim='nvim'
 alias v='nvim'
@@ -82,7 +85,7 @@ alias mux='tmuxinator'
 alias m='make'
 alias bm='bear make'
 
-# rust/cargo things
+#    rust/cargo things
 [[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
 alias cn='cargo new --vcs git'
 alias cr='cargo run'
