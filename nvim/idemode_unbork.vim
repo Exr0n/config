@@ -172,6 +172,7 @@ xmap <Leader>t <Plug>NERDCommenterInvert
 
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
+let g:NERDCommentEmptyLines = 1
 
 "map cn to NERDTreeToggle
 nnoremap <Leader>d :NERDTreeToggle<CR>
