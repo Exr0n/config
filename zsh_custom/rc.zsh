@@ -64,7 +64,7 @@ alias gp='gpext'
 alias grsh='git remote show'
 function gutil {
     gpl
-    git add ${1:-"."} && git commit -v
+    git add ${1:-"."} && git commit -v --allow-empty
     gp
 }
 alias gg='gutil'
