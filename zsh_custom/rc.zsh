@@ -64,14 +64,14 @@ alias gp='gpext'
 alias grsh='git remote show'
 function gutil {
     gpl
-    git add ${1:-"."} && git commit -v --allow-empty
+    git add ${1:-"."} &&\
+    git commit -v --allow-empty
     gp
 }
 alias gg='gutil'
 alias GG='gutil -A'
 #    python stuff
 alias py='python3'
-alias p='python3'
 alias pip='python3 -m pip'
 alias pym='python3 -m'
 #    screen stuff
