@@ -116,7 +116,9 @@ set termguicolors
 set regexpengine=1 " supposedly makes things faster
 colo dark_purple
 highlight Comment cterm=italic gui=italic
-
+highlight Conditional cterm=italic gui=italic
+highlight Repeat cterm=italic gui=italic
+highlight Keyword cterm=italic gui=italic
 
 "set search stuff
 set hlsearch
