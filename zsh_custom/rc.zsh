@@ -83,7 +83,7 @@ alias mux='tmuxinator'
 
 #    makefile
 alias m='make'
-alias bm='bear make'
+alias bear='SDKROOT=$(xcrun --show-sdk-path) \bear'
 
 #    rust/cargo things
 [[ -f $HOME/.cargo/env ]] && source $HOME/.cargo/env
@@ -104,7 +104,7 @@ function fcd () {
 alias c='fcd'
 
 #    Alias to auto open files with vim
-alias -s {txt,md,cpp,rs,py,properties,yml,yaml}=nvim
+alias -s {txt,md,cpp,rs,js,mjs,py,properties,yml,yaml,zsh}=nvim
 
 #    One off aliases (like config commands)
 #alias set_right_alt='cd $ZSH_CUSTOM/keymap_util && hidutil property --set $(./map) && -'
