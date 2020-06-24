@@ -128,6 +128,8 @@ set smartcase
 
 " tab sizing
 set shiftwidth=4
+set ts=4
+set et
 set si " smart indent
 
 " stop physical line wrapping
