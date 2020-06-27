@@ -10,7 +10,7 @@ set diffopt+=algorithm:patience
 command W w
 
 " IDE mode
-command IDE source $VIMCONFIG/idemode_unbork.vim
+command IDE source $VIMCONFIG/idemode.vim
 
 let idemode=$IDEMODE
 if idemode == '1'
