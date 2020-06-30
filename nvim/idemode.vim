@@ -85,7 +85,7 @@ au FocusGained,BufEnter * :checktime
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 set number " line numbers
 set ruler " display current cursor "coordinates"
-set showmatch " highlight the matching bracket
+set nosm    " don't show match
 " show invisibles
 set encoding=utf-8
 set listchars=eol:⏎,tab:→·,trail:·,extends:>,precedes:<
@@ -108,18 +108,6 @@ augroup OnColorScheme
 	autocmd!
 	autocmd ColorScheme,BufEnter,BufWinEnter * call s:CustomizeColors()
 augroup END
-
-function! NeatFoldText()
-  let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
-  let lines_count = v:foldend - v:foldstart + 1
-  let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
-  let foldchar = matchstr(&fillchars, 'fold:\zs.')	" TODO typo on this line?
-  let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
-  let foldtextend = lines_count_text . repeat(foldchar, 8)
-  let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
-  return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
-endfunction
-set foldtext=NeatFoldText()
 
 " force vim to use true colors (https://medium.com/@dubistkomisch/how-to-actually-get-italics-and-true-colour-to-work-in-iterm-tmux-vim-9ebe55ebc2be)
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
@@ -155,6 +143,19 @@ augroup AutoSaveFolds
   autocmd BufWinLeave * silent! mkview
   autocmd BufWinEnter * silent! loadview
 augroup END
+
+"   [fancy looking folds](https://dhruvasagar.com/2013/03/28/vim-better-foldtext)
+function! NeatFoldText()
+	let line = ' ' . substitute(getline(v:foldstart), '^\s*"\?\s*\|\s*"\?\s*{{' . '{\d*\s*', '', 'g') . ' '
+	let lines_count = v:foldend - v:foldstart + 1
+	let lines_count_text = '| ' . printf("%10s", lines_count . ' lines') . ' |'
+	let foldchar = matchstr(&fillchars, 'fold:\zs.')	" TODO typo on this line?
+	let foldtextstart = strpart('+' . repeat(foldchar, v:foldlevel*2) . line, 0, (winwidth(0)*2)/3)
+	let foldtextend = lines_count_text . repeat(foldchar, 8)
+	let foldtextlength = strlen(substitute(foldtextstart . foldtextend, '.', 'x', 'g')) + &foldcolumn
+	return foldtextstart . repeat(foldchar, winwidth(0)-foldtextlength) . foldtextend
+endfunction
+set foldtext=NeatFoldText()
 
 " cursor stuff
 set mouse=a
