@@ -3,6 +3,7 @@ git submodule foreach git pull
 
 # Brew
 brew install git-secret gotop libcairo2 tig flake8 node yarn ripgrep ack gnupg gcc gmp rustup ffmpeg tree wget tmux tmuxinator cmake fzf neovim go coreutils
+brew install cmatrix sl fortune cowsay
 brew upgrade
 
 # [terminfo](https://github.com/tmux/tmux/issues/2226#issuecomment-633260085)
