@@ -18,8 +18,10 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 make -C ../scripts/wabt
 
 # font
-wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/RobotoMono/Thin/complete/Roboto%20Mono%20Thin%20Nerd%20Font%20Complete%20Mono.ttf -O RobotoMonoThinNerd.ttf
-open RobotoMonoThinNerd.ttf
+# wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/RobotoMono/Thin/complete/Roboto%20Mono%20Thin%20Nerd%20Font%20Complete%20Mono.ttf -O RobotoMonoThinNerd.ttf && open RobotMonoThinNerd.ttf
+wget https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip -O hack-ttf.zip
+unzip hack-ttf.zip
+open ttf/*
 
 # vim plugins
 v -c "PlugInstall | qa"
