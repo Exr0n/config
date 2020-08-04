@@ -24,6 +24,8 @@ Plug 'tpope/vim-repeat'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 
+"Plug 'dpc/vim-smarttabs'   // TODO: would be nice but doesn't actually work
+
 "Decent
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'wadackel/vim-dogrun'
