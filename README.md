@@ -25,3 +25,5 @@ open ttf/*
 
 # vim plugins
 v -c "PlugInstall | qa"
+
+# [yabai](https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release))
