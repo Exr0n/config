@@ -63,6 +63,10 @@ function gpext {
 alias gp='gpext'
 alias grsh='git remote show'
 function gutil {
+    if [[ -z "$(git status --porcelain)" ]] then
+	echo "Nothing to add... commit anyways?"
+	read -t 1
+    fi
     gpl
     git add ${1:-"."} &&\
     git commit -v --allow-empty
@@ -108,5 +112,5 @@ alias -s {txt,md,cpp,rs,js,mjs,py,properties,yml,yaml,zsh}=nvim
 
 #    One off aliases (like config commands)
 hidutil property --set "$($ZSH_CUSTOM/keymap_util/map)" > /dev/null
-#defaults write -g KeyRepeat -int 1 # https://apple.stackexchange.com/a/83923
+defaults write -g KeyRepeat -int 1 # https://apple.stackexchange.com/a/83923
 defaults write -g ApplePressAndHoldEnabled -bool false # turn off accentecd characters: https://www.addictivetips.com/mac-os/disable-accented-characters-on-macos/
