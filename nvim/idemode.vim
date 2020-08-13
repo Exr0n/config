@@ -143,6 +143,7 @@ set wrapmargin=0
 augroup AutoSaveFolds
   autocmd!
   autocmd BufWinLeave * silent! mkview
+  "autocmd BufWinLeave * echom 'hi' " TODO: don't mkview on diff files
   autocmd BufWinEnter * silent! loadview
 augroup END
 
