@@ -111,6 +111,7 @@ alias c='fcd'
 alias -s {txt,md,cpp,rs,js,mjs,py,properties,yml,yaml,zsh}=nvim
 
 #    One off aliases (like config commands)
+alias ok='alerter -message hi -timeout 3 -appIcon https://i.imgur.com/1lKcbkC.png'
 hidutil property --set "$($ZSH_CUSTOM/keymap_util/map)" > /dev/null
 defaults write -g KeyRepeat -int 1 # https://apple.stackexchange.com/a/83923
 defaults write -g ApplePressAndHoldEnabled -bool false # turn off accentecd characters: https://www.addictivetips.com/mac-os/disable-accented-characters-on-macos/

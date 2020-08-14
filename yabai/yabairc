@@ -1,2 +1,1 @@
-# yabai config (https://github.com/koekeishiya/yabai/wiki/Tips-and-tricks#split-yabai-configuration-across-multiple-files)
-
+source "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/yabai.zsh"   # gotta get that syntax highlighting
