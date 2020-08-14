@@ -7,20 +7,50 @@
 
 # TODO: make these work with tmux and vim splits, all using ctrl-hjkl
 # focus window
-ctrl + lcmd - h : yabai -m window --focus west
-ctrl + lcmd - j : yabai -m window --focus south
-ctrl + lcmd - k : yabai -m window --focus north
-ctrl + lcmd - l : yabai -m window --focus east
+ctrl + lcmd - h             : yabai -m window   --focus west
+ctrl + lcmd - j             : yabai -m window   --focus south
+ctrl + lcmd - k             : yabai -m window   --focus north
+ctrl + lcmd - l             : yabai -m window   --focus east
 
-# swap window
-ctrl + lcmd + rcmd - h : yabai -m window --swap west
-ctrl + lcmd + rcmd - j : yabai -m window --swap south
-ctrl + lcmd + rcmd - k : yabai -m window --swap north
-ctrl + lcmd + rcmd - l : yabai -m window --swap east
+# focus space
+ctrl + lcmd - 1             : yabai -m space    --focus 1
+ctrl + lcmd - 2             : yabai -m space    --focus 2
+ctrl + lcmd - 3             : yabai -m space    --focus 3
+ctrl + lcmd - 4             : yabai -m space    --focus 4
+ctrl + lcmd - 5             : yabai -m space    --focus 5
+ctrl + lcmd - 0x0C          : yabai -m space    --focus 6
+ctrl + lcmd - 0x0E          : yabai -m space    --focus 7
+ctrl + lcmd - p             : yabai -m space    --focus 8
+ctrl + lcmd - u             : yabai -m space    --focus 9
+ctrl + lcmd - 0             : yabai -m space    --focus 10
+ctrl + lalt - 1             : yabai -m space    --focus 11
+ctrl + lalt - 2             : yabai -m space    --focus 12
+ctrl + lalt - 3             : yabai -m space    --focus 13
+ctrl + lalt - 4             : yabai -m space    --focus 14
+ctrl + lalt - 5             : yabai -m space    --focus 15
+ctrl + lalt - 6             : yabai -m space    --focus 16
 
-## move window
-#shift + cmd - h : yabai -m window --warp west
-#shift + cmd - j : yabai -m window --warp south
-#shift + cmd - k : yabai -m window --warp north
-#shift + cmd - l : yabai -m window --warp east
+# swap wind
+ctrl + lcmd - h             : yabai -m window   --swap west
+ctrl + lcmd - j             : yabai -m window   --swap south
+ctrl + lcmd - k             : yabai -m window   --swap north
+ctrl + lcmd - l             : yabai -m window   --swap east
+
+# move window to space
+ctrl + lcmd + rcmd - 1      : yabai -m window   --space 1
+ctrl + lcmd + rcmd - 2      : yabai -m window   --space 2
+ctrl + lcmd + rcmd - 3      : yabai -m window   --space 3
+ctrl + lcmd + rcmd - 4      : yabai -m window   --space 4
+ctrl + lcmd + rcmd - 5      : yabai -m window   --space 5
+ctrl + lcmd + rcmd - 0x0C   : yabai -m window   --space 6
+ctrl + lcmd + rcmd - 0x0E   : yabai -m window   --space 7
+ctrl + lcmd + rcmd - p      : yabai -m window   --space 8
+ctrl + lcmd + rcmd - u      : yabai -m window   --space 9
+ctrl + lcmd + rcmd - 0      : yabai -m window   --space 10
+ctrl + lalt + rcmd - 1      : yabai -m window   --space 11
+ctrl + lalt + rcmd - 2      : yabai -m window   --space 12
+ctrl + lalt + rcmd - 3      : yabai -m window   --space 13
+ctrl + lalt + rcmd - 4      : yabai -m window   --space 14
+ctrl + lalt + rcmd - 5      : yabai -m window   --space 15
+ctrl + lalt + rcmd - 6      : yabai -m window   --space 16
 
