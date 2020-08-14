@@ -13,6 +13,11 @@ ctrl + lcmd - k             : yabai -m window   --focus north
 ctrl + lcmd - l             : yabai -m window   --focus east
 
 # focus space
+#   This looks crazy (and it probably is) but its a hierarchy ok?
+#       spaces 6 and 9 are like registers, where 6 = terminal and 9 = calendar/control conter
+#       spaces 7 and 8 are like the cpu cache, for whatever is being worked on now (7 slightly faster than 8)
+#       spaces 1-5 are memory, resources or production areas for the current task
+#       spaces 11-16 are storage, for things i might come back to in the future
 ctrl + lcmd - 1             : yabai -m space    --focus 1
 ctrl + lcmd - 2             : yabai -m space    --focus 2
 ctrl + lcmd - 3             : yabai -m space    --focus 3
