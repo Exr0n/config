@@ -54,3 +54,9 @@ ctrl + lalt + rcmd - 4      : yabai -m window   --space 14 | yabai -m space --fo
 ctrl + lalt + rcmd - 5      : yabai -m window   --space 15 | yabai -m space --focus 15
 ctrl + lalt + rcmd - 6      : yabai -m window   --space 16 | yabai -m space --focus 16
 
+# open specific applications
+ctrl + lcmd - d             : open -a Discord
+ctrl + lcmd - m             : open -a Messages
+ctrl + lcmd - t             : open -a TogglDesktop
+ctrl + lcmd - s             : open -a Spark
+
