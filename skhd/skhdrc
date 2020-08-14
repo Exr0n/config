@@ -1,2 +1,26 @@
 # skhd config (https://github.com/koekeishiya/skhd)
+# inspiration includes
+#   https://gist.github.com/TomFaulkner/5531bde4f2955c08bcd07d6e308f6d59
+
+# keyboard test
+#ctrl - j : ok
+
+# TODO: make these work with tmux and vim splits, all using ctrl-hjkl
+# focus window
+ctrl + lcmd - h : yabai -m window --focus west
+ctrl + lcmd - j : yabai -m window --focus south
+ctrl + lcmd - k : yabai -m window --focus north
+ctrl + lcmd - l : yabai -m window --focus east
+
+# swap window
+ctrl + lcmd + rcmd - h : yabai -m window --swap west
+ctrl + lcmd + rcmd - j : yabai -m window --swap south
+ctrl + lcmd + rcmd - k : yabai -m window --swap north
+ctrl + lcmd + rcmd - l : yabai -m window --swap east
+
+## move window
+#shift + cmd - h : yabai -m window --warp west
+#shift + cmd - j : yabai -m window --warp south
+#shift + cmd - k : yabai -m window --warp north
+#shift + cmd - l : yabai -m window --warp east
 
