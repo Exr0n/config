@@ -18,12 +18,19 @@ yabai -m config right_padding  0
 yabai -m config window_gap     5
 # 	only show window shadows for floating windows
 yabai -m config window_shadow float
-# 	render all unfocused windows with 90% opacity
-yabai -m config window_opacity off
-#yabai -m config active_window_opacity 1.0
-#yabai -m config normal_window_opacity 0.8
-#   TODO: window border?
-yabai -m config window_border off
+# 	render all unfocused windows with 80% opacity
+yabai -m config window_opacity on
+yabai -m config window_opacity_duration 0.0
+yabai -m config active_window_opacity 1.0
+yabai -m config normal_window_opacity 0.8
+
+# always keep laptop apps at full opacity
+yabai -m rule --add app="TogglDesktop" opacity=1.0
+yabai -m rule --add app="Discord" opacity=1.0
+yabai -m rule --add app="Messages" opacity=1.0
+yabai -m rule --add app="Condution" opacity=1.0
+yabai -m rule --add app="Spark" opacity=1.0
+yabai -m rule --add app="Chrome" opacity=1.0
 
 echo 'yabai configuration loaded.'
 
