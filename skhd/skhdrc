@@ -65,3 +65,10 @@ ctrl + lcmd - m             : open -a Messages
 ctrl + lcmd - t             : open -a TogglDesktop
 ctrl + lcmd - s             : open -a Spark
 
+# vivaldi doesn't have control n/p for quick commands
+ctrl - n [
+    "vivaldi" : release_control_key && osascript -e 'tell application "System Events" to key code 125'
+]
+ctrl - p [
+    "vivaldi" : release_control_key && osascript -e 'tell application "System Events" to key code 126'
+]
