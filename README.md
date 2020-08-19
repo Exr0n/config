@@ -4,7 +4,7 @@ git submodule init
 # Brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew install git-secret gotop tig flake8 node yarn ripgrep ack gnupg gcc gmp rustup ffmpeg tree wget tmux tmuxinator cmake fzf neovim go coreutils
-brew install cmatrix sl fortune cowsay
+brew install cmatrix sl fortune cowsay neofetch
 brew upgrade
 
 # [terminfo](https://github.com/tmux/tmux/issues/2226#issuecomment-633260085)
@@ -29,3 +29,8 @@ open ttf/*
 v -c "PlugInstall | qa"
 
 # [yabai](https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release))
+brew install koekeishiya/formulae/skhd
+brew services start skhd
+brew install koekeishiya/formulae/yabai
+sudo yabai --install-sa
+killall Dock
