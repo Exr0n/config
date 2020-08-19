@@ -3,7 +3,7 @@ git submodule init
 
 # Brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-brew install git-secret gotop tig flake8 node yarn ripgrep ack gnupg gcc gmp rustup ffmpeg tree wget tmux tmuxinator cmake fzf neovim go coreutils
+brew install btm git-secret tig flake8 node yarn ack gnupg gcc gmp rustup ffmpeg tree wget tmux tmuxinator cmake fzf neovim go coreutils
 brew install cmatrix sl fortune cowsay neofetch
 brew upgrade
 
