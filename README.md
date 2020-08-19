@@ -2,6 +2,7 @@
 git submodule foreach git pull
 
 # Brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew install git-secret gotop libcairo2 tig flake8 node yarn ripgrep ack gnupg gcc gmp rustup ffmpeg tree wget tmux tmuxinator cmake fzf neovim go coreutils
 brew install cmatrix sl fortune cowsay
 brew upgrade
