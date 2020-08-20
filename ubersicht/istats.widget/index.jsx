@@ -47,6 +47,7 @@ const config = {
     radius: '18',
     strokeWidth: '2',
     /* Stat  color */
+    gradient: true,
     color: '#ccc',
     /* Stat icon sizes */
     iconSize: '1.0rem',
