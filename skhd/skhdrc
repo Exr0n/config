@@ -36,10 +36,10 @@ ctrl + lalt - 5             : yabai -m space    --focus 15
 ctrl + lalt - 6             : yabai -m space    --focus 16
 
 # swap wind
-ctrl + lcmd - h             : yabai -m window   --swap west
-ctrl + lcmd - j             : yabai -m window   --swap south
-ctrl + lcmd - k             : yabai -m window   --swap north
-ctrl + lcmd - l             : yabai -m window   --swap east
+ctrl + lcmd + rcmd - h      : yabai -m window   --swap west
+ctrl + lcmd + rcmd - j      : yabai -m window   --swap south
+ctrl + lcmd + rcmd - k      : yabai -m window   --swap north
+ctrl + lcmd + rcmd - l      : yabai -m window   --swap east
 
 # move window to space
 ctrl + lcmd + rcmd - 1      : yabai -m window   --space 1  | yabai -m space --focus 1
@@ -59,6 +59,9 @@ ctrl + lalt + rcmd - 4      : yabai -m window   --space 14 | yabai -m space --fo
 ctrl + lalt + rcmd - 5      : yabai -m window   --space 15 | yabai -m space --focus 15
 ctrl + lalt + rcmd - 6      : yabai -m window   --space 16 | yabai -m space --focus 16
 
+# toggle float
+ctrl + lcmd - 0x0D          : yabai -m window --toggle float
+
 # open specific applications
 ctrl + lcmd - d             : open -a Discord
 ctrl + lcmd - m             : open -a Messages
@@ -72,3 +75,4 @@ ctrl - n [
 ctrl - p [
     "vivaldi" : release_control_key && osascript -e 'tell application "System Events" to key code 126'
 ]
+
