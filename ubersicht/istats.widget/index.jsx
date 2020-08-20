@@ -31,10 +31,10 @@ const config = {
     /* Available stat keys, in order of rendering */
     stats: [
         'cpu.cpu-temp',
-        'extra.tcgc-peci-gpu-temp',
+        'extra.tcgc-peci-gpu',  // TODO: extras widgets not working
+        'battery.current-charge',
         'fan.fan-0-speed',
         'fan.fan-1-speed',
-        'battery.current-charge'
     ],
     /* Temperature unit, either 'C' or 'F' */
     tempUnit: 'F',
@@ -63,7 +63,7 @@ export const command = '/usr/local/bin/istats';
 /**
  * Widget refresh frequency in milliseconds
  */
-export const refreshFrequency = 5000;
+export const refreshFrequency = 1000;
 
 export const className = `
     width: 100%;

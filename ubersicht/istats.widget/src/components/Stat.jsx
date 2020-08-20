@@ -43,10 +43,11 @@ class Stat extends React.Component {
             <div className={"stat " + this.props.title}>
                 <i className={"icon " + this.props.icon} style={{ fontSize: this.props.config.iconSize, lineHeight: this.props.config.iconLineHeight }}></i>
                 <svg width={this.props.config.width} height={this.props.config.height}>
-                    <circle r={this.props.config.radius - (this.props.config.strokeWidth / 2)} cx={this.props.config.width / 2} cy={this.props.config.height / 2}
-                        style={{ stroke: 'transparent', strokeWidth: this.props.config.strokeWidth, strokeDasharray: c + ' ' + c }} />;
-                    <circle r={this.props.config.radius - (this.props.config.strokeWidth / 2)} cx={this.props.config.width / 2} cy={this.props.config.height / 2}
-                        style={{ stroke: this.props.config.color, strokeWidth: this.props.config.strokeWidth, strokeDasharray: p + ' ' + c }} />;
+                    <circle r="0" />;   // not sure why we need this extra circle
+                    <circle r={this.props.config.radius - (this.props.config.strokeWidth / 2)}
+                            cx={this.props.config.width / 2}
+                            cy={this.props.config.height / 2}
+                            style={{ stroke: this.props.config.color, strokeWidth: this.props.config.strokeWidth, strokeDasharray: p + ' ' + c }} />
                 </svg>
                 <div className="text" style={{ fontSize: this.props.config.labelSize }}>{this.props.value}</div>
             </div>
