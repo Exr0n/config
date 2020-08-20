@@ -13,3 +13,6 @@
 [submodule "scripts/wabt"]
 	path = scripts/wabt
 	url = https://github.com/webassembly/wabt
+[submodule "ubersicht/istats.widget"]
+	path = ubersicht/istats.widget
+	url = https://github.com/Exr0nProjects/istats.widget.git
