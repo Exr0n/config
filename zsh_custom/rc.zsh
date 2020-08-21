@@ -109,6 +109,10 @@ function fcd () {
 }
 alias c='fcd'
 
+function chpwd () {	# auto called by zsh
+    echo "$(date '+%Y,%m,%d,%H,%M,%S'),$(pwd)" >> $XDG_DATA_HOME/recent-dirs.csv
+}
+
 #    Alias to auto open files with vim
 alias -s {txt,md,cpp,rs,js,mjs,py,properties,yml,yaml,zsh}=nvim
 
