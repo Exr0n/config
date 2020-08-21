@@ -97,13 +97,15 @@ alias cr='cargo run'
 # functions
 #    cd to parent directory of file, https://askubuntu.com/a/316632
 function fcd () {
-    [[ -n "$1" ]] && {
-	[ -f "$1" ] && {
-	    \cd "$(dirname "$1")";
-	}\
-	|| { \cd "$1"; } ;
-    return; }\
-    || { \cd $HOME; } ;
+    if [[ -n "$1" ]]; then
+	if [[ -f "$1" ]]; then
+	    \cd "$(dirname "$1")"
+	else
+	    \cd "$1"
+	fi
+    else
+	\cd $HOME
+    fi
 }
 alias c='fcd'
 
