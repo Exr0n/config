@@ -7,14 +7,14 @@
 
 # TODO: make these work with tmux and vim splits, all using ctrl-hjkl
 # focus window
-ctrl + lcmd - h             : yabai -m window   --focus west
-ctrl + lcmd - j             : yabai -m window   --focus south
-ctrl + lcmd - k             : yabai -m window   --focus north
-ctrl + lcmd - l             : yabai -m window   --focus east
-ctrl - h                    : yabai -m window   --focus west
-ctrl - j                    : yabai -m window   --focus south
-ctrl - k                    : yabai -m window   --focus north
-ctrl - l                    : yabai -m window   --focus east
+ctrl + lcmd - h             : yabai -m window   --focus west || yabai -m display --focus 1
+ctrl + lcmd - j             : yabai -m window   --focus south|| yabai -m display --focus 3h
+ctrl + lcmd - k             : yabai -m window   --focus north|| yabai -m display --focus 1h
+ctrl + lcmd - l             : yabai -m window   --focus east || yabai -m display --focus 2
+ctrl - h                    : yabai -m window   --focus west || yabai -m display --focus 1
+ctrl - j                    : yabai -m window   --focus south|| yabai -m display --focus 3
+ctrl - k                    : yabai -m window   --focus north|| yabai -m display --focus 1
+ctrl - l                    : yabai -m window   --focus east || yabai -m display --focus 2
 
 # focus space
 #   This looks crazy (and it probably is) but its a hierarchy ok?
@@ -39,11 +39,15 @@ ctrl + lalt - 4             : yabai -m space    --focus 14
 ctrl + lalt - 5             : yabai -m space    --focus 15
 ctrl + lalt - 6             : yabai -m space    --focus 16
 
-# swap wind
-ctrl + lcmd + rcmd - h      : yabai -m window   --swap west
-ctrl + lcmd + rcmd - j      : yabai -m window   --swap south
-ctrl + lcmd + rcmd - k      : yabai -m window   --swap north
-ctrl + lcmd + rcmd - l      : yabai -m window   --swap east
+# swap window
+ctrl + lcmd + rcmd - h      : yabai -m window   --warp west  || echo TODO #yabai -m window 
+ctrl + lcmd + rcmd - j      : yabai -m window   --warp south || echo failed #yabai -m window 
+ctrl + lcmd + rcmd - k      : yabai -m window   --warp north || echo failed #yabai -m window 
+ctrl + lcmd + rcmd - l      : yabai -m window   --warp east  || echo failed #yabai -m window 
+ctrl + rcmd - h             : yabai -m window   --warp west  || echo failed #yabai -m window 
+ctrl + rcmd - j             : yabai -m window   --warp south || echo failed #yabai -m window 
+ctrl + rcmd - k             : yabai -m window   --warp north || echo failed #yabai -m window 
+ctrl + rcmd - l             : yabai -m window   --warp east  || echo failed #yabai -m window 
 
 # move window to space
 ctrl + lcmd + rcmd - 1      : yabai -m window   --space 1  | yabai -m space --focus 1

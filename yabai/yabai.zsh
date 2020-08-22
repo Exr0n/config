@@ -22,7 +22,7 @@ yabai -m config window_shadow float
 yabai -m config window_opacity on
 yabai -m config window_opacity_duration 0.0
 yabai -m config active_window_opacity 1.0
-yabai -m config normal_window_opacity 0.8
+yabai -m config normal_window_opacity 0.95
 
 # always keep laptop apps at full opacity
 yabai -m rule --add app="TogglDesktop" opacity=1.0
