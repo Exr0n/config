@@ -16,7 +16,6 @@ class StatusList extends React.Component {
                     .map(p => { try { return JSON.parse(p) } catch (e) { return 'Loading...'; } } )
                     .map(p => {
                         const is_clean = !p[1] && !p[2] && !p[3];
-                        p[2] *= 1000;
                         return <div className="status">
                             <div className="status-icons">
                                 <div className={is_clean ? 'status-icon-clean icon-check' : 'status-icon-dirty icon-chevron-right'} />

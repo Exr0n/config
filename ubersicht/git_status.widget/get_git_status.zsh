@@ -1,5 +1,3 @@
-#!/usr/local/bin/zsh
-
 start="$(pwd)"
 paths=("$HOME/.config" "$HOME/projects/learn_cpp/problems" "$HOME/Desktop/projects/learn_cpp/problems")
 
