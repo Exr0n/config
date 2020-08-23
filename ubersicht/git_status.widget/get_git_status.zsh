@@ -1,7 +1,7 @@
 start="$(pwd)"
-paths=("$HOME/.config" "$HOME/projects/learn_cpp/problems" "$HOME/Desktop/projects/learn_cpp/problems")
+GIT_STATUS_PATHS=("$HOME/.config" "$HOME/projects/learn_cpp/problems" "$HOME/Desktop/projects/learn_cpp/problems")
 
-for name ($paths); do
+for name ($GIT_STATUS_PATHS) do
     if [[ -e $name ]]; then
         cd $name
         cd "$(git rev-parse --show-toplevel)"
