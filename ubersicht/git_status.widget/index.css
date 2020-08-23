@@ -1,0 +1,54 @@
+.status-list {
+    position: absolute;
+    top: 100px;
+    left: 10px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.status {
+    display: flex;
+    flex-direction: row;
+}
+
+.status-icons {
+    display: inherit;
+    flex-direction: inherit;
+}
+.status-icons > div {
+    display: inherit;
+    flex-direction: inherit;
+    text-align: center;
+    margin: 5px;
+    width: 30;
+    height: 30;
+}
+.status-icon-clean {
+    color: lime;
+}
+.status-icon-staged {
+    color: orange;
+}
+.status-icon-modified {
+    color: yellow;
+}
+.status-icon-untracked {
+    color: blueviolet;
+}
+.status-hide {
+    opacity: 0;
+}
+.status-icon-count {
+    line-height: 2em;
+    font-size: 0.8em;
+    font-family: Courier;
+    color: white;
+}
+
+.status-path {
+    line-height: 1.8em;
+    font-family: Courier;
+    color: white;
+}
+
