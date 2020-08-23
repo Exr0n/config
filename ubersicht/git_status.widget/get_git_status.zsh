@@ -1,5 +1,5 @@
 start="$(pwd)"
-GIT_STATUS_PATHS=("$HOME/.config" "$HOME/projects/learn_cpp/" "$HOME/projects")
+GIT_STATUS_PATHS=("$HOME/projects/Condution" "$HOME/Desktop/materials/capsule" "$HOME/Desktop/materials/ml-reflect" "$HOME/.config" "$HOME/projects/learn_cpp/" "$HOME/projects")
 
 for name ($GIT_STATUS_PATHS) do
     if [[ -e $name ]]; then
