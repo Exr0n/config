@@ -1,9 +1,10 @@
 start="$(pwd)"
-GIT_STATUS_PATHS=("$HOME/.config" "$HOME/projects/learn_cpp/problems" "$HOME/Desktop/projects/learn_cpp/problems")
+GIT_STATUS_PATHS=("$HOME/.config" "$HOME/projects/learn_cpp/" "$HOME/projects")
 
 for name ($GIT_STATUS_PATHS) do
     if [[ -e $name ]]; then
         cd $name
+        git rev-parse --show-toplevel > /dev/null 2>&1 || break
         cd "$(git rev-parse --show-toplevel)"
         gstatus="$(git status --porcelain --branch)"
         printf "[\"$(echo $gstatus | head -n 1 | cut -c 4-)\", \"$(pwd)\""
