@@ -16,3 +16,4 @@
 [submodule "ubersicht/istats.widget"]
 	path = ubersicht/istats.widget
 	url = https://github.com/Exr0nProjects/istats.widget.git
+    ignore = dirty
