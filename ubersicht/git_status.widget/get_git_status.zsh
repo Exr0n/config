@@ -5,9 +5,8 @@ for name ($paths); do
     if [[ -e $name ]]; then
         cd $name
         cd "$(git rev-parse --show-toplevel)"
-        printf "[\"$(pwd)\""
-        #echo "$(git status -s | ack -i '^.[MARCD]')"
-        gstatus="$(git status -s)"
+        gstatus="$(git status --porcelain --branch)"
+        printf "[\"$(echo $gstatus | head -n 1 | cut -c 4-)\", \"$(pwd)\""
         printf ", $(echo $gstatus | ack -i '^\?\?' | wc -l | xargs)"
         printf ", $(echo $gstatus | ack -i '^.[MARCD]' | wc -l | xargs)"
         printf ", $(echo $gstatus | ack -i '^[MARCD]' | wc -l | xargs)"

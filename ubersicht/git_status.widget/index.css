@@ -1,13 +1,24 @@
 .status-list {
     position: absolute;
-    top: 100px;
-    left: 10px;
+    left: 0px;
+    top: 0px;
+    padding-left: 20px;
+    width: 100vw;
+    height: 100vh;
 
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+}
+
+#bottom-spacer {
+    margin-bottom: 10px;
 }
 
 .status {
+    position: relative;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: row;
 }
@@ -65,5 +76,11 @@
     line-height: 1.8em;
     font-family: Courier;
     color: white;
+}
+.status-branch {
+    margin-left: 10px;
+    line-height: 1.8em;
+    font-family: Courier;
+    color: lightgray;
 }
 
