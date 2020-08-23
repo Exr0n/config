@@ -15,29 +15,44 @@
 .status-icons {
     display: inherit;
     flex-direction: inherit;
+    width: 160px;
 }
 .status-icons > div {
+    position: absolute;
     display: inherit;
     flex-direction: inherit;
     text-align: center;
-    margin: 5px;
-    width: 30;
+    overflow: hidden;
+    max-width: 30;
     height: 30;
 }
 .status-icon-clean {
+    position: relative;
     color: lime;
+    left: 0px;
+}
+.status-icon-dirty {
+    position: relative;
+    color: red;
+    left: 0px;
 }
 .status-icon-staged {
+    position: relative;
     color: orange;
+    left: 40px;
 }
 .status-icon-modified {
+    position: relative;
     color: yellow;
+    left: 80px;
 }
 .status-icon-untracked {
+    position: relative;
     color: blueviolet;
+    left: 120px;
 }
 .status-hide {
-    opacity: 0;
+    opacity: 20%;
 }
 .status-icon-count {
     line-height: 2em;
