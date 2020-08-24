@@ -75,6 +75,7 @@ ctrl + lcmd - d             : open -a Discord
 ctrl + lcmd - m             : open -a Messages
 ctrl + lcmd - t             : open -a TogglDesktop
 ctrl + lcmd - s             : open -a Spark
+ctrl + lcmd - n             : open -a Zettlr
 
 # vivaldi doesn't have control n/p for quick commands
 ctrl - n [
