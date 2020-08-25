@@ -7,10 +7,10 @@
 
 # TODO: make these work with tmux and vim splits, all using ctrl-hjkl
 # focus window
-ctrl + lcmd - h             : yabai -m window   --focus west || yabai -m display --focus 1
-ctrl + lcmd - j             : yabai -m window   --focus south|| yabai -m display --focus 3h
-ctrl + lcmd - k             : yabai -m window   --focus north|| yabai -m display --focus 1h
-ctrl + lcmd - l             : yabai -m window   --focus east || yabai -m display --focus 2
+ctrl + lcmd - h              : yabai -m window   --focus west || yabai -m display --focus 1
+ctrl + lcmd - j              : yabai -m window   --focus south|| yabai -m display --focus 3
+ctrl + lcmd - k              : yabai -m window   --focus north|| yabai -m display --focus 1
+ctrl + lcmd - l              : yabai -m window   --focus east || yabai -m display --focus 2
 #ctrl - h                    : yabai -m window   --focus west || yabai -m display --focus 1
 #ctrl - j                    : yabai -m window   --focus south|| yabai -m display --focus 3
 #ctrl - k                    : yabai -m window   --focus north|| yabai -m display --focus 1
@@ -75,7 +75,7 @@ ctrl + lcmd - d             : open -a Discord
 ctrl + lcmd - m             : open -a Messages
 ctrl + lcmd - t             : open -a TogglDesktop
 ctrl + lcmd - s             : open -a Spark
-ctrl + lcmd - n             : open -a Zettlr
+ctrl + lcmd - n             : open -a Obsidian
 
 # vivaldi doesn't have control n/p for quick commands
 ctrl - n [
