@@ -11,10 +11,10 @@ ctrl + lcmd - h             : yabai -m window   --focus west || yabai -m display
 ctrl + lcmd - j             : yabai -m window   --focus south|| yabai -m display --focus 3h
 ctrl + lcmd - k             : yabai -m window   --focus north|| yabai -m display --focus 1h
 ctrl + lcmd - l             : yabai -m window   --focus east || yabai -m display --focus 2
-ctrl - h                    : yabai -m window   --focus west || yabai -m display --focus 1
-ctrl - j                    : yabai -m window   --focus south|| yabai -m display --focus 3
-ctrl - k                    : yabai -m window   --focus north|| yabai -m display --focus 1
-ctrl - l                    : yabai -m window   --focus east || yabai -m display --focus 2
+#ctrl - h                    : yabai -m window   --focus west || yabai -m display --focus 1
+#ctrl - j                    : yabai -m window   --focus south|| yabai -m display --focus 3
+#ctrl - k                    : yabai -m window   --focus north|| yabai -m display --focus 1
+#ctrl - l                    : yabai -m window   --focus east || yabai -m display --focus 2
 
 # focus space
 #   This looks crazy (and it probably is) but its a hierarchy ok?

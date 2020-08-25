@@ -7,7 +7,7 @@ function! EditZettelNew()
     echom 'edit zettl new!'
 endfunction
 
-inoremap gzn <Esc>:call EditZettelNew()<CR>
+inoremap jzn <Esc>:call EditZettelNew()<CR>
 
 
 "nm gzb <Plug>NeuronRibStart
