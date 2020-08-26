@@ -38,7 +38,9 @@ yabai -m rule --add app="^Spark$"               manage=off
 yabai -m rule --add app="^Creative Cloud$"      manage=off
 yabai -m rule --add app="^Condution$"           manage=off
 yabai -m rule --add app="^Finder$"              manage=off
-yabai -m rule --add app="^FaceTime$"              manage=off
+yabai -m rule --add app="^FaceTime$"            manage=off
+yabai -m rule --add app="^Numi$"                manage=off
+yabai -m rule --add app="^Numi$"                float=on
 
 #    	default to bsp
 yabai -m config layout bsp

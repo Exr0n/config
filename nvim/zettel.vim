@@ -4,6 +4,9 @@
 let g:zettel_dir = $PATH . '/Desktop/materials/Taproot'
 
 function! EditZettelNew()
+    let path = system('echo delme.txt')
+    echom path
+    edit g:path
     echom 'edit zettl new!'
 endfunction
 
