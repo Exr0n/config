@@ -8,3 +8,4 @@ coc/extensions/node_modules/**
 coc/history.json
 coc/snippets-mru
 nvim/.netrwhist
+snap
