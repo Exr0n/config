@@ -17,3 +17,6 @@
 	path = ubersicht/istats.widget
 	url = https://github.com/Exr0nProjects/istats.widget.git
     ignore = dirty
+[submodule "dontrun_custom/elegant-emacs"]
+	path = dontrun_custom/elegant-emacs
+	url = https://github.com/rougier/elegant-emacs.git
