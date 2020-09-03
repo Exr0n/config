@@ -69,6 +69,8 @@ ctrl + lalt + rcmd - 6      : yabai -m window   --space 16 | yabai -m space --fo
 
 # toggle float
 ctrl + lcmd - 0x0D          : yabai -m window --toggle float
+# toggle split direction
+ctrl +  cmd - e             : yabai -m window --toggle split
 
 # open specific applications
 ctrl + lcmd - d             : open -a Discord

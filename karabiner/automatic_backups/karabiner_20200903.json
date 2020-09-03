@@ -14,7 +14,8 @@
                     "basic.to_if_held_down_threshold_milliseconds": 500,
                     "mouse_motion_to_scroll.speed": 100
                 },
-                "rules": []
+                "rules": [
+                ]
             },
             "devices": [],
             "fn_function_keys": [
@@ -161,7 +162,7 @@
                 "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 50,
                     "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 300,
+                    "basic.to_if_alone_timeout_milliseconds": 1000,
                     "basic.to_if_held_down_threshold_milliseconds": 500,
                     "mouse_motion_to_scroll.speed": 100
                 },
@@ -237,9 +238,9 @@
                                     "key_code": "r",
                                     "modifiers": {
                                         "TODO": "below could be shift or fn and it works, but not caps_lock :(. I know caps lock is correct because it triggers directly (remap capslock to enter) and that r is correct too",
-                                        "mandatory": [
-                                            "caps_lock"
-                                        ]
+                                            "mandatory": [
+                                                "caps_lock"
+                                            ]
                                     }
                                 },
                                 "to": [
