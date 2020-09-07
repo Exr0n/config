@@ -15,6 +15,7 @@ export PATH="$HOME/anaconda3/bin:$PATH"
 # Setting PATH for Python 3.7
 # The original version is saved in .bash_profile.pysave
 export PATH="$HOME/Library/Python/3.7/bin:${PATH}"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
 
 # brew ncurses for updated terminfo that includes tmux
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
