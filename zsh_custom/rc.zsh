@@ -27,6 +27,9 @@ export PATH="$ZSH_CUSTOM/../scripts/wabt/bin:$PATH"
 # custom bin
 export PATH="$ZSH_CUSTOM/bin:$PATH"
 
+# alacritty
+export PATH="$ZSH_CUSTOM/../dontrun_custom/Alacritty.app/Contents/MacOS:$PATH"
+
 # Zsh Completions (https://medium.com/@beatrizmrg/gaining-efficiency-with-iterm-prompt-customization-on-macos-3ad212f5bfde)
 # shouldn't need this with zsh-autosuggest # fpath=(/usr/local/share/zsh-completions $fpath)
 
