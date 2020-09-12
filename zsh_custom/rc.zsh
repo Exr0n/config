@@ -98,7 +98,7 @@ alias cn='cargo new --vcs git'
 alias cr='cargo run'
 
 # emaaaacs
-alias emacs='open -a emacs --args $XDG_CONFIG_HOME/dontrun_custom/elegant-emacs/Splash.org'
+alias emacs='open -a emacs --args $CAPSULEROOT/org/inbox.org'
 
 # functions
 #    cd to parent directory of file, https://askubuntu.com/a/316632

@@ -31,7 +31,7 @@ yabai -m rule --add app="Chrome" opacity=1.0
 #yabai -m config --space 19 layout float
 # ignore applications
 yabai -m rule --add app="^System Preferences$"  manage=off
-yabai -m rule --add app="^TogglDesktop$"        manage=off
+yabai -m rule --add app="^Toggl Track$"          manage=off
 yabai -m rule --add app="^Discord$"             manage=off
 yabai -m rule --add app="^Messages$"            manage=off
 yabai -m rule --add app="^Spark$"               manage=off
