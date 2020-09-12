@@ -99,7 +99,7 @@ alias cn='cargo new --vcs git'
 alias cr='cargo run'
 
 # emaaaacs
-alias emacs='open -a emacs --args $XDG_CONFIG_HOME/dontrun_custom/elegant-emacs/Splash.org'
+alias emacs='open -a emacs --args $CAPSULEROOT/org/inbox.org'
 
 # functions
 #    cd to parent directory of file, https://askubuntu.com/a/316632
@@ -125,6 +125,6 @@ alias -s {txt,md,cpp,rs,js,mjs,py,properties,yml,yaml,zsh}=nvim
 
 #    One off aliases (like config commands)
 alias ok='alerter -message hi -timeout 3 -appIcon https://i.imgur.com/1lKcbkC.png'
-#hidutil property --set "$($ZSH_CUSTOM/keymap_util/map)" > /dev/null # Replaced by Karabiner
+hidutil property --set "$($ZSH_CUSTOM/keymap_util/map)" > /dev/null # Replaced by Karabiner
 defaults write -g KeyRepeat -int 1 # https://apple.stackexchange.com/a/83923
 defaults write -g ApplePressAndHoldEnabled -bool false # turn off accentecd characters: https://www.addictivetips.com/mac-os/disable-accented-characters-on-macos/
