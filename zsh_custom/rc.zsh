@@ -117,11 +117,13 @@ function fcd () {
 alias c='fcd'
 
 function chpwd () {	# auto called by zsh
-    echo "$(date '+%Y,%m,%d,%H,%M,%S'),$(pwd)" >> $XDG_DATA_HOME/recent-dirs.csv
+    echo "$(date '+%Y,%m,%d,%H,%M,%S'),$(pwd)" >> $XDG_DATA_HOME/recent_dirs.csv
+    #git rev-parse --show-toplevel > /dev/null 2>&1 &&
+	echo "$(pwd)" >> $XDG_DATA_HOME/recent_git_dirs.csv
 }
 
 #    Alias to auto open files with vim
-alias -s {txt,md,cpp,rs,js,mjs,py,properties,yml,yaml,zsh}=nvim
+alias -s {txt,md,cpp,rs,js,mjs,py,properties,yml,yaml}=nvim
 
 #    One off aliases (like config commands)
 alias ok='alerter -message hi -timeout 3 -appIcon https://i.imgur.com/1lKcbkC.png'

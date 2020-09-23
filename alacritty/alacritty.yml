@@ -7,7 +7,7 @@ scrolling:
 font:
     size: 14
     normal:
-        family: Hack
+        family: Hack Nerd Font
     use_thin_strokes: true
 colors:
     cursor:
