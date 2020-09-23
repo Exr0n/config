@@ -2,7 +2,7 @@ start="$(pwd)"
 #count=1    # TODO: remove duplicates by getting another one if duped
 
 #for name ($(git_status_paths)) do
-for name in $(tail -r "/Users/exr0n/.data/recent_git_dirs.csv"); do
+for name in $(tail -r -n $1 "/Users/exr0n/.data/recent_git_dirs.csv"); do
     if [[ -d $name ]]; then
         cd $name
         git rev-parse --show-toplevel > /dev/null 2>&1 || continue
