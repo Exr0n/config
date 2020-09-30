@@ -12,10 +12,11 @@ export PATH="$HOME/anaconda/bin:$PATH"
 # added by Anaconda3 5.0.1 installer
 export PATH="$HOME/anaconda3/bin:$PATH"
 
-# Setting PATH for Python 3.7
+# Setting PATH for Python 
 # The original version is saved in .bash_profile.pysave
 export PATH="$HOME/Library/Python/3.7/bin:${PATH}"
 export PATH="/Library/Frameworks/Python.framework/Versions/3.8/bin:${PATH}"
+export PATH="$HOME/Library/Python/3.8/bin:${PATH}"
 
 # brew ncurses for updated terminfo that includes tmux
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
@@ -101,6 +102,9 @@ alias cr='cargo run'
 # emaaaacs
 alias emacs='open -a emacs --args $CAPSULEROOT/org/inbox.org'
 
+# other bits
+alias ql='qlmanage -p >/dev/null 2>&1'
+
 # functions
 #    cd to parent directory of file, https://askubuntu.com/a/316632
 function fcd () {
@@ -115,6 +119,7 @@ function fcd () {
     fi
 }
 alias c='fcd'
+alias ..='"$(dirname "$(pwd)")"'
 
 function chpwd () {	# auto called by zsh
     echo "$(date '+%Y,%m,%d,%H,%M,%S'),$(pwd)" >> $XDG_DATA_HOME/recent_dirs.csv

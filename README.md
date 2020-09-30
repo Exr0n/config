@@ -37,3 +37,9 @@ brew cask install whichspace
 
 # desktop bits
 sudo gem install iStats
+
+exit
+
+# Other notes
+
+- Remember to set browser search engine shortcut Query URL `s-` or something similar to `javascript:` to escape the omnibar
