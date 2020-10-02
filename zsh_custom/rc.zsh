@@ -90,6 +90,12 @@ alias s='trf'
 #    tmuxinator
 alias mux='tmuxinator'
 
+#    toggl
+alias tl='pym toggl'
+alias tg='tl ls -f id,description,start,duration | tail -n +2 | fzf | cut -d" " -f 2'
+alias  t='tl ls -f description | tail -n +2 | fzf | tl continue'
+alias tm='tl ls -f description | tail -n +2 | fzf'
+
 #    makefile
 alias m='make'
 alias bear='SDKROOT=$(xcrun --show-sdk-path) \bear'
