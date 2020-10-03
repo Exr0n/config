@@ -92,9 +92,10 @@ alias mux='tmuxinator'
 
 #    toggl
 alias tl='pym toggl'
-alias tg='tl ls -f id,description,start,duration | tail -n +2 | fzf | cut -d" " -f 2'
-alias  t='tl ls -f description | tail -n +2 | fzf | tl continue'
-alias tm='tl ls -f description | tail -n +2 | fzf'
+alias t='tl continue "$(tl -s ls -f description | tail -n +2 | fzf)"'
+#alias tg='tl ls -f id,description,start,duration | tail -n +2 | fzf | cut -d" " -f 2'
+#alias  t='tl continue "$(tl ls -f description | tail -n +2 | fzf)"'
+#alias  t='tl continue ${"$(tl ls -f description | tail -n +2 | fzf)": 1}'
 
 #    makefile
 alias m='make'
