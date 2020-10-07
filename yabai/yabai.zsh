@@ -18,12 +18,12 @@ yabai -m config window_shadow float
 #yabai -m config normal_window_opacity 0.95
 
 # always keep laptop apps at full opacity
-yabai -m rule --add app="TogglDesktop" opacity=1.0
-yabai -m rule --add app="Discord" opacity=1.0
-yabai -m rule --add app="Messages" opacity=1.0
-yabai -m rule --add app="Condution" opacity=1.0
-yabai -m rule --add app="Spark" opacity=1.0
-yabai -m rule --add app="Chrome" opacity=1.0
+#yabai -m rule --add app="TogglDesktop" opacity=1.0
+#yabai -m rule --add app="Discord" opacity=1.0
+#yabai -m rule --add app="Messages" opacity=1.0
+#yabai -m rule --add app="Condution" opacity=1.0
+#yabai -m rule --add app="Spark" opacity=1.0
+#yabai -m rule --add app="Chrome" opacity=1.0
 
 ##	don't manage laptop spaces
 #yabai -m config --space 17 layout float
