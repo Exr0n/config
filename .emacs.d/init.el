@@ -94,4 +94,8 @@
 ;(eval-when-compile
   ;(require 'use-package))
 
-(global-display-line-numbers-mode)
+(global-display-line-numbers-mode t)
+(display-line-numbers-mode t)
+
+(smart-tabs-insinuate 'c 'c++ 'python 'javascript)
+
