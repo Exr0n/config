@@ -18,7 +18,8 @@
 (global-set-key (kbd "C-k") 'windmove-up)
 (global-set-key (kbd "C-j") 'windmove-down)
 
-(smooth-scrolling-mode)
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
 
 (setq make-backup-files nil)
 
@@ -82,6 +83,8 @@
 ; https://emacs.stackexchange.com/a/34660
 (add-to-list 'org-structure-template-alist
              '("T" "#+TITLE:   \n#+AUTHOR: html-postamble:nil whn:nil toc:nil nav:nil\n#+HTML_HEAD:\n#+HTML_HEAD_EXTRA:\n\n? "))
+
+(org-return-follows-link t)
 
 ;; package stuff frome https://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html 
 ; (unless (package-installed-p 'use-package)
