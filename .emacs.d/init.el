@@ -10,6 +10,13 @@
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
 
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
+
+(setq make-backup-files nil)
+(global-visual-line-mode t)
+
+;;;;;;;;;;;;;;;;;;;;;; keymaps
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-x C-x") 'execute-extended-command)
 
@@ -18,45 +25,19 @@
 (global-set-key (kbd "C-k") 'windmove-up)
 (global-set-key (kbd "C-j") 'windmove-down)
 
-(require 'smooth-scrolling)
-(smooth-scrolling-mode 1)
-
-(setq make-backup-files nil)
-
 (global-set-key (kbd "s-c") 'kill-ring-save)
 (global-set-key (kbd "s-v") 'yank)
 ; (global-set-key (kbd "shortcut") 'command)
+
+;;;;;;;;;;;;;;;;;;;;;;; vim bits
+; (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line) ; TODO
+; (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 
 (require 'evil)
 (evil-mode 1)
 (evil-ex-define-cmd "q" 'kill-this-buffer)
 
-; https://github.com/Somelauw/evil-org-mode
-(use-package evil-org
-  :ensure t
-  :after org
-  :config
-  (add-hook 'org-mode-hook 'evil-org-mode)
-  (add-hook 'evil-org-mode-hook
-            (lambda ()
-              (evil-org-set-key-theme)))
-  (require 'evil-org-agenda)
-  (evil-org-agenda-set-keys))
 
-;; (use-package evil-org
-;;   :ensure t
-;;   :after org
-;;   :config
-;;   (add-hook 'org-mode-hook 'evil-org-mode)
-;;   (add-hook 'evil-org-mode-hook
-;;             (lambda ()
-;;               (evil-org-set-key-theme)))
-;;   (require 'evil-org-agenda)
-;;   (evil-org-agenda-set-keys))
-
-(global-visual-line-mode 1)
-
-(display-line-numbers-mode 1)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -71,12 +52,16 @@
  ;; If there is more than one, they won't work right.
  )
 
+;;;;;;;;;;;;;;;;;;; org bits
 (require 'org)
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
 
-(require 'org-download-clipboard)
+(setq org-log-done t)
+(setq org-agenda-files (list (concat (getenv "CAPSULEROOT") "/org")))
+
+
+;(require 'org-download-clipboard)
 
 (global-auto-revert-mode t)
 
@@ -86,6 +71,18 @@
 
 (org-return-follows-link t)
 
+; https://github.com/Somelauw/evil-org-mode
+(use-package evil-org
+  :ensure t
+  :after org
+  :config
+  (add-hook 'org-mode-hook 'evil-org-mode)
+  (add-hook 'evil-org-mode-hook
+            (lambda ()
+              (evil-org-set-key-theme)))
+  (require 'evil-org-agenda)
+  (evil-org-agenda-set-keys))
+
 ;; package stuff frome https://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html 
 ; (unless (package-installed-p 'use-package)
 ;   (package-refresh-contents)
@@ -94,8 +91,29 @@
 ;(eval-when-compile
   ;(require 'use-package))
 
+;;;;;;;;;;;;;;;;;;;;; visuals
+
 (global-display-line-numbers-mode t)
+(global-display-line-numbers-mode)
 (display-line-numbers-mode t)
 
+(global-visual-line-mode 1)
+(display-line-numbers-mode 1)
+
+;;;;;;;;;;;;;;;;;;;; dealin w/ windows
+
+(use-package balanced-windows
+  :config
+  (balanced-windows-mode))
+
+(require 'buffer-move) ; TODO: doesn't work
+(global-set-key (kbd "C-S-x C-k") 'buf-move-up)
+(global-set-key (kbd "C-S-x C-j") 'buf-move-down)
+(global-set-key (kbd "C-S-x C-h") 'buf-move-left)
+(global-set-key (kbd "C-S-x C-l") 'buf-move-right)
+
+;;;;;;;;;;;;;;;;;;;;;; editing niceties
+
 (smart-tabs-insinuate 'c 'c++ 'python 'javascript)
+
 
