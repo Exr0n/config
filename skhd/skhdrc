@@ -68,16 +68,17 @@ ctrl + lalt + rcmd - 5      : yabai -m window   --space 15 | yabai -m space --fo
 ctrl + lalt + rcmd - 6      : yabai -m window   --space 16 | yabai -m space --focus 16
 
 # toggle float
-ctrl + lcmd - 0x0D          : yabai -m window --toggle float
+ctrl + lcmd - a             : yabai -m window --toggle float
 # toggle split direction
-ctrl +  cmd - e             : yabai -m window --toggle split
+ctrl +  cmd - o             : yabai -m window --toggle split
 
 # open specific applications
 ctrl + lcmd - d             : open -a Discord
 ctrl + lcmd - m             : open -a Messages
 ctrl + lcmd - t             : open -a TogglDesktop
 ctrl + lcmd - s             : open -a Spark
-ctrl + lcmd - n             : open -a emacs --args $CAPSULEROOT/org/inbox.org
+ctrl + lcmd - e             : open -n -a emacs --args ~/Desktop/materials/capsule/org/inbox.org
+ctrl + lcmd - u             : open -n -a alacritty
 
 # vivaldi doesn't have control n/p for quick commands
 ctrl - n [

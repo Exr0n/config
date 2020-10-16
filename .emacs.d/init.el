@@ -63,7 +63,7 @@
 
 (setq org-log-done t)
 ;; (setq org-agenda-files (list (concat (getenv "CAPSULEROOT") "/org")))
-(setq org-agenda-files ("~/Desktop/materials/capsule/org")))
+(setq org-agenda-files (list "~/Desktop/materials/capsule/org"))
 
 
 ;(require 'org-download-clipboard)
@@ -73,8 +73,6 @@
 ; https://emacs.stackexchange.com/a/34660
 (add-to-list 'org-structure-template-alist
              '("T" "#+TITLE:   \n#+AUTHOR: \n\n"))
-
-(org-return-follows-link t)
 
 ; https://github.com/Somelauw/evil-org-mode
 (use-package evil-org
@@ -95,6 +93,34 @@
 
 ;(eval-when-compile
   ;(require 'use-package))
+
+;; (org-return-follows-link t)
+
+
+;; (use-package org-roam
+;;       :ensure t
+;;       :hook
+;;       (after-init . org-roam-mode)
+;;       :custom
+;;       (org-roam-directory "~/Desktop/materials/capsule/org/")
+;;       :bind (:map org-roam-mode-map
+;;               (("C-c n l" . org-roam)
+;;                ("C-c n f" . org-roam-find-file)
+;;                ("C-c n g" . org-roam-graph))
+;;               :map org-mode-map
+;;               (("C-c n i" . org-roam-insert))
+;;               (("C-c n I" . org-roam-insert-immediate))))
+
+;;;;;;;;;;;;;;;;;;;;; org calander import from https://www.ict4g.net/adolfo/notes/emacs/emacs-caldav.html
+
+;; (message "hi")
+;; (message (getenv "HOME"))
+
+(setq calendars
+      '(("canvas" . (getenv "calendars"))
+        ;; ("calendar2" . "http://.../work.ics")
+        ))
+(message calendars)
 
 ;;;;;;;;;;;;;;;;;;;;; visuals
 

@@ -107,7 +107,7 @@ alias cn='cargo new --vcs git'
 alias cr='cargo run'
 
 # emaaaacs
-# alias emacs='open -a emacs --args $CAPSULEROOT/org/inbox.org'
+alias emacs='open -a emacs --args $CAPSULEROOT/org/inbox.org'
 alias emacs='open -a emacs --args $CAPSULEROOT/org/inbox.org'
 
 # other bits
