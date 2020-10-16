@@ -62,8 +62,8 @@
 (define-key global-map "\C-ca" 'org-agenda)
 
 (setq org-log-done t)
-;; (setq org-agenda-files (list (concat (getenv "CAPSULEROOT") "/org")))
-(setq org-agenda-files (list "~/Desktop/materials/capsule/org"))
+(setq org-agenda-files (list (concat (getenv "CAPSULEROOT") "/org")))
+;; (setq org-agenda-files (list "~/Desktop/materials/capsule/org"))
 
 
 ;(require 'org-download-clipboard)
@@ -113,14 +113,26 @@
 
 ;;;;;;;;;;;;;;;;;;;;; org calander import from https://www.ict4g.net/adolfo/notes/emacs/emacs-caldav.html
 
-;; (message "hi")
-;; (message (getenv "HOME"))
-
 (setq calendars
-      '(("canvas" . (getenv "calendars"))
+      ;; '(("canvas" . (getenv "CANVAS_CAL") )
         ;; ("calendar2" . "http://.../work.ics")
         ))
-(message calendars)
+
+(setq calendar-import-location (concat (getenv "CAPSULEROOT") "/org/calendar_import/"))
+
+(defun getcals ()
+  "Load a set of ICS calendars into Emacs diary files"
+  (interactive)
+  (mapcar #'(lambda (x)
+              (let ((file (concat calendar-import-location (car x)))
+                    (url (cdr x)))
+                (message (concat "Loading " url " into " file))
+                (find-file file)
+                ;; (flush-lines "^[& ]") ;; if you import ical as non marking
+                (erase-buffer) ;; to avoid duplicating events
+                (getcal url file)
+                ))
+          calendars))
 
 ;;;;;;;;;;;;;;;;;;;;; visuals
 
