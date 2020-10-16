@@ -7,6 +7,7 @@
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
 
@@ -14,6 +15,7 @@
 (smooth-scrolling-mode 1)
 
 (setq make-backup-files nil)
+(setq create-lockfiles nil)
 (global-visual-line-mode t)
 
 ;;;;;;;;;;;;;;;;;;;;;; keymaps
@@ -28,6 +30,8 @@
 (global-set-key (kbd "s-c") 'kill-ring-save)
 (global-set-key (kbd "s-v") 'yank)
 ; (global-set-key (kbd "shortcut") 'command)
+
+(setq doc-view-continuous 1)
 
 ;;;;;;;;;;;;;;;;;;;;;;; vim bits
 ; (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line) ; TODO
@@ -58,7 +62,8 @@
 (define-key global-map "\C-ca" 'org-agenda)
 
 (setq org-log-done t)
-(setq org-agenda-files (list (concat (getenv "CAPSULEROOT") "/org")))
+;; (setq org-agenda-files (list (concat (getenv "CAPSULEROOT") "/org")))
+(setq org-agenda-files ("~/Desktop/materials/capsule/org")))
 
 
 ;(require 'org-download-clipboard)
@@ -67,7 +72,7 @@
 
 ; https://emacs.stackexchange.com/a/34660
 (add-to-list 'org-structure-template-alist
-             '("T" "#+TITLE:   \n#+AUTHOR: html-postamble:nil whn:nil toc:nil nav:nil\n#+HTML_HEAD:\n#+HTML_HEAD_EXTRA:\n\n? "))
+             '("T" "#+TITLE:   \n#+AUTHOR: \n\n"))
 
 (org-return-follows-link t)
 
@@ -83,7 +88,7 @@
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
 
-;; package stuff frome https://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html 
+;; package stuff frome https://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html
 ; (unless (package-installed-p 'use-package)
 ;   (package-refresh-contents)
 ;   (package-install 'use-package))
@@ -115,5 +120,3 @@
 ;;;;;;;;;;;;;;;;;;;;;; editing niceties
 
 (smart-tabs-insinuate 'c 'c++ 'python 'javascript)
-
-

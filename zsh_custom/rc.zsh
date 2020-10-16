@@ -142,3 +142,5 @@ alias ok='alerter -message hi -timeout 3 -appIcon https://i.imgur.com/1lKcbkC.pn
 hidutil property --set "$($ZSH_CUSTOM/keymap_util/map)" > /dev/null # Replaced by Karabiner
 defaults write -g KeyRepeat -int 1 # https://apple.stackexchange.com/a/83923
 defaults write -g ApplePressAndHoldEnabled -bool false # turn off accentecd characters: https://www.addictivetips.com/mac-os/disable-accented-characters-on-macos/
+
+cd "$(tail -n 1 $XDG_DATA_HOME/recent_dirs.csv | cut -d ',' -f7)"
