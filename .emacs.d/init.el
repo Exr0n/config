@@ -22,10 +22,11 @@
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-x C-x") 'execute-extended-command)
 
-(global-set-key (kbd "C-h") 'windmove-left)
-(global-set-key (kbd "C-l") 'windmove-right)
-(global-set-key (kbd "C-k") 'windmove-up)
-(global-set-key (kbd "C-j") 'windmove-down)
+(global-unset-key (kbd "C-w"))
+(global-set-key (kbd "C-w h") 'windmove-left)
+(global-set-key (kbd "C-w l") 'windmove-right)
+(global-set-key (kbd "C-w k") 'windmove-up)
+(global-set-key (kbd "C-w j") 'windmove-down)
 
 (global-set-key (kbd "s-c") 'kill-ring-save)
 (global-set-key (kbd "s-v") 'yank)
@@ -48,7 +49,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(org-agenda-files nil)
- '(package-selected-packages '(use-package smooth-scrolling evil-vimish-fold evil-org)))
+ '(package-selected-packages
+   '(org-caldav oauth2 use-package smooth-scrolling evil-vimish-fold evil-org)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -65,6 +67,12 @@
 (setq org-agenda-files (list (concat (getenv "CAPSULEROOT") "/org")))
 ;; (setq org-agenda-files (list "~/Desktop/materials/capsule/org"))
 
+(defun agenda-wrapper ()                ; yoniked from quantumish
+  (interactive)
+  (org-agenda nil "a")
+  (org-agenda-month-view))
+
+(global-set-key (kbd "C-c a") 'agenda-wrapper)
 
 ;(require 'org-download-clipboard)
 
@@ -72,7 +80,7 @@
 
 ; https://emacs.stackexchange.com/a/34660
 (add-to-list 'org-structure-template-alist
-             '("T" "#+TITLE:   \n#+AUTHOR: \n\n"))
+             '("T" . "#+TITLE:   \n#+AUTHOR: \n\n"))
 
 ; https://github.com/Somelauw/evil-org-mode
 (use-package evil-org
@@ -85,6 +93,9 @@
               (evil-org-set-key-theme)))
   (require 'evil-org-agenda)
   (evil-org-agenda-set-keys))
+
+;; org capture
+(global-set-key (kbd "C-c c") 'org-capture)
 
 ;; package stuff frome https://blog.aaronbieber.com/2015/05/24/from-vim-to-emacs-in-fourteen-days.html
 ; (unless (package-installed-p 'use-package)
@@ -112,11 +123,12 @@
 ;;               (("C-c n I" . org-roam-insert-immediate))))
 
 ;;;;;;;;;;;;;;;;;;;;; org calander import from https://www.ict4g.net/adolfo/notes/emacs/emacs-caldav.html
+;; TODO
 
-(setq calendars
-      ;; '(("canvas" . (getenv "CANVAS_CAL") )
+;; (setq calendars
+      ;; '(("canvas" . (getenv "SECRET_CANVAS_CAL") )
         ;; ("calendar2" . "http://.../work.ics")
-        ))
+        ;; ))
 
 (setq calendar-import-location (concat (getenv "CAPSULEROOT") "/org/calendar_import/"))
 
@@ -133,6 +145,11 @@
                 (getcal url file)
                 ))
           calendars))
+
+(setq org-caldav-oauth2-client-id (getenv "SECRET_CALDAV_OAUTH2_CLIENT_ID"))
+(setq org-caldav-oauth2-client-secret (getenv "SECRET_CALDAV_OAUTH2_CLIENT_SECRET"))
+(setq org-caldav-url 'google)
+(setq org-caldav-calender-id (getenvv "SECRET_CALDAV_CALENDAR_ID"))
 
 ;;;;;;;;;;;;;;;;;;;;; visuals
 

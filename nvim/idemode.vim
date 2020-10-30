@@ -63,6 +63,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
 "Plug 'BurntSushi/ripgrep'
 "Plug 'ihsanturk/neuron.vim'
 
+" Memes
+Plug 'wakatime/vim-wakatime'
+
 call plug#end()
 
 

@@ -137,10 +137,11 @@ function chpwd () {	# auto called by zsh
 
 #    Alias to auto open files with vim
 alias -s {txt,md,cpp,rs,js,mjs,py,properties,yml,yaml}=nvim
+alias -s {pdf,html}=ql
 
 #    One off aliases (like config commands)
 alias ok='alerter -message hi -timeout 3 -appIcon https://i.imgur.com/1lKcbkC.png'
-hidutil property --set "$($ZSH_CUSTOM/keymap_util/map)" > /dev/null # Replaced by Karabiner
+#hidutil property --set "$($ZSH_CUSTOM/keymap_util/map)" > /dev/null # Replaced by Karabiner
 defaults write -g KeyRepeat -int 1 # https://apple.stackexchange.com/a/83923
 defaults write -g ApplePressAndHoldEnabled -bool false # turn off accentecd characters: https://www.addictivetips.com/mac-os/disable-accented-characters-on-macos/
 

@@ -1,9 +1,10 @@
 {
     "diagnostic.signOffset": 9999999,
     "diagnostic.checkCurrentLine": true,
-    "snippets": {
-        "userSnippetsDirectory": "$CONFIG/coc/UltiSnips"
-    },
-    "clangd.path": "/Users/exr0n/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
-	"clangd.arguments": ["-Wshift-op-parentheses"]
+	"clangd": {
+		"path": "/Users/exr0n/.config/coc/extensions/coc-clangd-data/install/10.0.0/clangd_10.0.0/bin/clangd",
+		"arguments": ["-cross-file-rename"],
+		"fallbackFlags": ["-std=c++17"],
+		"TODO_BROKE_arguments": ["-std=c++17"]
+	},
 }

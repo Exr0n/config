@@ -9,3 +9,5 @@ coc/history.json
 coc/snippets-mru
 nvim/.netrwhist
 snap
+karabiner/automatic_backups
+.emacs.d/calc.el
