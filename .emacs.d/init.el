@@ -42,6 +42,11 @@
 (evil-mode 1)
 (evil-ex-define-cmd "q" 'kill-this-buffer)
 
+;; (use-package evil-surround              ; https://github.com/emacs-evil/evil-surround
+;;   :ensure t
+;;   :config
+;;   (global-evil-surround-mode 1))
+(global-evil-surround-mode 1)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -108,19 +113,19 @@
 ;; (org-return-follows-link t)
 
 
-;; (use-package org-roam
-;;       :ensure t
-;;       :hook
-;;       (after-init . org-roam-mode)
-;;       :custom
-;;       (org-roam-directory "~/Desktop/materials/capsule/org/")
-;;       :bind (:map org-roam-mode-map
-;;               (("C-c n l" . org-roam)
-;;                ("C-c n f" . org-roam-find-file)
-;;                ("C-c n g" . org-roam-graph))
-;;               :map org-mode-map
-;;               (("C-c n i" . org-roam-insert))
-;;               (("C-c n I" . org-roam-insert-immediate))))
+(use-package org-roam
+      :ensure t
+      :hook
+      (after-init . org-roam-mode)
+      :custom
+      (org-roam-directory "~/Desktop/materials/capsule/org/")
+      :bind (:map org-roam-mode-map
+              (("C-c n l" . org-roam)
+               ("C-c n f" . org-roam-find-file)
+               ("C-c n g" . org-roam-graph))
+              :map org-mode-map
+              (("C-c n i" . org-roam-insert))
+              (("C-c n I" . org-roam-insert-immediate))))
 
 ;;;;;;;;;;;;;;;;;;;;; org calander import from https://www.ict4g.net/adolfo/notes/emacs/emacs-caldav.html
 ;; TODO
@@ -149,7 +154,7 @@
 (setq org-caldav-oauth2-client-id (getenv "SECRET_CALDAV_OAUTH2_CLIENT_ID"))
 (setq org-caldav-oauth2-client-secret (getenv "SECRET_CALDAV_OAUTH2_CLIENT_SECRET"))
 (setq org-caldav-url 'google)
-(setq org-caldav-calender-id (getenvv "SECRET_CALDAV_CALENDAR_ID"))
+(setq org-caldav-calender-id (getenv "SECRET_CALDAV_CALENDAR_ID"))
 
 ;;;;;;;;;;;;;;;;;;;;; visuals
 
@@ -175,3 +180,7 @@
 ;;;;;;;;;;;;;;;;;;;;;; editing niceties
 
 (smart-tabs-insinuate 'c 'c++ 'python 'javascript)
+
+(add-to-list 'default-frame-alist '(font . "Hack Nerd Font" ))
+(set-face-attribute 'default t :font "Hack Nerd Font" )
+(set-face-attribute 'default nil :height 140)

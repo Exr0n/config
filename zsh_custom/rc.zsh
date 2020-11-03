@@ -98,7 +98,7 @@ alias t='tl continue "$(tl -s ls -f description | tail -n +2 | fzf)"'
 #alias  t='tl continue ${"$(tl ls -f description | tail -n +2 | fzf)": 1}'
 
 #    makefile
-alias m='make'
+#alias m='make'
 alias bear='SDKROOT=$(xcrun --show-sdk-path) \bear'
 
 #    rust/cargo things
@@ -134,6 +134,34 @@ function chpwd () {	# auto called by zsh
     #git rev-parse --show-toplevel > /dev/null 2>&1 &&
 	echo "$(pwd)" >> $XDG_DATA_HOME/recent_git_dirs.csv
 }
+
+function run_generic () {
+    files="$(ls 2>/dev/null)"
+    # build systems
+    if   [[ -n "$(echo $files | ack '^start.z?sh$')" ]]; then	# start.sh
+	source start.*sh
+    elif   [[ -n "$(echo $files | ack '^[Mm]akefile$')" ]]; then	# makefile
+	make
+    elif [[ -n "$(echo $files | ack '^yarn.lock$')" ]]; then		# yarn 
+	yarn && yarn run
+    # standard entry point file names
+    else
+	TEMP_RUN_HEADER="$(date)\n$(printf "%*s\n" "${COLUMNS:-$(tput cols)}" '' | tr " " "#")"
+	if [[ -n "$(echo $files | ack '^main*.cpp$')" ]]; then		# cpp
+	    g++ -std=c++11 main*.cpp -o auto 				&&\
+	    echo $TEMP_RUN_HEADER && ./auto 				&&\
+	    setopt +o nomatch && cat *.out 2>/dev/null
+	# TODO: dry up following ifs
+	elif [[ -n "$(echo $files | ack '^main.py$')" ]]; then		# python
+	    echo $TEMP_RUN_HEADER && py main.py
+	elif [[ -n "$(echo $files | ack '^index.js$')" ]]; then		# node index.js
+	    echo $TEMP_RUN_HEADER && node index.js
+	elif [[ -n "$(echo $files | ack '^main.js$')" ]]; then		# node main.js
+	    echo $TEMP_RUN_HEADER && node main.js
+	fi
+    fi
+}
+alias m='run_generic'
 
 #    Alias to auto open files with vim
 alias -s {txt,md,cpp,rs,js,mjs,py,properties,yml,yaml}=nvim
