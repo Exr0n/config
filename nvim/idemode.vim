@@ -58,6 +58,7 @@ let g:gitgutter_preview_win_floating = 0 " Disable floating/popup window for <Le
 
 " Rednering
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
+Plug 'mhinz/vim-startify'
 
 " Zettelksaten
 "Plug 'BurntSushi/ripgrep'
@@ -228,5 +229,5 @@ set splitbelow
 set splitright
 
 source $VIMCONFIG/coc-config.vim
-source $VIMCONFIG/zettel.vim
+"source $VIMCONFIG/zettel.vim
 noh

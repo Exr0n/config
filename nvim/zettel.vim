@@ -21,5 +21,5 @@ inoremap jzn <Esc>:call EditZettelNew()<CR>
 "nm gzr <Plug>NeuronRefreshCache
 "nm gzo <Plug>EditZettelUnderCursor
 
-echom 'Zettelkasten keybinds loaded.'
+"echom 'Zettelkasten keybinds loaded.'
 
