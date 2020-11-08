@@ -181,6 +181,6 @@
 
 (smart-tabs-insinuate 'c 'c++ 'python 'javascript)
 
-(add-to-list 'default-frame-alist '(font . "Hack Nerd Font" ))
-(set-face-attribute 'default t :font "Hack Nerd Font" )
+(add-to-list 'default-frame-alist '(font . "Hack" ))
+(set-face-attribute 'default t :font "Hack" )
 (set-face-attribute 'default nil :height 140)

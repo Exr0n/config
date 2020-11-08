@@ -53,5 +53,7 @@ export SECRET_CALDAV_OAUTH2_CLIENT_ID=""
 export SECRET_CALDAV_OAUTH2_CLIENT_SECRET=""
 export SECRET_CALDAV_CALENDAR_ID=""
 
+export XDG_CONFIG_HOME="$CONFIG"
+export XDG_DATA_HOME="$HOME/.data"
 alias ql='qlmanage -p >/dev/null 2>&1'
 ```
