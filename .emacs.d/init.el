@@ -1,4 +1,4 @@
-(add-to-list 'load-path "/Users/exr0n/.config/dontrun_custom/elegant-emacs/")
+(add-to-list 'load-path (concat (getenv "XDG_CONFIG_HOME") "dontrun_custom/elegant-emacs/"))
 (load "sanity.el")
 (load "elegance.el")
 

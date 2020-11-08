@@ -43,3 +43,15 @@ exit
 # Other notes
 
 - Remember to set browser search engine shortcut Query URL `s-` or something similar to `javascript:` to escape the omnibar
+- Remember to set `~/.zshenv`
+```zsh
+export PROJECTS_ALGO=""
+export CAPSULEROOT=""
+
+export SECRET_CANVAS_CAL=""
+export SECRET_CALDAV_OAUTH2_CLIENT_ID=""
+export SECRET_CALDAV_OAUTH2_CLIENT_SECRET=""
+export SECRET_CALDAV_CALENDAR_ID=""
+
+alias ql='qlmanage -p >/dev/null 2>&1'
+```
