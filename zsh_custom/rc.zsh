@@ -92,7 +92,8 @@ alias mux='tmuxinator'
 
 #    toggl
 alias tl='pym toggl'
-alias t='tl continue "$(tl -s ls -f description | tail -n +2 | fzf)"'
+alias t='pt' # github.com/exr0nprojects/pit2ya
+#alias t='tl continue "$(tl -s ls -f description | tail -n +2 | fzf)"'
 #alias tg='tl ls -f id,description,start,duration | tail -n +2 | fzf | cut -d" " -f 2'
 #alias  t='tl continue "$(tl ls -f description | tail -n +2 | fzf)"'
 #alias  t='tl continue ${"$(tl ls -f description | tail -n +2 | fzf)": 1}'
@@ -138,27 +139,30 @@ function chpwd () {	# auto called by zsh
 function run_generic () {
     files="$(ls 2>/dev/null)"
     # build systems
-    if   [[ -n "$(echo $files | ack '^start.z?sh$')" ]]; then	# start.sh
+    if   echo $files | ack '^start\.z?sh$' > /dev/null; then	    # start.sh
 	source start.*sh
-    elif   [[ -n "$(echo $files | ack '^[Mm]akefile$')" ]]; then	# makefile
+    elif echo $files | ack '^[Mm]akefile$' > /dev/null; then	    # makefile
 	make
-    elif [[ -n "$(echo $files | ack '^yarn.lock$')" ]]; then		# yarn 
+    elif echo $files | ack '^yarn\.lock$' > /dev/null; then		    # yarn
 	yarn && yarn run
     # standard entry point file names
     else
-	TEMP_RUN_HEADER="$(date)\n$(printf "%*s\n" "${COLUMNS:-$(tput cols)}" '' | tr " " "#")"
-	if [[ -n "$(echo $files | ack '^main*.cpp$')" ]]; then		# cpp
-	    g++ -std=c++11 main*.cpp -o auto 				&&\
-	    echo $TEMP_RUN_HEADER && ./auto 				&&\
-	    setopt +o nomatch && cat *.out 2>/dev/null
-	# TODO: dry up following ifs
-	elif [[ -n "$(echo $files | ack '^main.py$')" ]]; then		# python
-	    echo $TEMP_RUN_HEADER && py main.py
-	elif [[ -n "$(echo $files | ack '^index.js$')" ]]; then		# node index.js
-	    echo $TEMP_RUN_HEADER && node index.js
-	elif [[ -n "$(echo $files | ack '^main.js$')" ]]; then		# node main.js
-	    echo $TEMP_RUN_HEADER && node main.js
-	fi
+        TEMP_RUN_HEADER="$(date)\n$(printf "%*s\n" "${COLUMNS:-$(tput cols)}" '' | tr " " "#")"
+        if echo $files | ack '^main.*\.cpp$' > /dev/null; then		# cpp
+            g++ -std=c++11 main*.cpp -o auto 				&&\
+            echo $TEMP_RUN_HEADER && ./auto 				&&\
+            setopt +o nomatch && cat *.out 2>/dev/null
+        # TODO: dry up following ifs
+        elif echo $files | ack '^main\.py$' > /dev/null; then		# python
+            echo $TEMP_RUN_HEADER && py main.py
+        elif echo $files | ack '^index\.js$' > /dev/null; then		# node index.js
+            if echo $files | ack '^package(-lock)?\.json$' > /dev/null; then
+                npm install
+            fi
+            echo $TEMP_RUN_HEADER && node index.js
+        elif echo $files | ack '^main\.js$' > /dev/null; then       # node main.js
+            echo $TEMP_RUN_HEADER && node main.js
+        fi
     fi
 }
 alias m='run_generic'

@@ -65,7 +65,7 @@ Plug 'mhinz/vim-startify'
 "Plug 'ihsanturk/neuron.vim'
 
 " Memes
-Plug 'wakatime/vim-wakatime'
+"Plug 'wakatime/vim-wakatime'
 
 call plug#end()
 

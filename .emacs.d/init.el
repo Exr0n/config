@@ -4,6 +4,8 @@
 
 (setq mac-command-modifier 'super mac-option-modifier 'meta)
 
+(menu-bar-mode t)
+
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 
