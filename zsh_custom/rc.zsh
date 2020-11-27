@@ -3,8 +3,8 @@
 alias italics='echo -e "\e[3mitalics?\e[0m"' # TODO: REMOVE
 
 
-# zsh syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# zsh syntax highlighting # TODO: broke on emacs
+#source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # added by Anaconda3 4.0.0 installer
 export PATH="$HOME/anaconda/bin:$PATH"
@@ -25,6 +25,9 @@ export PATH="/usr/local/opt/ncurses/bin:$PATH"
 export PATH="/usr/local/Cellar/llvm/10.0.0_1/bin:$PATH"
 
 export PATH="$ZSH_CUSTOM/../scripts/wabt/bin:$PATH"
+
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # custom bin
 export PATH="$ZSH_CUSTOM/bin:$PATH"
@@ -98,6 +101,10 @@ alias pt='pit2ya_mod'
 #alias tg='tl ls -f id,description,start,duration | tail -n +2 | fzf | cut -d" " -f 2'
 #alias  t='tl continue "$(tl ls -f description | tail -n +2 | fzf)"'
 #alias  t='tl continue ${"$(tl ls -f description | tail -n +2 | fzf)": 1}'
+
+alias sus='systemctl suspend'
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
 
 #    makefile
 #alias m='make'
@@ -175,7 +182,7 @@ alias -s {pdf,html}=ql
 #    One off aliases (like config commands)
 alias ok='alerter -message hi -timeout 3 -appIcon https://i.imgur.com/1lKcbkC.png'
 #hidutil property --set "$($ZSH_CUSTOM/keymap_util/map)" > /dev/null # Replaced by Karabiner
-defaults write -g KeyRepeat -int 1 # https://apple.stackexchange.com/a/83923
-defaults write -g ApplePressAndHoldEnabled -bool false # turn off accentecd characters: https://www.addictivetips.com/mac-os/disable-accented-characters-on-macos/
+#defaults write -g KeyRepeat -int 1 # https://apple.stackexchange.com/a/83923
+#defaults write -g ApplePressAndHoldEnabled -bool false # turn off accentecd characters: https://www.addictivetips.com/mac-os/disable-accented-characters-on-macos/
 
 cd "$(tail -n 1 $XDG_DATA_HOME/recent_dirs.csv | cut -d ',' -f7)"
