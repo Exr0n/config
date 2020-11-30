@@ -1,0 +1,37 @@
+Vanilla Tweaks Resource Pack
+Version: 1.15
+Packs:
+	EndlessEndRods
+	ClearerWater
+	ShorterGrass
+	ShorterTallGrass
+	ConnectedBookshelves
+	QuieterDispensersDroppers
+	QuieterGhasts
+	QuieterMinecarts
+	QuieterVillagers
+	QuieterFire
+	QuieterCows
+	QuieterPistons
+	QuieterEndermen
+	MineProgressBar
+	StickyPistonSides
+	DirectionalHoppers
+	DiminishingTools
+	BetterObservers
+	VisibleTripwires
+	RedstonePowerLevels
+	CleanRedstoneDust
+	UnobtrusiveRain
+	BorderlessGlass
+	BorderlessStainedGlass
+	LowerShield
+	LowerFire
+	NoVignette
+	CleanerWorldBorder
+	AlternateEnchantGlint
+	SmallerUtilities
+	NoPumpkinOverlay
+	LargeAttackIndicator
+	MoreCrosshairs-4Angled
+	TransparentGUI
