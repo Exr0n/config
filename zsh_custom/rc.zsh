@@ -178,4 +178,16 @@ alias ok='alerter -message hi -timeout 3 -appIcon https://i.imgur.com/1lKcbkC.pn
 defaults write -g KeyRepeat -int 1 # https://apple.stackexchange.com/a/83923
 defaults write -g ApplePressAndHoldEnabled -bool false # turn off accentecd characters: https://www.addictivetips.com/mac-os/disable-accented-characters-on-macos/
 
+# p10k extra configuration (handheld by https://github.com/romkatv/powerlevel10k/issues/942)
+function p10k-on-pre-prompt() {
+  # Show empty line if it's the first prompt in the TTY.
+  [[ $P9K_TTY == old ]] && p10k display 'empty_line'=show
+  # Show the first prompt line.
+  p10k display '1|*/left_frame'=show '2/right/time'=hide
+}
+function p10k-on-post-prompt() {
+  # Hide the empty line and the first prompt line.
+  p10k display 'empty_line|1|*/left_frame'=hide '2/right/time'=show
+}
+
 cd "$(tail -n 1 $XDG_DATA_HOME/recent_dirs.csv | cut -d ',' -f7)"

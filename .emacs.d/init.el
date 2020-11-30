@@ -150,6 +150,8 @@
 
 (setq org-return-follows-link t)
 
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 2.0)) ; https://emacs.stackexchange.com/a/19881
+
 ;; (use-package org-roam
 ;;       :ensure t
 ;;       :hook

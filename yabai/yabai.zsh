@@ -4,11 +4,11 @@
 
 #    Yabai setup
 # 	set gap padding padding and gaps to 10px
-yabai -m config top_padding    5
-yabai -m config bottom_padding 5
-yabai -m config left_padding   5
-yabai -m config right_padding  5
-yabai -m config window_gap     10
+yabai -m config top_padding    15
+yabai -m config bottom_padding 15
+yabai -m config left_padding   15
+yabai -m config right_padding  15
+yabai -m config window_gap     15
 # 	only show window shadows for floating windows
 yabai -m config window_shadow float
 # 	render all unfocused windows with 80% opacity
@@ -43,6 +43,12 @@ yabai -m rule --add app="^Numi$"                manage=off
 
 #    	default to bsp
 yabai -m config layout bsp
+#       default split left and up
+#yabai -m config window_placement first_child
+#       resize windows by area
+yabai -m config auto_balance on
+#       yabai -m config focus_follows_mouse autofocus
+#yabai -m config focus_follows_mouse none
 
 # index=3; eval "$(yabai -m query --spaces | jq --argjson index "${index}" -r '(.[] | select(.index == $index).windows[0]) as $wid | if $wid then "yabai -m window --focus \"" + ($wid | tostring) + "\"" else "skhd --key \"ctrl - " + (map(select(."native-fullscreen" == 0)) | index(map(select(.index == $index))) + 1 % 10 | tostring) + "\"" end')" # from https://github.com/koekeishiya/yabai/issues/205#issuecomment-520027557
 
