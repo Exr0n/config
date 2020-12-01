@@ -16,4 +16,6 @@ BraveSoftware/
 dingtalk/
 lunarclient/*
 !lunarclient/Preferences
+zoomus.conf
+syncthing/config.xml
 

@@ -58,7 +58,9 @@ alias pt='pit2ya_mod'
 alias sus='systemctl suspend'
 alias slep='xset dpms force off'
 alias pbcopy='xsel --clipboard --input'
+alias ss='import png:- | xclip -selection c -t image/png' # https://bbs.archlinux.org/viewtopic.php?id=163312
 alias pbpaste='xsel --clipboard --output'
+alias vidya='pkill xcape && xcape -e "Caps_Lock=Caps_Lock" && ~/Applications/Lunar\ Client-2.4.0.AppImage && pkill xcape && xcape -e "Caps_Lock=Escape"'
 
 #    makefile
 #alias m='make'
