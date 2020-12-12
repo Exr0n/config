@@ -76,7 +76,7 @@ alias cr='cargo run'
 alias emacs='open -a emacs --args $CAPSULEROOT/org/inbox.org'
 
 # other bits
-alias ql='qlmanage -p >/dev/null 2>&1'
+alias ql='mupdf'
 
 # functions
 #    cd to parent directory of file, https://askubuntu.com/a/316632
@@ -103,28 +103,28 @@ function chpwd () {	# auto called by zsh
 function run_generic () {
     files="$(ls 2>/dev/null)"
     # build systems
-    if   echo $files | ack '^start\.z?sh$' > /dev/null; then	    # start.sh
+    if   echo $files | ag '^start\.z?sh$' > /dev/null; then	    # start.sh
 	source start.*sh
-    elif echo $files | ack '^[Mm]akefile$' > /dev/null; then	    # makefile
+    elif echo $files | ag '^[Mm]akefile$' > /dev/null; then	    # makefile
 	make
-    elif echo $files | ack '^yarn\.lock$' > /dev/null; then		    # yarn
+    elif echo $files | ag '^yarn\.lock$' > /dev/null; then		    # yarn
 	yarn && yarn run
     # standard entry point file names
     else
         TEMP_RUN_HEADER="$(date)\n$(printf "%*s\n" "${COLUMNS:-$(tput cols)}" '' | tr " " "#")"
-        if echo $files | ack '^main.*\.cpp$' > /dev/null; then		# cpp
+        if echo $files | ag '^main.*\.cpp$' > /dev/null; then		# cpp
             g++ -std=c++11 main*.cpp -o auto 				&&\
             echo $TEMP_RUN_HEADER && ./auto 				&&\
             setopt +o nomatch && cat *.out 2>/dev/null
         # TODO: dry up following ifs
-        elif echo $files | ack '^main\.py$' > /dev/null; then		# python
+        elif echo $files | ag '^main\.py$' > /dev/null; then		# python
             echo $TEMP_RUN_HEADER && py main.py
-        elif echo $files | ack '^index\.js$' > /dev/null; then		# node index.js
-            if echo $files | ack '^package(-lock)?\.json$' > /dev/null; then
+        elif echo $files | ag '^index\.js$' > /dev/null; then		# node index.js
+            if echo $files | ag '^package(-lock)?\.json$' > /dev/null; then
                 npm install
             fi
             echo $TEMP_RUN_HEADER && node index.js
-        elif echo $files | ack '^main\.js$' > /dev/null; then       # node main.js
+        elif echo $files | ag '^main\.js$' > /dev/null; then       # node main.js
             echo $TEMP_RUN_HEADER && node main.js
         fi
     fi

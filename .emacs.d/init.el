@@ -3,8 +3,6 @@
 (load "sanity.el")
 (load "elegance.el")
 
-(setq mac-command-modifier 'super mac-option-modifier 'meta)
-
 ;; (menu-bar-mode t)
 
 (ido-mode t)
@@ -98,9 +96,14 @@
 (defun agenda-wrapper ()                ; yoniked from quantumish
   (interactive)
   (org-agenda nil "a")
-  (org-agenda-month-view))
-
+  (org-agenda-month-view)
+  (visual-line-mode -1))
 (global-set-key (kbd "C-c a") 'agenda-wrapper)
+
+; superuser.com/a/531670
+(add-hook 'org-agenda-mode-hook
+          (lambda()
+            (visual-line-mode -1)))
 
 ;; (require 'org-download-clipboard)
 
@@ -110,7 +113,8 @@
 ;; (add-to-list 'org-structure-template-alist
 ;;              '("T" . "#+TITLE:   \n#+AUTHOR: \n\n"))
 
-; org + latex
+;; org + latex
+(setq org-format-latex-options (plist-put org-format-latex-options :scale 3.0))
 ;; (require 'tex-site')
 ;; (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 
@@ -193,3 +197,15 @@
 ;; (setq org-caldav-oauth2-client-secret (getenv "SECRET_CALDAV_OAUTH2_CLIENT_SECRET"))
 ;; (setq org-caldav-url 'google)
 ;; (setq org-caldav-calender-id (getenv "SECRET_CALDAV_CALENDAR_ID"))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(org-agenda-files '("~/materials/capsule/org/inbox.org")))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

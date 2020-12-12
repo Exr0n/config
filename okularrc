@@ -1,0 +1,14 @@
+[Desktop Entry]
+FullScreen=false
+
+[MainWindow]
+HDMI-0 DP-0 Height 1080=1050
+HDMI-0 DP-0 Width 1920=1914
+HDMI-0 DP-0 XPosition=3
+HDMI-0 DP-0 YPosition=27
+State=AAAA/wAAAAD9AAAAAAAAB3oAAAPDAAAABAAAAAQAAAAIAAAACPwAAAACAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+
+[Recent Files]
+File1[$e]=$HOME/materials/nus10/End Fall 2020 Linear Algebra Grading Rubric.pdf
+Name1[$e]=End Fall 2020 Linear Algebra Grading Rubric.pdf
