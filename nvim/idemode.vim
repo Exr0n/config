@@ -101,7 +101,6 @@ set encoding=utf-8
 set listchars=eol:⏎,tab:→·,trail:·,extends:>,precedes:<
 set list
 
-
 " colors
 " fix neovim's weird highlight (https://github.com/neovim/neovim/issues/9019#issuecomment-521532103)
 function! s:CustomizeColors()
@@ -129,6 +128,10 @@ highlight Comment cterm=italic gui=italic
 highlight Conditional cterm=italic gui=italic
 highlight Repeat cterm=italic gui=italic
 highlight Keyword cterm=italic gui=italic
+
+" neovide
+let g:neovide_cursor_animation_length=0.03
+let g:neovide_cursor_trail_length=0.9
 
 "set search stuff
 set hlsearch
@@ -223,6 +226,12 @@ nmap <Leader>hr <Plug>(GitGutterRevertHunk)
 xmap <Leader>y :w !xsel --clipboard --input<CR><CR>
 nmap <Leader>y :w !xsel --clipboard --input<CR><CR>
 nmap <Leader>yy :%w !pbcopy<CR><CR>
+
+" additional control-o control-i mappings
+nnoremap <M-Left> <C-o>
+nnoremap <M-Right> <C-I>
+nnoremap <M-Left> <C-o>
+nnoremap <M-Right> <C-I>
 
 " split direction
 set splitbelow

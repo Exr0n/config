@@ -127,7 +127,9 @@
          id="rect"
          style="fill:blue;"
          usecurrent="1"
-         width="0" />
+         width="7256.69"
+         ry="0"
+         height="4081.89" />
       <eventcontext
          id="3dbox"
          style="stroke:none;stroke-linejoin:round;"
@@ -389,7 +391,8 @@
        selcue="1"
        gradientdrag="1"
        pick="1"
-       setalpha="1" />
+       setalpha="1"
+       onetimepick="0" />
     <eventcontext
        id="select"
        selcue="1"
@@ -523,7 +526,7 @@
   </group>
   <group
      id="colorselector"
-     page="0" />
+     page="1" />
   <group
      id="embedded">
     <group
@@ -541,30 +544,39 @@
        id="toolbox" />
     <group
        id="fillstroke"
-       page="0"
+       page="2"
        x="0"
        y="0"
-       w="378"
-       h="494"
-       visible="0"
+       w="382"
+       h="441"
+       visible="1"
        state="2"
-       placement="2" />
+       placement="1" />
     <group
        id="filtereffects" />
     <group
        id="textandfont" />
     <group
        id="transformation"
-       applyseparately="0" />
+       applyseparately="0"
+       rotateCounterClockwise="1"
+       x="0"
+       y="0"
+       w="388"
+       h="211"
+       visible="0"
+       state="2"
+       placement="2" />
     <group
        id="align"
        x="0"
        y="0"
-       w="312"
-       h="437"
-       visible="0"
+       w="382"
+       h="342"
+       visible="1"
        state="2"
-       placement="1" />
+       placement="2"
+       align-to="0" />
     <group
        id="xml" />
     <group
@@ -580,7 +592,7 @@
     <group
        id="preferences"
        state="1"
-       page="9"
+       page="7"
        x="501"
        y="73"
        w="918"
@@ -595,11 +607,20 @@
        id="export"
        default=""
        append_extension="1"
-       path="">
+       path=""
+       x="0"
+       y="0"
+       w="382"
+       h="489"
+       visible="1"
+       state="2"
+       placement="1">
       <group
-         id="exportarea" />
+         id="exportarea"
+         value="drawing" />
       <group
-         id="defaultxdpi" />
+         id="defaultxdpi"
+         value="300" />
     </group>
     <group
        id="save_as"
@@ -621,12 +642,13 @@
     <group
        id="import"
        enable_preview="1"
-       path=""
+       path="/home/exr0n/snap/"
        ask="1"
        ask_svg="1"
-       link="link"
-       scale="auto"
-       import_mode_svg="include" />
+       link="embed"
+       scale="optimizeSpeed"
+       import_mode_svg="include"
+       forcexdpi="0" />
     <group
        id="debug"
        redirect="0" />
@@ -675,7 +697,8 @@
        add-label-comments="0" />
   </group>
   <group
-     id="options">
+     id="options"
+     onimport="0">
     <group
        id="renderingcache"
        size="512" />
@@ -945,15 +968,16 @@
        unitType="2" />
   </group>
   <group
-     id="extensions" />
+     id="extensions"
+     org.inkscape.input.gdkpixbuf.jpg.scale="optimizeSpeed" />
   <group
      id="desktop"
-     style="fill:#000000;stroke:#000000;fill-opacity:0">
+     style="fill:#ff7f02;stroke:#000000;stroke-width:0">
     <group
-       width="763"
-       height="1010"
+       width="1136"
+       height="1011"
        x="20"
-       y="44"
+       y="270"
        fullscreen="0"
        id="geometry"
        maximized="0" />

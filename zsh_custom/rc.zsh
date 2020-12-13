@@ -14,6 +14,7 @@ alias u='mkdir -p "$CAPSULEROOT/notes" && v "$CAPSULEROOT/notes/$(date +"%Y_%m_%
 alias :q='tmux kill-pane'
 alias :qa='tmux kill-window'
 #    editing
+#alias nvim='neovide' # :sun: :glasses: # :( capslock->control doesn't work
 alias vim='nvim'
 alias v='nvim'
 #    git

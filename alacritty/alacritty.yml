@@ -5,14 +5,17 @@ window:
 scrolling:
     history: 100000
 font:
-    size: 14
-    normal:
-        family: Hack Nerd Font
+    size: 16
+    #normal:
+    #    family: Iosevka
+    #    #family: Hack Nerd Font
+    #    #family: Iosevka SS12
+    #    #family: 'RobotoMono'
     use_thin_strokes: true
 colors:
     cursor:
         text: '#000000'
-        cursor: '#eaea00'
+        cursor: '#caca00'
     # [challenger deep colors](https://github.com/challenger-deep-theme/alacritty/blob/master/challenger-deep.yml)
     # Default colors
     primary:
