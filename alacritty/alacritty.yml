@@ -19,7 +19,7 @@ colors:
     # [challenger deep colors](https://github.com/challenger-deep-theme/alacritty/blob/master/challenger-deep.yml)
     # Default colors
     primary:
-        background: '0x1b182c'
+        background: '0x222222'
         foreground: '0xcbe3e7'
 
     # Normal colors

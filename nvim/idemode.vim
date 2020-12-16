@@ -87,6 +87,15 @@ set ttyfast " speed up scrolling
 set scrolloff=5 " display 8 lines above and below cursor at all times
 set matchpairs+=<:>
 
+" auto-toggle hybrid line numbers on buffer enter/leave
+" source: https://jeffkreeftmeijer.com/vim-number/
+" not used because relative jumping with j/k doesn't set <C-o> mark
+"augroup numbertoggle
+"    autocmd!
+"    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+"    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+"augroup END
+
 " autoread (https://vi.stackexchange.com/a/13092)
 set autoread
 au FocusGained,BufEnter * :checktime
@@ -94,8 +103,9 @@ au FocusGained,BufEnter * :checktime
 " passive and HUD
 let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
 set number " line numbers
-set ruler " display current cursor "coordinates"
-set nosm    " don't show match
+"set rnu    " relative numbers
+set ruler  " display current cursor "coordinates"
+set nosm   " don't show match
 " show invisibles
 set encoding=utf-8
 set listchars=eol:⏎,tab:→·,trail:·,extends:>,precedes:<
