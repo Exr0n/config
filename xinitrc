@@ -21,6 +21,7 @@ xrandr --output HDMI-0 --rotate left
 #syncthingtray &
 syncthing &
 slstatus &
+eval $(ssh-agent)
 
 # scripts
 cd /home/exr0n/projects/Taproot
@@ -39,7 +40,8 @@ xset +fp /usr/share/fonts/local,/usr/share/fonts/TTF
 
 # backgroundd
 #feh --bg-center ~/snap/kitten-440379.jpg
-feh --bg-fill --no-xinerama ~/snap/background.jpg
+#feh --bg-fill --no-xinerama ~/snap/background.jpg
+/home/exr0n/projects/backdash/production &
 
 # go!
 #exec i3

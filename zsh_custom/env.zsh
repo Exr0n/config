@@ -1,6 +1,8 @@
 # zsh syntax highlighting # TODO: broke on emacs
 #source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+export PATH="/usr/lib/emscripten:$PATH"
+
 # added by Anaconda3 4.0.0 installer
 export PATH="$HOME/anaconda/bin:$PATH"
 

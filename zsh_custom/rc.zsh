@@ -31,7 +31,7 @@ function gutil {
     fi
     gpl
     git add ${1:-"."} &&\
-    git commit -v --allow-empty
+    git commit -S -v --allow-empty
     gp
 }
 alias gg='gutil'
@@ -100,6 +100,8 @@ function chpwd () {	# auto called by zsh
     echo "$(date '+%Y,%m,%d,%H,%M,%S'),$(pwd)" >> $XDG_DATA_HOME/recent_dirs.csv
     #git rev-parse --show-toplevel > /dev/null 2>&1 &&
 	echo "$(pwd)" >> $XDG_DATA_HOME/recent_git_dirs.csv
+
+    [[ -f 'pyvenv.cfg' ]] && source bin/activate
 }
 
 function run_generic () {
