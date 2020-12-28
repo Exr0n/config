@@ -40,6 +40,7 @@ alias GG='gutil -A'
 alias py='python3'
 alias pip='python3 -m pip'
 alias pym='python3 -m'
+alias venv='pym venv . && source bin/activate'
 #    screen stuff
 alias sl='screen -ls'
 alias ss='screen -S '
@@ -117,7 +118,7 @@ function run_generic () {
     else
         TEMP_RUN_HEADER="$(date)\n$(printf "%*s\n" "${COLUMNS:-$(tput cols)}" '' | tr " " "#")"
         if echo $files | ag '^main.*\.cpp$' > /dev/null; then		# cpp
-            g++ -std=c++11 main*.cpp -o auto 				&&\
+            clang++ -std=c++11 main*.cpp -o auto 				&&\
             echo $TEMP_RUN_HEADER && ./auto 				&&\
             setopt +o nomatch && cat *.out 2>/dev/null
         # TODO: dry up following ifs

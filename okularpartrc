@@ -11,6 +11,10 @@ SlidesScreen=-1
 ChangeColors=true
 RenderMode=InvertLightness
 
+[Main View]
+ShowLeftPanel=false
+SplitterSizes=147,879
+
 [PageView]
 BackgroundColor=99,99,99
 ScrollOverlap=5

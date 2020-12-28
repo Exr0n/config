@@ -41,7 +41,7 @@ xset +fp /usr/share/fonts/local,/usr/share/fonts/TTF
 # backgroundd
 #feh --bg-center ~/snap/kitten-440379.jpg
 #feh --bg-fill --no-xinerama ~/snap/background.jpg
-/home/exr0n/projects/backdash/production &
+/home/exr0n/projects/backdash/backdash &
 
 # go!
 #exec i3
