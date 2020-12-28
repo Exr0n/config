@@ -1,0 +1,36 @@
+Vanilla Tweaks Resource Pack
+Version: 1.16
+Packs:
+	EndlessEndRods
+	ClearerWater
+	BetterBedrock
+	ConnectedIronBlocks
+	VariatedBookshelves+ConnectedBookshelves
+	QuieterWater
+	QuieterEndermen
+	QuieterNetherPortals
+	OreBorders
+	VisualInfestedStoneItems
+	FullAgeCropMarker
+	MineProgressBar
+	DiminishingTools
+	DirectionalHoppers
+	DirectionalDispensersDroppers
+	StickyPistonSides
+	CleanRedstoneDust
+	RedstonePowerLevels
+	UnobtrusiveSnow
+	UnobtrusiveRain
+	UnobtrusiveScaffolding
+	LowerFire
+	CleanStainedGlass
+	CleanGlass
+	NoPumpkinOverlay
+	LowerShield
+	AlternateEnchantGlint
+	NoVignette
+	CleanerWorldBorder
+	SmallerUtilities
+	ShortSwords
+	DarkUI
+	SmootherFont

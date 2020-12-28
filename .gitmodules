@@ -20,3 +20,6 @@
 [submodule "dontrun_custom/elegant-emacs"]
 	path = dontrun_custom/elegant-emacs
 	url = https://github.com/rougier/elegant-emacs.git
+[submodule "suckless/dwm-flexipatch"]
+	path = suckless/dwm-flexipatch
+	url = https://github.com/exr0n/dwm-flexipatch
