@@ -1,0 +1,10 @@
+# ignore old backups
+/home/exr0n/vol/backup/*
+
+# ignore temp files
+/tmp/*
+
+/var/cache/pacman/pkg
+
+# tar --exclude-from=/home/exr0n/.config/dontrun_custom/backup_ignores.txt --acls --xattrs -cpvf "/home/exr0n/vol/backup/arch-full-$(date '+%F').tar.gz" -I pbzip2 /
+

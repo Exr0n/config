@@ -1,15 +1,6 @@
-#!/bin/zsh
 
-# automated login: https://superuser.com/questions/189376/ssh-copy-id-does-not-work
-
-# rsync -HaxP --numeric-ids --delete -e "ssh -T -c arcfour -o Compression=no -o 'IPQoS throughput' -x" user@<source>:<source_dir> <dest_dir>
-
-filenames=( etc root srv usr var )
-
-for file in "${filenames[@]}"; do
-    tmux split-pane "echo $file; sleep 2"
-    tmux select-layout even-vertical
-done
-
-echo done
+SOURCE=/
+SIZE="$(sudo du -sk $SOURCE | cut -f 1)"
+echo "total size: $SIZE"
+sudo tar --exclude-from=/home/exr0n/.config/dontrun_custom/backup_ignores.txt --acls --xattrs -I pbzip2 -cvpf $SOURCE | pv -p -s ${SIZE}k | sudo bzip2 -c > "/home/exr0n/vol/backup/arch-full-$(date '+%F').tar.bz2"
 
