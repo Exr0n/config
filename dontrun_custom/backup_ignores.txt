@@ -3,6 +3,8 @@
 
 # ignore temp files
 /tmp/*
+/proc/*
+/run/*
 
 /var/cache/pacman/pkg
 

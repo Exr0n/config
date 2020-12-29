@@ -4,14 +4,16 @@ setxkbmap -option caps:ctrl_modifier
 xcape -e 'Caps_Lock=Escape'
 
 # mouse
-xinput set-prop 'pointer:Razer Razer DeathAdder 2013' 290 1 # natural scrolling
+xinput set-prop 'pointer:Razer Razer DeathAdder 2013' 291 1 # natural scrolling
 xinput set-prop 'pointer:Razer Razer DeathAdder 2013' 301 -0.6 # mouse acceleration
 #xset m 3/5 1
 
 # monitors
-#nvidia-settings --assign CurrentMetaMode="HDMI-0: nvidia-auto-select +0+0 {ForceCompositionPipeline=On}, DP-1: nvidia-auto-select +4096+0 {ForceCompositionPipeline=On}"
-##xrandr --output HDMI-0 --scale 0.5x0.5
-#xrandr --output DP-1   --scale 0.5x0.5 --rotate left
+#nvidia-settings --assign CurrentMetaMode="HDMI-0: nvidia-auto-select +1920+0 {ForceCompositionPipeline=On}, DP-5: nvidia-auto-select +0+0 {ForceCompositionPipeline=On}"
+#xrandr --output HDMI-0 --scale 0.5x0.5
+##xrandr --output DP-1   --scale 0.5x0.5 --rotate left
+#xrandr --output DP-5   --scale 0.5x0.5
+
 # display 2 barley boogaloo
 nvidia-settings --assign CurrentMetaMode="DP-0: nvidia-auto-select +0+250 {ForceCompositionPipeline=On}, HDMI-0: nvidia-auto-select +1920+0 {ForceCompositionPipeline=On}"
 xrandr --output HDMI-0 --rotate left
@@ -19,7 +21,7 @@ xrandr --output HDMI-0 --rotate left
 # applets
 #blueman-applet &
 #syncthingtray &
-syncthing &
+#syncthing &
 slstatus &
 eval $(ssh-agent)
 

@@ -66,7 +66,7 @@ static const struct arg args[] = {
     { run_command, "襤 %s | ",    "cat $HOME/.data/pit2ya/current.desc" },
 	{ datetime, "%s |",           " %a %d %b %T" },
     { cpu_perc, "  %s",     NULL },
-    { run_command, "  %2s", "nvidia-smi --query-gpu='utilization.gpu' --format=csv,noheader,nounits" },
+    { run_command, "  %2s", "nvidia-smi --query-gpu='utilization.gpu' --format=csv,noheader,nounits | tr '\n' ' ' | cut -c1-" },
     { ram_perc, " ﲭ %2s",     NULL },
 };
 
