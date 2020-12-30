@@ -1,7 +1,7 @@
 
-SOURCE='/'
+SOURCE='/home'
 SIZE="$(sudo du -sk $SOURCE --exclude=/proc --exclude=/run --exclude=/tmp | cut -f 1)"
-TARGET="/home/exr0n/vol/backup/$hostname-full-$(date '+%F')"
+TARGET="/home/exr0n/vol/backup/$hostname-home-$(date '+%F')"
 echo "total size: $SIZE"
 echo backing up $SOURCE
 

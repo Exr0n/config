@@ -40,10 +40,10 @@ Plug 'cespare/vim-toml'		" .toml syntax highlighting
 Plug 'luochen1990/rainbow'
 Plug 'airblade/vim-gitgutter'
 Plug 'rickhowe/diffchar.vim'
-"Plug 'Yggdroot/indentLine'
-"let g:indentLine_char = '▏'
-"let g:indentLine_conceallevel = 1
-"let g:indentLine_concealcursor = 'nv'
+Plug 'Yggdroot/indentLine'
+let g:indentLine_char = '▏'
+let g:indentLine_conceallevel = 1
+let g:indentLine_concealcursor = 'nv'
 "   tmux integration
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -110,6 +110,9 @@ set nosm   " don't show match
 set encoding=utf-8
 set listchars=eol:⏎,tab:→·,trail:·,extends:>,precedes:<
 set list
+
+"set filetype off
+"set filetype plugin indent on
 
 " colors
 " fix neovim's weird highlight (https://github.com/neovim/neovim/issues/9019#issuecomment-521532103)
