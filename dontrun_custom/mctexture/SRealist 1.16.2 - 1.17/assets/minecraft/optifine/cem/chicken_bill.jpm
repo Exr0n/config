@@ -1,0 +1,23 @@
+{
+  "comment": "Designed by MushirMickeyJoe with Cubik Studio - https://cubik.studio",
+  "createdWith": "Cubik Studio 2.6.384 Beta",
+  "texture": "chicken",
+  "textureSize": [64,32],
+  "submodels": [
+    {
+      "id": "Cube1",
+      "translate": [1.0,-2.0,-4.0],
+      "boxes": [
+        {
+          "coordinates": [-2.0,-2.0,0.0,2.0,2.0,2.0],
+          "uvDown": [18,0,20,2],
+          "uvUp": [16,0,18,2],
+          "uvNorth": [16,2,18,4],
+          "uvSouth": [20,2,22,4],
+          "uvWest": [14,2,16,4],
+          "uvEast": [18,2,20,4]
+        }
+      ]
+    }
+  ]
+}
