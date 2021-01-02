@@ -37,7 +37,7 @@ function gutil {
 alias gg='gutil'
 alias GG='gutil -A'
 #    python stuff
-alias py='python3'
+alias py='/usr/bin/python3'
 alias pip='python3 -m pip'
 alias pym='python3 -m'
 alias venv='pym venv . && source bin/activate'

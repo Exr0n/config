@@ -15,7 +15,7 @@ xinput set-prop 'pointer:Razer Razer DeathAdder 2013' 301 -0.6 # mouse accelerat
 #xrandr --output DP-5   --scale 0.5x0.5
 
 # display 2 barley boogaloo
-nvidia-settings --assign CurrentMetaMode="DP-0: nvidia-auto-select +0+250 {ForceCompositionPipeline=On}, HDMI-0: nvidia-auto-select +1920+0 {ForceCompositionPipeline=On}" && xrandr --output HDMI-0 --rotate left
+nvidia-settings --assign CurrentMetaMode="DP-0: nvidia-auto-select +0+240 {ForceCompositionPipeline=On}, HDMI-0: nvidia-auto-select +1920+0 {ForceCompositionPipeline=On}" && xrandr --output HDMI-0 --rotate left
 #nvidia-settings --assign CurrentMetaMode="DP-0: nvidia-auto-select +0+0 {ForceCompositionPipeline=On}, HDMI-0: nvidia-auto-select +1920+0 {ForceCompositionPipeline=On}"
 #nvidia-settings --assign CurrentMetaMode="DP-4: nvidia-auto-select +0+0 {ForceCompositionPipeline=On}, HDMI-0: nvidia-auto-select +1920+0 {ForceCompositionPipeline=On}"
 #nvidia-settings --assign CurrentMetaMode="DP-1-4: nvidia-auto-select +0+250 {ForceCompositionPipeline=On}, HDMI-0: nvidia-auto-select +1920+0 {ForceCompositionPipeline=On}"

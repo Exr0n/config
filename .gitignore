@@ -18,4 +18,8 @@ lunarclient/*
 !lunarclient/Preferences
 zoomus.conf
 syncthing/config.xml
+blender/
+pulse/*
+!pulse/*.conf
+!pulse/*.pa
 
