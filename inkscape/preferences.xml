@@ -165,8 +165,8 @@
          end="0"
          start="0"
          usecurrent="1"
-         rx="1.32548"
-         ry="0.399471" />
+         rx="9.04914"
+         ry="15.8546" />
       <eventcontext
          id="star"
          magnitude="3"
@@ -185,13 +185,14 @@
        style="fill:none;stroke:black;stroke-opacity:1;stroke-linejoin:miter;stroke-linecap:butt;">
       <eventcontext
          id="pencil"
-         tolerance="42.5"
+         tolerance="20"
          selcue="1"
          style="stroke-width:1px;"
          usecurrent="0"
          average_all_sketches="1"
          pressure="0"
-         freehand-mode="1" />
+         freehand-mode="0"
+         shape="3" />
       <eventcontext
          id="pen"
          mode="drag"
@@ -203,17 +204,17 @@
        id="calligraphic"
        style="fill:black;fill-opacity:1;fill-rule:nonzero;stroke:none;"
        mass="2"
-       angle="45"
-       width="18"
-       thinning="-40"
-       flatness="16"
-       cap_rounding="0.1"
+       angle="90"
+       width="50"
+       thinning="0"
+       flatness="0"
+       cap_rounding="1"
        usecurrent="1"
        tracebackground="0"
-       usepressure="1"
-       usetilt="1"
+       usepressure="0"
+       usetilt="0"
        keep_selected="1"
-       wiggle="25"
+       wiggle="0"
        tremor="0">
       <group
          id="preset">
@@ -544,7 +545,7 @@
        id="toolbox" />
     <group
        id="fillstroke"
-       page="0"
+       page="2"
        x="0"
        y="0"
        w="382"
@@ -572,7 +573,7 @@
        x="0"
        y="0"
        w="382"
-       h="437"
+       h="342"
        visible="1"
        state="2"
        placement="2"
@@ -592,7 +593,7 @@
     <group
        id="preferences"
        state="1"
-       page="7"
+       page="27"
        x="501"
        y="73"
        w="918"
@@ -617,7 +618,7 @@
        placement="2">
       <group
          id="exportarea"
-         value="page" />
+         value="selection" />
       <group
          id="defaultxdpi"
          value="300" />
@@ -646,14 +647,15 @@
        ask="1"
        ask_svg="1"
        link="embed"
-       scale="optimizeSpeed"
+       scale="auto"
        import_mode_svg="include"
        forcexdpi="0" />
     <group
        id="debug"
        redirect="0" />
     <group
-       id="clonetiler" />
+       id="clonetiler"
+       dotrace="0" />
     <group
        id="gridtiler" />
     <group
@@ -731,13 +733,13 @@
        value="12" />
     <group
        id="cursortolerance"
-       value="8.0" />
+       value="8" />
     <group
        id="dragtolerance"
        value="4.0" />
     <group
        id="grabsize"
-       value="3" />
+       value="1" />
     <group
        id="displayprofile"
        enable="0"
@@ -770,7 +772,7 @@
        value="1.414213562" />
     <group
        id="zoomcorrection"
-       value="1.0"
+       value="1"
        unit="mm" />
     <group
        id="keyscroll"
@@ -974,10 +976,10 @@
      id="desktop"
      style="fill:#ff7f02;stroke:#000000;stroke-width:0">
     <group
-       width="1030"
-       height="1825"
-       x="1940"
-       y="20"
+       width="1870"
+       height="985"
+       x="20"
+       y="260"
        fullscreen="0"
        id="geometry"
        maximized="0" />
@@ -1082,8 +1084,10 @@
      defaultTheme="Adwaita"
      defaultIconTheme="Adwaita"
      gtkTheme="Adwaita"
-     iconTheme="Adwaita"
+     iconTheme="Tango"
      menuIcons_canvas="0"
      menuIcons_layers="0"
-     menuIcons_objects="0" />
+     menuIcons_objects="0"
+     preferDarkTheme="1"
+     darkTheme="1" />
 </inkscape>
