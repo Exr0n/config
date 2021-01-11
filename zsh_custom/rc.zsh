@@ -15,6 +15,7 @@ alias :q='tmux kill-pane'
 alias :qa='tmux kill-window'
 #    editing
 #alias nvim='neovide' # :sun: :glasses: # :( capslock->control doesn't work
+# alias nvim='e' # emacs gang # TODO: iosevka, folds, 4 space indent, don't overwrite system clipboard
 alias vim='nvim'
 alias v='nvim'
 #    git

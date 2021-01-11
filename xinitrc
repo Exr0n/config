@@ -25,6 +25,7 @@ nvidia-settings --assign CurrentMetaMode="DP-0: nvidia-auto-select +0+240 {Force
 #syncthingtray &
 #syncthing &
 slstatus &
+emacs --daemon
 eval $(ssh-agent)
 
 # scripts

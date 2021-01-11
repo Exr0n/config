@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "evil-vimish-fold" "evil-vimish-fold.el" (0
-;;;;;;  0 0 0))
-;;; Generated autoloads from evil-vimish-fold.el
+;;;### (autoloads nil "evil-vimish-fold" "../../../../.emacs.d/elpa/evil-vimish-fold-20200122.117/evil-vimish-fold.el"
+;;;;;;  "9095f4dfa155350b762668783c238e74")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/evil-vimish-fold-20200122.117/evil-vimish-fold.el
 
 (autoload 'evil-vimish-fold-mode "evil-vimish-fold" "\
 Evil-vimish-fold-mode.
@@ -48,8 +48,21 @@ See `evil-vimish-fold-mode' for more information on Evil-Vimish-Fold mode.
 
 (autoload 'turn-off-evil-vimish-fold-mode "evil-vimish-fold" "\
 Turn off `evil-vimish-fold-mode'." t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "evil-vimish-fold"
+;;;;;;  "../../../../.emacs.d/elpa/evil-vimish-fold-20200122.117/evil-vimish-fold.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/evil-vimish-fold-20200122.117/evil-vimish-fold.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "evil-vimish-fold" '("evil-vimish-fold-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/evil-vimish-fold-20200122.117/evil-vimish-fold-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/evil-vimish-fold-20200122.117/evil-vimish-fold.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 
