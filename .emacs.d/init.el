@@ -87,7 +87,8 @@
 
 ;;; font
 (set-face-attribute 'default nil :height 180)
-(set-face-attribute 'default t :font "Iosevka")
+(set-face-attribute 'default t :font "Iosevka" :weight 'light)
+;; (set-face-attribute 'default t :font "Iosevka Nerd Font Mono:light") ; TODO: nerd font
 
 ;;; remove bars
 (menu-bar-mode -1)
