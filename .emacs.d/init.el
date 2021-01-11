@@ -1,4 +1,4 @@
-;; things TODO before I can daily drive emacs: vim-like foldmethod=manual with nesting, don't replace system clipboard
+;; things TODO before I can daily drive emacs: vim-like foldmethod=manual with nesting, https://www.reddit.com/r/emacs/comments/8pfdlb/weird_shifting_problem_with_new_emacs_line_numbers/
 ;; other niceties: figure out how indenting works, smart tabs, indent lines, invisible characters
 ;; packages
 (require 'package)
@@ -11,11 +11,20 @@
 (global-aggressive-indent-mode 1)
 (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 
-;; keybinds (TODO did other stuff get deleted too?)
+;; keybinds
 (global-set-key (kbd "C-S-v") 'x-clipboard-yank)
 
 ;;; clipboard (except keybinds, see keybind section)
 (setq x-select-enable-clipboard nil) ; don't touch external clipboard, from https://stackoverflow.com/a/24209883
+
+;; editing TODO what got delete from here again?
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+(setq-default tab-width 4)
+(setq-default c-basic-offset 4)
+(require 'undo-tree)
+
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
 
 ;; background
 (setq make-backup-files nil)
@@ -32,7 +41,7 @@
  '(custom-safe-themes
    '("a3b6a3708c6692674196266aad1cb19188a6da7b4f961e1369a68f06577afa16" default))
  '(package-selected-packages
-   '(aggressive-indent smart-tabs-mode evil-vimish-fold vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil)))
+   '(undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -45,6 +54,7 @@
 (evil-mode 1)
 
 ;; ability to redo things
+(global-undo-tree-mode)
 (evil-set-undo-system 'undo-tree)
 
 (require 'vimish-fold)
