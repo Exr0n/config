@@ -1,4 +1,4 @@
-;; things TODO before I can daily drive emacs: vim-like foldmethod=manual with nesting, https://www.reddit.com/r/emacs/comments/8pfdlb/weird_shifting_problem_with_new_emacs_line_numbers/
+;; things TODO before I can daily drive emacs: vim-like foldmethod=manual with nesting
 ;; other niceties: figure out how indenting works, smart tabs, indent lines, invisible characters
 ;; packages
 (require 'package)
@@ -13,6 +13,7 @@
 
 ;; keybinds
 (global-set-key (kbd "C-S-v") 'x-clipboard-yank)
+(global-set-key (kbd "C-S-c") 'clipboard-kill-ring-save)
 
 ;;; clipboard (except keybinds, see keybind section)
 (setq x-select-enable-clipboard nil) ; don't touch external clipboard, from https://stackoverflow.com/a/24209883
@@ -77,6 +78,12 @@
 
 ;; gui
 (global-display-line-numbers-mode t)
+(setq display-line-numbers-width-start t)
+(defun display-line-numbers-equalize ()
+  "Equalize The width, ala https://emacs.stackexchange.com/a/55166"
+  (setq display-line-numbers-width (length (number-to-string (line-number-at-pos (point-max))))))
+(add-hook 'find-file-hook 'display-line-numbers-equalize)
+
 
 ;;; font
 (set-face-attribute 'default nil :height 180)
