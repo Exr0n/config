@@ -16,59 +16,58 @@ colors:
     cursor:
         text: '#000000'
         cursor: '#caca00'
+    # # Default colors
+    # primary:
+    #     background: '0x040d1a'
+    #     foreground: '0xd7e6fd'
+
+    # # Normal colors
+    # normal:
+    #     black:   '0x5a5e63'
+    #     red:     '0xdb0000'
+    #     green:   '0x57b72d'
+    #     yellow:  '0xf0a400'
+    #     blue:    '0x194eec'
+    #     magenta: '0xa500d9'
+    #     cyan:    '0x00d7cb'
+    #     white:   '0x7b899d'
+
+    # # Bright colors
+    # bright:
+    #     black:   '0x8c8788'
+    #     red:     '0xff4545'
+    #     green:   '0xb0f15b'
+    #     yellow:  '0xf8f343'
+    #     blue:    '0x4a9bf6'
+    #     magenta: '0xdb85f3'
+    #     cyan:    '0x86f5e6'
+    #     white:   '0xdbe7fb'
+    # [challenger deep colors](https://github.com/challenger-deep-theme/alacritty/blob/master/challenger-deep.yml)
     # Default colors
     primary:
-        background: '0x040d1a'
-        foreground: '0xd7e6fd'
+       background: '0x1e1c31'
+       foreground: '0xcbe3e7'
 
     # Normal colors
     normal:
-        black:   '0x5a5e63'
-        red:     '0xdb0000'
-        green:   '0x57b72d'
-        yellow:  '0xf0a400'
-        blue:    '0x194eec'
-        magenta: '0xa500d9'
-        cyan:    '0x00d7cb'
-        white:   '0x7b899d'
+       black:   '0x100e23'
+       red:     '0xff8080'
+       green:   '0x95ffa4'
+       yellow:  '0xffe9aa'
+       blue:    '0x91ddff'
+       magenta: '0xc991e1'
+       cyan:    '0xaaffe4'
+       white:   '0xbbd3f7'
 
     # Bright colors
     bright:
-        black:   '0x8c8788'
-        red:     '0xff4545'
-        green:   '0xb0f15b'
-        yellow:  '0xf8f343'
-        blue:    '0x4a9bf6'
-        magenta: '0xdb85f3'
-        cyan:    '0x86f5e6'
-        white:   '0xdbe7fb'
-    ## [challenger deep colors](https://github.com/challenger-deep-theme/alacritty/blob/master/challenger-deep.yml)
-    ## Default colors
-    #primary:
-    #    background: '0x222222'
-    #    foreground: '0xcbe3e7'
-    #
-    ## Normal colors
-    #normal:
-    #    black:   '0x100e23'
-    #    red:     '0xff8080'
-    #    green:   '0x95ffa4'
-    #    yellow:  '0xffe9aa'
-    #    blue:    '0x91ddff'
-    #    magenta: '0xc991e1'
-    #    cyan:    '0xaaffe4'
-    #    white:   '0xbbd3f7'
-    #
-    ## Bright colors
-    #bright:
-    #    black:   '0x565575'
-    #    red:     '0xff5458'
-    #    green:   '0x62d196'
-    #    yellow:  '0xffb378'
-    #    blue:    '0x65b2ff'
-    #    magenta: '0x906cff'
-    #    cyan:    '0x63f2f1'
-    #    white:   '0x96a3dc'
+       black:   '0x565575'
+       red:     '0xff5458'
+       green:   '0x62d196'
+       yellow:  '0xffb378'
+       blue:    '0x65b2ff'
+       magenta: '0x906cff'
+       cyan:    '0x63f2f1'
+       white:   '0x96a3dc'
 key_bindings:
     - { key: N, mods: Command, command: { program: "open", args: ["-nb", "io.alacritty"] } }
-

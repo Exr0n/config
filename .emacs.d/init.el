@@ -1,5 +1,5 @@
 ;; things TODO before I can daily drive emacs: vim-like foldmethod=manual with nesting
-;; other niceties: figure out how indenting works, smart tabs, indent lines, invisible characters
+;; other niceties: smart tabs, indent lines, invisible characters, find-file recursively, ivy-swiper,  lsp, ligatures, rename support, show documentation, centered text in wide windows
 ;; packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
@@ -7,9 +7,9 @@
 
 (require 'smart-tabs-mode)
 (smart-tabs-insinuate 'c 'c++ 'javascript 'python)
-(require 'aggressive-indent)
-(global-aggressive-indent-mode 1)
-(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+;; (require 'aggressive-indent)
+;; (global-aggressive-indent-mode 1)
+;; (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 
 ;; keybinds
 (global-set-key (kbd "C-S-v") 'x-clipboard-yank)
@@ -30,6 +30,11 @@
 ;;; large files (vlf)
 (require 'vlf-setup)
 
+;; git
+(require 'magit)
+(global-git-gutter-mode +1)
+(add-hook 'prog-mode-hook 'git-gutter-mode)
+
 ;; background
 (setq make-backup-files nil)
 (setq create-lockfiles nil)
@@ -44,9 +49,10 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("a3b6a3708c6692674196266aad1cb19188a6da7b4f961e1369a68f06577afa16" default))
+ '(highlight-indent-guides-method 'character)
  '(org-agenda-files '("~/materials/capsule/org/inbox.org"))
  '(package-selected-packages
-   '(vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
+   '(highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
  '(vlf-application 'dont-ask))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -67,7 +73,6 @@
 (require 'evil-vimish-fold)
 (global-evil-vimish-fold-mode 1)
 
-
 ;; ivy
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
@@ -75,6 +80,9 @@
 ;; (setq ivy-re-builders-alist ; TODO https://oremacs.com/2016/01/06/ivy-flx/
 ;;       '((ivy-switch-buffer . ivy--regex-plus)
 ;;         (t . ivy--regex-fuzzy)))
+;; (swiper-mode 1)
+;; (global-set-key (kbd "C-x C-f") (ivy-read "File: " (directory-files-recursively default-directory "~"))) ; https://emacs.stackexchange.com/a/32864
+(counsel-mode 1)
 
 ;; gui
 (global-display-line-numbers-mode t)
@@ -84,6 +92,8 @@
   (setq display-line-numbers-width (length (number-to-string (line-number-at-pos (point-max))))))
 (add-hook 'find-file-hook 'display-line-numbers-equalize)
 
+;; indent guides
+(add-hook 'prog-mode-hook 'highlight-indent-guides-mode) ; TODO doesn't work
 
 ;;; font
 (set-face-attribute 'default nil :height 180)
