@@ -1,10 +1,14 @@
 ;; things TODO before I can daily drive emacs: vim-like foldmethod=manual with nesting
-;; other niceties: smart tabs, indent lines, invisible characters, find-file recursively, ivy-swiper,  lsp, ligatures, rename support, show documentation, centered text in wide windows, calendar to emacs https://opensource.com/article/20/1/emacs-mail-calendar
+;; other niceties: smart tabs, invisible characters, find-file recursively, ivy-swiper,  lsp, ligatures, rename support, show documentation, calendar to emacs https://opensource.com/article/20/1/emacs-mail-calendar
+;; snippets : yasnippet, see discord for example
 ;; packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 (require 'use-package)
+
+(add-to-list 'load-path "~/.emacs.d/autoload")
+(load "olivetti.el")
 
 (require 'smart-tabs-mode)
 (smart-tabs-insinuate 'c 'c++ 'javascript 'python)
