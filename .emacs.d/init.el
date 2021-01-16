@@ -1,9 +1,10 @@
 ;; things TODO before I can daily drive emacs: vim-like foldmethod=manual with nesting
-;; other niceties: smart tabs, indent lines, invisible characters, find-file recursively, ivy-swiper,  lsp, ligatures, rename support, show documentation, centered text in wide windows
+;; other niceties: smart tabs, indent lines, invisible characters, find-file recursively, ivy-swiper,  lsp, ligatures, rename support, show documentation, centered text in wide windows, calendar to emacs https://opensource.com/article/20/1/emacs-mail-calendar
 ;; packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
+(require 'use-package)
 
 (require 'smart-tabs-mode)
 (smart-tabs-insinuate 'c 'c++ 'javascript 'python)
@@ -17,6 +18,14 @@
 
 ;;; clipboard (except keybinds, see keybind section)
 (setq x-select-enable-clipboard nil) ; don't touch external clipboard, from https://stackoverflow.com/a/24209883
+
+;; evil
+(setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+(setq evil-want-keybinding nil)
+(require 'evil)
+(when (require 'evil-collection nil t)
+  (evil-collection-init))
+(evil-mode 1)
 
 ;; editing TODO what got delete from here again?
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -52,7 +61,7 @@
  '(highlight-indent-guides-method 'character)
  '(org-agenda-files '("~/materials/capsule/org/inbox.org"))
  '(package-selected-packages
-   '(highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
+   '(evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
  '(vlf-application 'dont-ask))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -61,17 +70,13 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; evil
-(require 'evil)
-(evil-mode 1)
-
 ;; ability to redo things
 (global-undo-tree-mode)
 (evil-set-undo-system 'undo-tree)
 
-(require 'vimish-fold)
-(require 'evil-vimish-fold)
-(global-evil-vimish-fold-mode 1)
+;; (require 'vimish-fold)
+;; (require 'evil-vimish-fold)
+;; (global-evil-vimish-fold-mode 1)
 
 ;; ivy
 (ivy-mode 1)
@@ -106,8 +111,11 @@
 (scroll-bar-mode -1)
 
 ;;; modeline
-(require 'doom-modeline)
-(doom-modeline-mode 1)
+;; (require 'doom-modeline)
+;; (doom-modeline-mode 1)
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
 
 ;;; colors
 (load-theme 'doom-challenger-deep)

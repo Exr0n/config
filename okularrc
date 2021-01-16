@@ -8,12 +8,13 @@ HDMI-0 DP-0 Width 1080=1040
 HDMI-0 DP-0 Width 1920=1914
 HDMI-0 DP-0 XPosition=1940
 HDMI-0 DP-0 YPosition=20
-RestorePositionForNextInstance=false
 State=AAAA/wAAAAD9AAAAAAAABBAAAAbJAAAABAAAAAQAAAAIAAAACPwAAAACAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAAAAAAAgAAAAEAAAAiAGEAbgBuAG8AdABhAHQAaQBvAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 
 [Recent Files]
 File1[$e]=$HOME/materials/nus10/End Fall 2020 Linear Algebra Grading Rubric.pdf
 File2[$e]=$HOME/projects/ml-reflect/papers/nlp/microsoft_research_r-net.pdf
+File3[$e]=$HOME/materials/nus10/linear_algebra_done_right.pdf
 Name1[$e]=End Fall 2020 Linear Algebra Grading Rubric.pdf
 Name2[$e]=microsoft_research_r-net.pdf
+Name3[$e]=linear_algebra_done_right.pdf
