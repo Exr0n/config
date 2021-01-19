@@ -37,11 +37,17 @@
 (setq-default c-basic-offset 4)
 (require 'undo-tree)
 
-(require 'smooth-scrolling)
-(smooth-scrolling-mode 1)
+;; (require 'smooth-scrolling)				; slow, apparently https://www.reddit.com/r/emacs/comments/3kgv75/why_is_smooth_scrolling_so_slow/cuxk3a3?utm_source=share&utm_medium=web2x&context=3
+;; (smooth-scrolling-mode 1)
+(setq scroll-conservatively 101) ;; move minimum when cursor exits view, instead of recentering
+(setq mouse-wheel-scroll-amount '(1)) ;; mouse scroll moves 1 line at a time, instead of 5 lines
+(setq mouse-wheel-progressive-speed nil) ;; on a long mouse scroll keep scrolling by 1 line
+;; (require 'fast-scroll)			   ; TODO: broken
+;; (setq fast-scroll-throttle 0.1)
 
 ;;; large files (vlf)
 (require 'vlf-setup)
+(setq vc-handled-backends nil)			; apparently helps with save performance
 
 ;; git
 (require 'magit)
@@ -65,7 +71,7 @@
  '(highlight-indent-guides-method 'character)
  '(org-agenda-files '("~/materials/capsule/org/inbox.org"))
  '(package-selected-packages
-   '(evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
+   '(fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
  '(vlf-application 'dont-ask))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
