@@ -6,10 +6,10 @@ scrolling:
     history: 100000
 font:
     size: 16
-    #normal:
-    #    family: Iosevka
+    normal:
+        family: Iosevka
     #    #family: Hack Nerd Font
-    #    #family: Iosevka SS12
+        family: Iosevka Term SS12 Light
     #    #family: 'RobotoMono'
     use_thin_strokes: true
 colors:
