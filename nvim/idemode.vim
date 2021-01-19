@@ -246,6 +246,9 @@ nnoremap <M-Right> <C-I>
 nnoremap <M-Left> <C-o>
 nnoremap <M-Right> <C-I>
 
+nnoremap <C-x><C-s> :w<CR>
+inoremap <C-x><C-s> <Esc>:w<CR>a
+
 " split direction
 set splitbelow
 set splitright
