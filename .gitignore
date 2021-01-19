@@ -23,4 +23,5 @@ blender/
 pulse/*
 !pulse/*.conf
 !pulse/*.pa
+okularrc
 

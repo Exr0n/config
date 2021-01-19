@@ -1,9 +1,14 @@
 ;; things TODO before I can daily drive emacs: vim-like foldmethod=manual with nesting
-;; other niceties: smart tabs, indent lines, invisible characters, find-file recursively, ivy-swiper,  lsp, ligatures, rename support, show documentation, centered text in wide windows
+;; other niceties: smart tabs, invisible characters, find-file recursively, ivy-swiper,  lsp, ligatures, rename support, show documentation, calendar to emacs https://opensource.com/article/20/1/emacs-mail-calendar
+;; snippets : yasnippet, see discord for example
 ;; packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
+(require 'use-package)
+
+(add-to-list 'load-path "~/.emacs.d/autoload")
+(load "olivetti.el")
 
 (require 'smart-tabs-mode)
 (smart-tabs-insinuate 'c 'c++ 'javascript 'python)
@@ -18,17 +23,31 @@
 ;;; clipboard (except keybinds, see keybind section)
 (setq x-select-enable-clipboard nil) ; don't touch external clipboard, from https://stackoverflow.com/a/24209883
 
+;; evil
+(setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+(setq evil-want-keybinding nil)
+(require 'evil)
+(when (require 'evil-collection nil t)
+  (evil-collection-init))
+(evil-mode 1)
+
 ;; editing TODO what got delete from here again?
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
 (require 'undo-tree)
 
-(require 'smooth-scrolling)
-(smooth-scrolling-mode 1)
+;; (require 'smooth-scrolling)				; slow, apparently https://www.reddit.com/r/emacs/comments/3kgv75/why_is_smooth_scrolling_so_slow/cuxk3a3?utm_source=share&utm_medium=web2x&context=3
+;; (smooth-scrolling-mode 1)
+(setq scroll-conservatively 101) ;; move minimum when cursor exits view, instead of recentering
+(setq mouse-wheel-scroll-amount '(1)) ;; mouse scroll moves 1 line at a time, instead of 5 lines
+(setq mouse-wheel-progressive-speed nil) ;; on a long mouse scroll keep scrolling by 1 line
+;; (require 'fast-scroll)			   ; TODO: broken
+;; (setq fast-scroll-throttle 0.1)
 
 ;;; large files (vlf)
 (require 'vlf-setup)
+(setq vc-handled-backends nil)			; apparently helps with save performance
 
 ;; git
 (require 'magit)
@@ -52,7 +71,7 @@
  '(highlight-indent-guides-method 'character)
  '(org-agenda-files '("~/materials/capsule/org/inbox.org"))
  '(package-selected-packages
-   '(highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
+   '(fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
  '(vlf-application 'dont-ask))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -61,17 +80,13 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; evil
-(require 'evil)
-(evil-mode 1)
-
 ;; ability to redo things
 (global-undo-tree-mode)
 (evil-set-undo-system 'undo-tree)
 
-(require 'vimish-fold)
-(require 'evil-vimish-fold)
-(global-evil-vimish-fold-mode 1)
+;; (require 'vimish-fold)
+;; (require 'evil-vimish-fold)
+;; (global-evil-vimish-fold-mode 1)
 
 ;; ivy
 (ivy-mode 1)
@@ -106,8 +121,11 @@
 (scroll-bar-mode -1)
 
 ;;; modeline
-(require 'doom-modeline)
-(doom-modeline-mode 1)
+;; (require 'doom-modeline)
+;; (doom-modeline-mode 1)
+(use-package doom-modeline
+  :ensure t
+  :init (doom-modeline-mode 1))
 
 ;;; colors
 (load-theme 'doom-challenger-deep)
