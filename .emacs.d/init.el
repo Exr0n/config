@@ -12,6 +12,8 @@
 
 (require 'smart-tabs-mode)
 (smart-tabs-insinuate 'c 'c++ 'javascript 'python)
+
+(visual-line-mode)
 ;; (require 'aggressive-indent)
 ;; (global-aggressive-indent-mode 1)
 ;; (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
@@ -60,6 +62,20 @@
 ;; workgroups
 ;; (require 'workgroups2); TODO: FIX
 
+;; LSP
+;; if you want to change prefix for lsp-mode keybindings.
+(setq lsp-keymap-prefix "M-l")
+
+(require 'lsp-mode)
+(add-hook 'c++-mode-hook #'lsp)
+(add-hook 'python-mode-hook #'lsp)
+(add-hook 'javascript-mode-hook #'lsp)
+
+(require 'lsp-ui)
+(setq lsp-ui-sideline-show-diagnostics t)
+(setq lsp-ui-sideline-show-hover t)
+(setq lsp-ui-delay 0)
+
 ;; Custom
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -68,10 +84,11 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    '("a3b6a3708c6692674196266aad1cb19188a6da7b4f961e1369a68f06577afa16" default))
+ '(fast-scroll-mode t)
  '(highlight-indent-guides-method 'character)
  '(org-agenda-files '("~/materials/capsule/org/inbox.org"))
  '(package-selected-packages
-   '(fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
+   '(all-the-icons-ivy-rich treemacs-all-the-icons lsp-ivy lsp-treemacs flycheck lsp-ui lsp-mode fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
  '(vlf-application 'dont-ask))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -84,9 +101,9 @@
 (global-undo-tree-mode)
 (evil-set-undo-system 'undo-tree)
 
-;; (require 'vimish-fold)
-;; (require 'evil-vimish-fold)
-;; (global-evil-vimish-fold-mode 1)
+(require 'vimish-fold)
+(require 'evil-vimish-fold)
+(global-evil-vimish-fold-mode 1)
 
 ;; ivy
 (ivy-mode 1)
@@ -112,7 +129,8 @@
 
 ;;; font
 (set-face-attribute 'default nil :height 180)
-(set-face-attribute 'default t :font "Iosevka" :weight 'light)
+(set-face-attribute 'default t :font "Iosevka Term SS12" :weight 'light)
+;; (set-face-attribute 'default t :font "Roboto Mono" :weight 'light)
 ;; (set-face-attribute 'default t :font "Iosevka Nerd Font Mono:light") ; TODO: nerd font
 
 ;;; remove bars
