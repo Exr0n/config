@@ -1,3 +1,8 @@
+# zsh syntax highlighting # TODO: broke on emacs
+#source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PATH="/usr/lib/emscripten:$PATH"
+
 # added by Anaconda3 4.0.0 installer
 export PATH="$HOME/anaconda/bin:$PATH"
 
@@ -23,7 +28,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # custom bin
 export PATH="$ZSH_CUSTOM/bin:$PATH"
-export PATH="$HOME/Applications" # installed appimages
 
 # alacritty
 export PATH="$ZSH_CUSTOM/../dontrun_custom/Alacritty.app/Contents/MacOS:$PATH"
@@ -43,4 +47,9 @@ export VIMCONFIG="$VIMROOT"
 export MYVIMRC="$VIMCONFIG/vimrc"
 export VIMINIT='source $MYVIMRC'
 export IDEMODE=1
+
+#export FZF_CTRL_T_COMMAND="command find -L $([[ "${PWD##$HOME}" != "${PWD}" ]] && echo "$HOME" || echo "$PWD") -mindepth 1 \\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
+#    -o -type f -print \
+#    -o -type d -print \
+#    -o -type l -print 2> /dev/null | cut -b1-"
 

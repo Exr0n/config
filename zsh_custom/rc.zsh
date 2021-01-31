@@ -39,9 +39,11 @@ alias gg='gutil'
 alias GG='gutil -A'
 #    python stuff
 alias py='/usr/bin/python3'
+alias py='ipython'
 alias pip='python3 -m pip'
 alias pym='python3 -m'
 alias venv='pym venv . && source bin/activate'
+alias ipy='ipython'
 #    screen stuff
 alias sl='screen -ls'
 alias ss='screen -S '
@@ -64,7 +66,7 @@ alias slep='xset dpms force off'
 alias pbcopy='xsel --clipboard --input'
 alias ss='import png:- | xclip -selection c -t image/png' # https://bbs.archlinux.org/viewtopic.php?id=163312
 alias pbpaste='xsel --clipboard --output'
-alias vidya='pkill xcape && xcape -e "Caps_Lock=Caps_Lock" && ~/Applications/Lunar\ Client-2.4.0.AppImage && pkill xcape && xcape -e "Caps_Lock=Escape"'
+alias vidya='pkill xcape && xcape -e "Caps_Lock=Caps_Lock" && ~/Applications/Lunar*.AppImage && pkill xcape && xcape -e "Caps_Lock=Escape"'
 
 #    makefile
 #alias m='make'
@@ -136,6 +138,16 @@ function run_generic () {
     fi
 }
 alias m='run_generic'
+
+#export FZF_CTRL_T_COMMAND='command find -L $([[ "${PWD##$HOME}" != "${PWD}" ]] && echo "$HOME" || echo "$PWD") -mindepth 1 \\( -path '"'"'*/\\.*'"'"' -o -fstype '"'"'sysfs'"'"' -o -fstype '"'"'devfs'"'"' -o -fstype '"'"'devtmpfs'"'"' -o -fstype '"'"'proc'"'"' \\) -prune \
+#    -o -type f -print \
+#    -o -type d -print \
+#    -o -type l -print 2> /dev/null | cut -b1-'
+#export FZF_CTRL_T_COMMAND='find -L $([[ "${PWD##$HOME}" != "${PWD}" ]] && echo "$HOME" || echo "$PWD") -mindepth 1 \\( -path '"'"'*/\\.*'"'"' -o -fstype '"'"'sysfs'"'"' -o -fstype '"'"'devfs'"'"' -o -fstype '"'"'devtmpfs'"'"' -o -fstype '"'"'proc'"'"' \\) -prune \
+#    -o -type f -print \
+#    -o -type d -print \
+#    -o -type l -print 2> /dev/null | cut -b1-'
+export FZF_CTRL_T_COMMAND='hypertrav $([[ "${PWD##$HOME}" != "${PWD}" ]] && echo "$HOME" || echo "$PWD")'
 
 #    Alias to auto open files with vim
 alias -s {txt,md,cpp,rs,js,mjs,py,properties,yml,yaml}=nvim

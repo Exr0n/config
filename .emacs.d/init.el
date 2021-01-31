@@ -101,9 +101,9 @@
 (global-undo-tree-mode)
 (evil-set-undo-system 'undo-tree)
 
-;; (require 'vimish-fold)
-;; (require 'evil-vimish-fold)
-;; (global-evil-vimish-fold-mode 1)
+(require 'vimish-fold)
+(require 'evil-vimish-fold)
+(global-evil-vimish-fold-mode 1)
 
 ;; ivy
 (ivy-mode 1)
