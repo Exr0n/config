@@ -148,6 +148,7 @@ alias m='run_generic'
 #    -o -type d -print \
 #    -o -type l -print 2> /dev/null | cut -b1-'
 export FZF_CTRL_T_COMMAND='hypertrav $([[ "${PWD##$HOME}" != "${PWD}" ]] && echo "$HOME" || echo "$PWD")'
+export FZF_DEFAULT_COMMAND='hypertrav'
 
 #    Alias to auto open files with vim
 alias -s {txt,md,cpp,rs,js,mjs,py,properties,yml,yaml}=nvim

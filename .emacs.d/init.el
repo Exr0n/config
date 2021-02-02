@@ -13,7 +13,6 @@
 (require 'smart-tabs-mode)
 (smart-tabs-insinuate 'c 'c++ 'javascript 'python)
 
-(visual-line-mode)
 ;; (require 'aggressive-indent)
 ;; (global-aggressive-indent-mode 1)
 ;; (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
@@ -59,6 +58,7 @@
 ;; background
 (setq make-backup-files nil)
 (setq create-lockfiles nil)
+(global-auto-revert-mode t)
 ;; workgroups
 ;; (require 'workgroups2); TODO: FIX
 
@@ -76,6 +76,11 @@
 (setq lsp-ui-sideline-show-hover t)
 (setq lsp-ui-delay 0)
 
+;; completion
+(require 'company)
+(require 'company-lsp)
+(push 'company-lsp company-backends)
+
 ;; Custom
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -85,10 +90,11 @@
  '(custom-safe-themes
    '("a3b6a3708c6692674196266aad1cb19188a6da7b4f961e1369a68f06577afa16" default))
  '(fast-scroll-mode t)
+ '(global-auto-revert-mode t)
  '(highlight-indent-guides-method 'character)
  '(org-agenda-files '("~/materials/capsule/org/inbox.org"))
  '(package-selected-packages
-   '(all-the-icons-ivy-rich treemacs-all-the-icons lsp-ivy lsp-treemacs flycheck lsp-ui lsp-mode fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
+   '(focus company-lsp company all-the-icons-ivy-rich treemacs-all-the-icons lsp-ivy lsp-treemacs flycheck lsp-ui lsp-mode fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
  '(vlf-application 'dont-ask))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -137,6 +143,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(visual-line-mode 1)
 
 ;;; modeline
 ;; (require 'doom-modeline)

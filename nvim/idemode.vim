@@ -30,9 +30,10 @@ Plug 'junegunn/fzf.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'wadackel/vim-dogrun'
 "Favorite so far:
-Plug 'shapeoflambda/dark-purple.vim' " rec
-Plug 'arzg/vim-colors-xcode'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
+"Plug 'shapeoflambda/dark-purple.vim' " rec
+"Plug 'arzg/vim-colors-xcode'
+"Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
 "   HUD
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
@@ -136,7 +137,7 @@ let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 set regexpengine=1 " supposedly makes things faster
-colo dark_purple
+colo challenger_deep
 highlight Comment cterm=italic gui=italic
 highlight Conditional cterm=italic gui=italic
 highlight Repeat cterm=italic gui=italic
