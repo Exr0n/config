@@ -24,4 +24,6 @@ pulse/*
 !pulse/*.conf
 !pulse/*.pa
 okularrc
+QtProject.conf
+Kite/*
 

@@ -217,6 +217,8 @@ nnoremap q: <Nop>
 nmap <Leader>t <Plug>NERDCommenterInvert
 xmap <Leader>t <Plug>NERDCommenterInvert
 
+let g:NERDCustomDelimiters = { 'c': { 'left': '//','right': '' } }
+
 " Align line-wise comment delimiters flush left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1

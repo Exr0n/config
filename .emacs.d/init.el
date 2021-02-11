@@ -67,7 +67,9 @@
 (setq lsp-keymap-prefix "M-l")
 
 (require 'lsp-mode)
+(add-hook 'c-mode-hook #'lsp)
 (add-hook 'c++-mode-hook #'lsp)
+(add-hook 'lisp-mode-hook #'lsp)
 (add-hook 'python-mode-hook #'lsp)
 (add-hook 'javascript-mode-hook #'lsp)
 
@@ -101,7 +103,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(lsp-ui-sideline-symbol-info ((t (:extend t :background "#1e1c31" :foreground "#4d4c6a")))))
 
 ;; ability to redo things
 (global-undo-tree-mode)
@@ -136,6 +138,7 @@
 ;;; font
 (set-face-attribute 'default nil :height 180)
 (set-face-attribute 'default t :font "Iosevka Term SS12" :weight 'light)
+;; (set-face-attribute 'default t :font "Hack Nerd Font" :weight 'light)
 ;; (set-face-attribute 'default t :font "Roboto Mono" :weight 'light)
 ;; (set-face-attribute 'default t :font "Iosevka Nerd Font Mono:light") ; TODO: nerd font
 

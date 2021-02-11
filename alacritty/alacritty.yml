@@ -7,10 +7,10 @@ scrolling:
 font:
     size: 16
     normal:
-        family: Iosevka
-    #    #family: Hack Nerd Font
+        #family: Iosevka
+        #family: Hack Nerd Font
         family: Iosevka Term SS12 Light
-    #    #family: 'RobotoMono'
+        #family: 'RobotoMono'
     use_thin_strokes: true
 colors:
     cursor:

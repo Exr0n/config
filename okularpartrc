@@ -17,7 +17,6 @@ SplitterSizes=147,879
 
 [PageView]
 BackgroundColor=99,99,99
-MouseMode=TextSelect
 ScrollOverlap=5
 UseCustomBackgroundColor=true
 
