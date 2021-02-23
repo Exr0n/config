@@ -19,6 +19,7 @@ lunarclient/*
 !lunarclient/Preferences
 zoomus.conf
 syncthing/config.xml
+syncthing/config.xml.v32
 blender/
 pulse/*
 !pulse/*.conf
@@ -26,4 +27,5 @@ pulse/*
 okularrc
 QtProject.conf
 Kite/*
+Condution/*
 

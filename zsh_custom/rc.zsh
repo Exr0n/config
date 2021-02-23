@@ -39,9 +39,9 @@ alias gg='gutil'
 alias GG='gutil -A'
 #    python stuff
 alias py='/usr/bin/python3'
-alias py='ipython'
-alias pip='python3 -m pip'
-alias pym='python3 -m'
+alias py='ipy'
+alias pip='py -m pip'
+alias pym='py -m'
 alias venv='pym venv . && source bin/activate'
 alias ipy='ipython'
 #    screen stuff

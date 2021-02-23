@@ -67,6 +67,7 @@ Plug 'mhinz/vim-startify'
 
 " Memes
 "Plug 'wakatime/vim-wakatime'
+Plug 'ActivityWatch/aw-watcher-vim'
 
 call plug#end()
 
