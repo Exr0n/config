@@ -6,8 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "evil-surround" "evil-surround.el" (0 0 0 0))
-;;; Generated autoloads from evil-surround.el
+;;;### (autoloads nil "evil-surround" "../../../../.emacs.d/elpa/evil-surround-20200603.2216/evil-surround.el"
+;;;;;;  "9db6b055bda8c5e6990c96d8162bef18")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/evil-surround-20200603.2216/evil-surround.el
 
 (autoload 'evil-surround-delete "evil-surround" "\
 Delete the surrounding delimiters represented by CHAR.
@@ -64,8 +65,21 @@ Evil-Surround mode is enabled in all buffers where
 See `evil-surround-mode' for more information on Evil-Surround mode.
 
 \(fn &optional ARG)" t nil)
+
+;;;### (autoloads "actual autoloads are elsewhere" "evil-surround"
+;;;;;;  "../../../../.emacs.d/elpa/evil-surround-20200603.2216/evil-surround.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/evil-surround-20200603.2216/evil-surround.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "evil-surround" '("evil-surround-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/evil-surround-20200603.2216/evil-surround-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/evil-surround-20200603.2216/evil-surround.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 

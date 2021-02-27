@@ -6,9 +6,9 @@
                          (or (file-name-directory #$) (car load-path))))
 
 
-;;;### (autoloads nil "smart-tabs-mode" "smart-tabs-mode.el" (0 0
-;;;;;;  0 0))
-;;; Generated autoloads from smart-tabs-mode.el
+;;;### (autoloads nil "smart-tabs-mode" "../../../../.emacs.d/elpa/smart-tabs-mode-20200907.2025/smart-tabs-mode.el"
+;;;;;;  "9d99fda4c61ddfc18c8aeefadf44cdf0")
+;;; Generated autoloads from ../../../../.emacs.d/elpa/smart-tabs-mode-20200907.2025/smart-tabs-mode.el
 
 (autoload 'smart-tabs-when "smart-tabs-mode" "\
 
@@ -65,8 +65,21 @@ Add support for a language not already in the `smart-tabs-insinuate-alist'.
 \(fn LANG MODE-HOOK ADVICE-LIST &rest BODY)" nil t)
 
 (function-put 'smart-tabs-add-language-support 'lisp-indent-function '2)
+
+;;;### (autoloads "actual autoloads are elsewhere" "smart-tabs-mode"
+;;;;;;  "../../../../.emacs.d/elpa/smart-tabs-mode-20200907.2025/smart-tabs-mode.el"
+;;;;;;  (0 0 0 0))
+;;; Generated autoloads from ../../../../.emacs.d/elpa/smart-tabs-mode-20200907.2025/smart-tabs-mode.el
 
 (if (fboundp 'register-definition-prefixes) (register-definition-prefixes "smart-tabs-mode" '("smart-tabs-")))
+
+;;;***
+
+;;;***
+
+;;;### (autoloads nil nil ("../../../../.emacs.d/elpa/smart-tabs-mode-20200907.2025/smart-tabs-mode-autoloads.el"
+;;;;;;  "../../../../.emacs.d/elpa/smart-tabs-mode-20200907.2025/smart-tabs-mode.el")
+;;;;;;  (0 0 0 0))
 
 ;;;***
 
