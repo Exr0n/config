@@ -1,14 +1,4 @@
-# actutal keyboard
-xset r rate 170 40
-setxkbmap -option caps:ctrl_modifier
-xcape -e 'Caps_Lock=Escape'
-
-# mouse
-xinput set-prop 'pointer:Razer Razer DeathAdder 2013' 'libinput Natural Scrolling Enabled' 1 # natural scrolling
-xinput set-prop 'pointer:Razer Razer DeathAdder 2013' 'libinput Accel Speed' -0.6 # mouse acceleration
-xinput set-prop 'pointer:Apple Inc. Magic Trackpad 2' 'libinput Natural Scrolling Enabled' 1
-xinput set-prop 'pointer:Apple Inc. Magic Trackpad 2' 'libinput Accel Speed' 0.5
-#xset m 3/5 1
+~/.config/zsh_custom/bin/rebind_keys.zsh
 
 # monitors
 #nvidia-settings --assign CurrentMetaMode="HDMI-0: nvidia-auto-select +1920+0 {ForceCompositionPipeline=On}, DP-5: nvidia-auto-select +0+0 {ForceCompositionPipeline=On}"
@@ -35,7 +25,7 @@ dex -a&
 slstatus &
 emacs --daemon
 eval $(ssh-agent)
-xbindkeys
+xbindkeys -f ~/.config/xbindkeysrc
 
 # scripts
 cd /home/exr0n/projects/Taproot

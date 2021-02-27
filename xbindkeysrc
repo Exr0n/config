@@ -1,3 +1,21 @@
+# scripts
+"~/.config/dontrun_custom/rebind_keys.zsh"
+    Mod4 + Super_L + g
+
+# homerow (apps + slep)
+"brave --incognito"
+    Mod4 + d
+
+"firefox"
+    Mod4 + h
+
+"/bin/alacritty"
+    Mod4 + t
+
+"emacsclient -nc -a=''"
+    Mod4 + n
+
 "sleep 0.1; xset dpms force off"
-    Shift+Alt + s
+    Mod4 + s
+
 

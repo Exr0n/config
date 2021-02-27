@@ -21,6 +21,8 @@ Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
+Plug 'tpope/vim-fugitive'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 
@@ -238,6 +240,14 @@ nmap <Leader>HN <Plug>(GitGutterPrevHunk)
 " git gutter stage/revert hunk because the default seems to be broken...
 nmap <Leader>hs <Plug>(GitGutterStageHunk)
 nmap <Leader>hr <Plug>(GitGutterRevertHunk)
+
+" git conflict resolution via vim-fugitive (https://www.prodops.io/blog/solving-git-merge-conflicts-with-vim)
+" enter diff view
+" choose left
+" choose right
+nnoremap <Leader>gd :Gvdiff<CR>     
+nnoremap <Leader>gh :diffget //2<CR>
+nnoremap <Leader>gl :diffget //3<CR>
 
 " clipboard https://coderwall.com/p/v-st8w/vim-copy-to-system-clipboard-on-a-mac
 xmap <Leader>y :w !xsel --clipboard --input<CR><CR>
