@@ -8,157 +8,6 @@
         {
             "complex_modifications": {
                 "parameters": {
-                    "basic.simultaneous_threshold_milliseconds": 50,
-                    "basic.to_delayed_action_delay_milliseconds": 500,
-                    "basic.to_if_alone_timeout_milliseconds": 1000,
-                    "basic.to_if_held_down_threshold_milliseconds": 500,
-                    "mouse_motion_to_scroll.speed": 100
-                },
-                "rules": []
-            },
-            "devices": [],
-            "fn_function_keys": [
-                {
-                    "from": {
-                        "key_code": "f1"
-                    },
-                    "to": {
-                        "consumer_key_code": "display_brightness_decrement"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f2"
-                    },
-                    "to": {
-                        "consumer_key_code": "display_brightness_increment"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f3"
-                    },
-                    "to": {
-                        "key_code": "mission_control"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f4"
-                    },
-                    "to": {
-                        "key_code": "launchpad"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f5"
-                    },
-                    "to": {
-                        "key_code": "illumination_decrement"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f6"
-                    },
-                    "to": {
-                        "key_code": "illumination_increment"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f7"
-                    },
-                    "to": {
-                        "consumer_key_code": "rewind"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f8"
-                    },
-                    "to": {
-                        "consumer_key_code": "play_or_pause"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f9"
-                    },
-                    "to": {
-                        "consumer_key_code": "fast_forward"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f10"
-                    },
-                    "to": {
-                        "consumer_key_code": "mute"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f11"
-                    },
-                    "to": {
-                        "consumer_key_code": "volume_decrement"
-                    }
-                },
-                {
-                    "from": {
-                        "key_code": "f12"
-                    },
-                    "to": {
-                        "consumer_key_code": "volume_increment"
-                    }
-                }
-            ],
-            "name": "",
-            "parameters": {
-                "delay_milliseconds_before_open_device": 1000
-            },
-            "rules": [
-                {
-                    "description": "helol? Post Esc if Caps is tapped, Control if held.",
-                    "manipulators": [
-                        {
-                            "from": {
-                                "key_code": "left_control",
-                                "modifiers": {
-                                    "optional": [
-                                        "any"
-                                    ]
-                                }
-                            },
-                            "to": [
-                                {
-                                    "key_code": "left_control",
-                                    "lazy": true
-                                }
-                            ],
-                            "to_if_alone": [
-                                {
-                                    "key_code": "escape"
-                                }
-                            ],
-                            "type": "basic"
-                        }
-                    ]
-                }
-            ],
-            "selected": false,
-            "simple_modifications": [],
-            "title": "Change caps_lock to Esc and Control",
-            "virtual_hid_keyboard": {
-                "country_code": 0,
-                "mouse_key_xy_scale": 100
-            }
-        },
-        {
-            "complex_modifications": {
-                "parameters": {
                     "basic.simultaneous_threshold_milliseconds": 70,
                     "basic.to_delayed_action_delay_milliseconds": 400,
                     "basic.to_if_alone_timeout_milliseconds": 350,
@@ -194,24 +43,12 @@
                         ]
                     },
                     {
-                        "description": "Change ^N ^P to arrow keys in Vivaldi",
+                        "description": "left shift += paren",
                         "manipulators": [
                             {
-                                "TODO": "doesn't work /",
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.vivaldi\\.[Vv]ivaldi$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
                                 "from": {
-                                    "key_code": "l",
+                                    "key_code": "left_shift",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "caps_lock"
-                                        ],
                                         "optional": [
                                             "any"
                                         ]
@@ -219,32 +56,156 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "fn"
+                                        "key_code": "left_shift",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "9",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
-                            },
+                            }
+                        ]
+                    },
+                    {
+                        "description": "left command += bracket",
+                        "manipulators": [
                             {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.vivaldi\\.[Vv]ivaldi$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
                                 "from": {
-                                    "key_code": "r",
+                                    "key_code": "left_command",
                                     "modifiers": {
-                                        "TODO": "below could be shift or fn and it works, but not caps_lock :(. I know caps lock is correct because it triggers directly (remap capslock to enter) and that r is correct too",
-                                        "mandatory": [
-                                            "caps_lock"
+                                        "optional": [
+                                            "any"
                                         ]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "return_or_enter"
+                                        "key_code": "left_command",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "hyphen"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "left option += curly",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "left_option",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_option",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "hyphen",
+                                        "modifiers": "left_shift"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "right shift += paren",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_shift",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_shift",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "0",
+                                        "modifiers": [
+                                            "left_shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "right command += bracket",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_command",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_command",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "equal_sign"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "right option += curly",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "right_option",
+                                    "modifiers": {
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "right_option",
+                                        "lazy": true
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "equal_sign",
+                                        "modifiers": "left_shift"
                                     }
                                 ],
                                 "type": "basic"
