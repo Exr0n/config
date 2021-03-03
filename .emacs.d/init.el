@@ -9,6 +9,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/autoload")
 (load "olivetti.el")
+(load "laas.el")
 
 (require 'smart-tabs-mode)
 (smart-tabs-insinuate 'c 'c++ 'javascript 'python)
@@ -32,11 +33,15 @@
   (evil-collection-init))
 (evil-mode 1)
 
-;; editing TODO what got delete from here again?
+;; editing
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
 (require 'undo-tree)
+
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "https://melpa.org/packages/") t)
 
 ;; (require 'smooth-scrolling)				; slow, apparently https://www.reddit.com/r/emacs/comments/3kgv75/why_is_smooth_scrolling_so_slow/cuxk3a3?utm_source=share&utm_medium=web2x&context=3
 ;; (smooth-scrolling-mode 1)
@@ -45,6 +50,12 @@
 (setq mouse-wheel-progressive-speed nil) ;; on a long mouse scroll keep scrolling by 1 line
 ;; (require 'fast-scroll)			   ; TODO: broken
 ;; (setq fast-scroll-throttle 0.1)
+
+; olivetti
+(add-hook 'prog-mode-hook  (lambda ()
+						   (olivetti-mode 1)
+							(olivetti-set-width 120)
+						   ))
 
 ;;; large files (vlf)
 (require 'vlf-setup)
@@ -96,8 +107,10 @@
  '(highlight-indent-guides-method 'character)
  '(org-agenda-files '("~/materials/capsule/org/inbox.org"))
  '(package-selected-packages
-   '(activity-watch-mode request focus company-lsp company all-the-icons-ivy-rich treemacs-all-the-icons lsp-ivy lsp-treemacs flycheck lsp-ui lsp-mode fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
- '(vlf-application 'dont-ask))
+   '(yasnippet aas activity-watch-mode request focus company-lsp company all-the-icons-ivy-rich treemacs-all-the-icons lsp-ivy lsp-treemacs flycheck lsp-ui lsp-mode fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
+ '(vlf-application 'dont-ask)
+ '(warning-suppress-log-types '((use-package)))
+ '(warning-suppress-types '((use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -133,7 +146,7 @@
 (add-hook 'find-file-hook 'display-line-numbers-equalize)
 
 ;; indent guides
-(add-hook 'prog-mode-hook 'highlight-indent-guides-mode) ; TODO doesn't work
+(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
 
 ;;; font
 (set-face-attribute 'default nil :height 180)
@@ -146,7 +159,7 @@
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(visual-line-mode 1)
+(global-visual-line-mode 1)
 
 ;;; modeline
 ;; (require 'doom-modeline)
@@ -157,6 +170,9 @@
 
 ;;; colors
 (load-theme 'doom-challenger-deep)
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'org-mode-hook 'rainbow-delimeters-mode)
 ;; (use-package doom-themes
 ;; 			 :config
 ;; 			 ;; Global settings (defaults)
@@ -190,6 +206,12 @@
 (add-hook 'org-agenda-mode-hook	; superuser.com/a/531670
 		  (lambda()
 			(visual-line-mode -1)))
+
+(add-hook 'org-mode-hook  (lambda ()
+							(olivetti-set-width 120)
+							(olivetti-mode 1)
+							(olivetti-set-width 120)
+						   ))
 ;; start at inbox
 (setq initial-buffer-choice (concat (getenv "HOME") "/materials/capsule/org/inbox.org"))
 
@@ -222,6 +244,56 @@
 
 ;; org + latex
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 3.0))
+
+;; (use-package aas
+;;     :hook (LaTeX-mode . ass-activate-for-major-mode)
+;;     :hook (org-mode . ass-activate-for-major-mode)
+;;     :config
+;;     (aas-set-snippets 'text-mode
+;;     					;; expand unconditionally
+;;     					"o-" "ō"
+;;     					"i-" "ī"
+;;     					"a-" "ā"
+;;     					"u-" "ū"
+;;     					"e-" "ē")
+;;     (aas-set-snippets 'latex-mode
+;;     					;; set condition!
+;;     					:cond #'texmathp ; expand only while in math
+;;     					"supp" "\\supp"
+;;     					"On" "O(n)"
+;;     					"O1" "O(1)"
+;;     					"Olog" "O(\\log n)"
+;;     					"Olon" "O(n \\log n)"
+;;     					;; bind to functions!
+;;     					"//" (lambda () (interactive)
+;;     						   (yas-expand-snippet "\\frac{$1}{$2}$0"))
+;;     					"Span" (lambda () (interactive)
+;;     							 (yas-expand-snippet "\\Span($1)$0"))))
+
+;; (use-package laas
+;; 			  :hook (LaTeX-mode . laas-mode)
+;; 			  :config ; do whatever here
+;; 			  (aas-set-snippets 'laas-mode
+;; 								;; set condition!
+;; 								:cond #'texmathp ; expand only while in math
+;; 								"supp" "\\supp"
+;; 								"On" "O(n)"
+;; 								"O1" "O(1)"
+;; 								"Olog" "O(\\log n)"
+;; 								"Olon" "O(n \\log n)"
+;; 								;; bind to functions!
+;; 								"//" (lambda () (interactive)
+;; 									   (yas-expand-snippet "\\frac{$1}{$2}$0"))
+;; 								"Span" (lambda () (interactive)
+;; 										 (yas-expand-snippet "\\Span($1)$0"))))
+
+(use-package aas
+  :hook (LaTeX-mode . auto-activating-snippets-mode)
+  :hook (org-mode   . auto-activating-snippets-mode)
+  ; ... any other hooks
+  :config (require 'laas))
+
+(use-package laas)
 
 ;; activitywatch and other meta time tracking things
 (global-activity-watch-mode)
