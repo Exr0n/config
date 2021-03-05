@@ -39,6 +39,9 @@
 (setq-default c-basic-offset 4)
 (require 'undo-tree)
 
+;; (require 'smartparens-config)
+;; (smartparens-global-mode t)
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
@@ -106,8 +109,13 @@
  '(global-auto-revert-mode t)
  '(highlight-indent-guides-method 'character)
  '(org-agenda-files '("~/materials/capsule/org/inbox.org"))
+ '(org-latex-packages-alist
+   '(("" "enumitem" nil)
+	 ("" "xesearch" nil)
+	 ("" "trimspaces" nil)
+	 ("" "cancel" nil)))
  '(package-selected-packages
-   '(yasnippet aas activity-watch-mode request focus company-lsp company all-the-icons-ivy-rich treemacs-all-the-icons lsp-ivy lsp-treemacs flycheck lsp-ui lsp-mode fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
+   '(evil-smartparens yasnippet aas activity-watch-mode request focus company-lsp company all-the-icons-ivy-rich treemacs-all-the-icons lsp-ivy lsp-treemacs flycheck lsp-ui lsp-mode fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
  '(vlf-application 'dont-ask)
  '(warning-suppress-log-types '((use-package)))
  '(warning-suppress-types '((use-package))))
@@ -245,55 +253,31 @@
 ;; org + latex
 (setq org-format-latex-options (plist-put org-format-latex-options :scale 3.0))
 
-;; (use-package aas
-;;     :hook (LaTeX-mode . ass-activate-for-major-mode)
-;;     :hook (org-mode . ass-activate-for-major-mode)
-;;     :config
-;;     (aas-set-snippets 'text-mode
-;;     					;; expand unconditionally
-;;     					"o-" "ō"
-;;     					"i-" "ī"
-;;     					"a-" "ā"
-;;     					"u-" "ū"
-;;     					"e-" "ē")
-;;     (aas-set-snippets 'latex-mode
-;;     					;; set condition!
-;;     					:cond #'texmathp ; expand only while in math
-;;     					"supp" "\\supp"
-;;     					"On" "O(n)"
-;;     					"O1" "O(1)"
-;;     					"Olog" "O(\\log n)"
-;;     					"Olon" "O(n \\log n)"
-;;     					;; bind to functions!
-;;     					"//" (lambda () (interactive)
-;;     						   (yas-expand-snippet "\\frac{$1}{$2}$0"))
-;;     					"Span" (lambda () (interactive)
-;;     							 (yas-expand-snippet "\\Span($1)$0"))))
+; manual hooks because prev doesn't seem to be working
+(add-hook 'org-mode-hook 'laas-mode)
 
-;; (use-package laas
-;; 			  :hook (LaTeX-mode . laas-mode)
-;; 			  :config ; do whatever here
-;; 			  (aas-set-snippets 'laas-mode
-;; 								;; set condition!
-;; 								:cond #'texmathp ; expand only while in math
-;; 								"supp" "\\supp"
-;; 								"On" "O(n)"
-;; 								"O1" "O(1)"
-;; 								"Olog" "O(\\log n)"
-;; 								"Olon" "O(n \\log n)"
-;; 								;; bind to functions!
-;; 								"//" (lambda () (interactive)
-;; 									   (yas-expand-snippet "\\frac{$1}{$2}$0"))
-;; 								"Span" (lambda () (interactive)
-;; 										 (yas-expand-snippet "\\Span($1)$0"))))
+;; (use-package laas)
+; NOTE: customize org latex headers with describe-variable org-latex-packages-alist
+(use-package laas
+  :config ; do whatever here
+  (aas-set-snippets 'laas-mode
+                    ;; set condition!
+                    :cond #'texmathp ; expand only while in math
+                    "supp" "\\supp"
+                    "On" "O(n)"
+                    "O1" "O(1)"
+                    "Olog" "O(\\log n)"
+                    "Olon" "O(n \\log n)"
+					"hh" "\\left("
+					"tt" "\\right)"
+                    ;; bind to functions!
+                    ;; "//" (lambda () (interactive)
+                    ;;          (yas-expand-snippet "\\frac{$1}{$2}$0"))
+                    ;; "Span" (lambda () (interactive)
+                    ;;          (yas-expand-snippet "\\Span($1)$0"))))
+					))
 
-(use-package aas
-  :hook (LaTeX-mode . auto-activating-snippets-mode)
-  :hook (org-mode   . auto-activating-snippets-mode)
-  ; ... any other hooks
-  :config (require 'laas))
-
-(use-package laas)
+(yas-minor-mode)
 
 ;; activitywatch and other meta time tracking things
 (global-activity-watch-mode)

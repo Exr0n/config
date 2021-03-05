@@ -18,4 +18,13 @@
 "sleep 0.1; xset dpms force off"
     Mod4 + s
 
+# arrowkeys TODO not working
+"/bin/xte 'key Up'"
+    Mod4 + period
+"/bin/xte 'key Left'"
+    Mod4 + e
+"/bin/xte 'key Down'"
+    Mod4 + o
+"/bin/xte 'key Right'"
+    Mod4 + u
 
