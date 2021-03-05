@@ -258,6 +258,9 @@
 
 ;; (use-package laas)
 ; NOTE: customize org latex headers with describe-variable org-latex-packages-alist
+(require 'yasnippet)
+(yas-global-mode 1)
+
 (use-package laas
   :config ; do whatever here
   (aas-set-snippets 'laas-mode
@@ -268,8 +271,25 @@
                     "O1" "O(1)"
                     "Olog" "O(\\log n)"
                     "Olon" "O(n \\log n)"
+
 					"hh" "\\left("
 					"tt" "\\right)"
+
+					"FF" "\\mathbb{F}"
+					"CC" "\\mathbb{C}"
+					"RR" "\\mathbb{R}"
+					"NN" "\\mathbb{N}"
+					"ZZ" "\\mathbb{Z}"
+					"QQ" "\\mathbb{Q}"
+					"HH" "\\mathbb{H}"
+					"PP" "\\mathbb{P}"
+
+					"Pp" "\\mathcal{P}"
+					"Ll" "\\mathcal{L}"
+					"Mm" "\\mathcal{M}"
+
+					"sq" (lambda () (interactive)
+						   (yas-expand-snippet "\\sqrt{$1}$0"))
                     ;; bind to functions!
                     ;; "//" (lambda () (interactive)
                     ;;          (yas-expand-snippet "\\frac{$1}{$2}$0"))
@@ -277,7 +297,6 @@
                     ;;          (yas-expand-snippet "\\Span($1)$0"))))
 					))
 
-(yas-minor-mode)
 
 ;; activitywatch and other meta time tracking things
 (global-activity-watch-mode)
