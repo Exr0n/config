@@ -2,6 +2,9 @@
 "~/.config/dontrun_custom/rebind_keys.zsh"
     Mod4 + Super_L + g
 
+"~/.config/zsh_custom/bin/alt_active_setvar.zsh"
+    Mod4 + c
+
 # homerow (apps + slep)
 "brave --incognito"
     Mod4 + d
@@ -19,12 +22,21 @@
     Mod4 + s
 
 # arrowkeys TODO not working
-"/bin/xte 'key Up'"
+"/bin/xdotool key --clearmodifiers --window $(xdotool getactivewindow) Up"
     Mod4 + period
-"/bin/xte 'key Left'"
+"/bin/xdotool key --clearmodifiers --window $(xdotool getactivewindow) Down"
     Mod4 + e
-"/bin/xte 'key Down'"
+"/bin/xdotool key --clearmodifiers --window $(xdotool getactivewindow) Left"
     Mod4 + o
-"/bin/xte 'key Right'"
+"/bin/xdotool key --clearmodifiers --window $(xdotool getactivewindow) Right"
     Mod4 + u
 
+# alt active updown
+"/bin/xdotool key --clearmodifiers --window $(~/.config/zsh_custom/bin/alt_active_checkvar.zsh) Up"
+    Mod4 + k
+"/bin/xdotool key --clearmodifiers --window $(~/.config/zsh_custom/bin/alt_active_checkvar.zsh) Down"
+    Mod4 + j
+"/bin/xdotool key --clearmodifiers --window $(~/.config/zsh_custom/bin/alt_active_checkvar.zsh) Up"
+    Alt + k
+"/bin/xdotool key --clearmodifiers --window $(~/.config/zsh_custom/bin/alt_active_checkvar.zsh) Down"
+    Alt + j

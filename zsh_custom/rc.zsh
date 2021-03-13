@@ -9,6 +9,15 @@ alias tsn='ts-node'
 alias trf='ssh exr0n@hop.exr0n.com -p 2222'
 alias pls='sudo'
 alias u='mkdir -p "$CAPSULEROOT/notes" && v "$CAPSULEROOT/notes/$(date +"%Y_%m_%d").md"'
+function mv_confirm {
+    if [[ -f "$([[ -d $2 ]] && echo "$2/$(basename $1)" || echo "$2")" ]]; then
+        echo Destination Exists!
+        return 1
+    else
+        mv $1 $2
+    fi
+}
+alias mv='mv_confirm'
 #    vim tmux integration
 #        that moment when you forget what's vim and what's tmux
 alias :q='tmux kill-pane'
@@ -66,6 +75,9 @@ alias pbcopy='xsel --clipboard --input'
 alias ss='import png:- | xclip -selection c -t image/png' # https://bbs.archlinux.org/viewtopic.php?id=163312
 alias pbpaste='xsel --clipboard --output'
 alias vidya='pkill xcape && xcape -e "Caps_Lock=Caps_Lock" && ~/Applications/Lunar*.AppImage && pkill xcape && xcape -e "Caps_Lock=Escape"'
+
+#   custom alt active
+alias aset='alt_active_setvar.zsh'
 
 #    makefile
 #alias m='make'

@@ -8,8 +8,6 @@ exe 'set rtp+=' . $VIMCONFIG
 
 call plug#begin($VIMCONFIG.'/plugged')
 
-
-
 " Editing
 Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
@@ -70,6 +68,7 @@ Plug 'mhinz/vim-startify'
 " Memes
 "Plug 'wakatime/vim-wakatime'
 Plug 'ActivityWatch/aw-watcher-vim'
+Plug 'floobits/floobits-neovim'
 
 call plug#end()
 

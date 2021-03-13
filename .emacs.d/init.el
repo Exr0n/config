@@ -9,7 +9,6 @@
 
 (add-to-list 'load-path "~/.emacs.d/autoload")
 (load "olivetti.el")
-(load "laas.el")
 
 (require 'smart-tabs-mode)
 (smart-tabs-insinuate 'c 'c++ 'javascript 'python)
@@ -108,14 +107,34 @@
  '(fast-scroll-mode t)
  '(global-auto-revert-mode t)
  '(highlight-indent-guides-method 'character)
- '(org-agenda-files '("~/materials/capsule/org/inbox.org"))
+ '(org-agenda-files
+   '("~/org/stepup/seec/general_action_items.org" "~/materials/capsule/org/inbox.org"))
+ '(org-latex-default-packages-alist
+   '(("AUTO" "inputenc" t
+	  ("pdflatex"))
+	 ("T1" "fontenc" t
+	  ("pdflatex"))
+	 ("" "graphicx" t nil)
+	 ("" "grffile" t nil)
+	 ("" "longtable" nil nil)
+	 ("" "wrapfig" nil nil)
+	 ("" "rotating" nil nil)
+	 ("normalem" "ulem" t nil)
+	 ("" "amsmath" t nil)
+	 ("" "textcomp" t nil)
+	 ("" "amssymb" t nil)
+	 ("" "capt-of" nil nil)
+	 ("" "hyperref" nil nil)))
  '(org-latex-packages-alist
-   '(("" "enumitem" nil)
-	 ("" "xesearch" nil)
-	 ("" "trimspaces" nil)
-	 ("" "cancel" nil)))
+   '(("" "siunitx" t)
+	 ("" "enumitem" t)
+	 ("" "xesearch" t)
+	 ("" "trimspaces" t)
+	 ("" "cancel" t)
+	 "\\setcounter{section}{-1}"))
  '(package-selected-packages
-   '(evil-smartparens yasnippet aas activity-watch-mode request focus company-lsp company all-the-icons-ivy-rich treemacs-all-the-icons lsp-ivy lsp-treemacs flycheck lsp-ui lsp-mode fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
+   '(laas evil-smartparens yasnippet aas activity-watch-mode request focus company-lsp company all-the-icons-ivy-rich treemacs-all-the-icons lsp-ivy lsp-treemacs flycheck lsp-ui lsp-mode fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
+ '(smartparens-global-mode nil)
  '(vlf-application 'dont-ask)
  '(warning-suppress-log-types '((use-package)))
  '(warning-suppress-types '((use-package))))
@@ -264,6 +283,15 @@
 (use-package laas
   :config ; do whatever here
   (aas-set-snippets 'laas-mode
+					":B" (lambda () (interactive)
+						   (yas-expand-snippet "\\boxed{\\text{$1}}$0"))
+					":t" (lambda () (interactive)
+						   (yas-expand-snippet "\\text{ $1 }$0"))
+					":M" (lambda () (interactive)
+						   (yas-expand-snippet "\n\\[\\begin{aligned}\n    $1\n\\end{aligned}\\]\n$0"))
+					":m" (lambda () (interactive)
+						   ;; (yas-expand-snippet "\\( $1 \\)$0"))
+						   (yas-expand-snippet "\$$1\$$0"))
                     ;; set condition!
                     :cond #'texmathp ; expand only while in math
                     "supp" "\\supp"
@@ -288,8 +316,12 @@
 					"Ll" "\\mathcal{L}"
 					"Mm" "\\mathcal{M}"
 
-					"sq" (lambda () (interactive)
+					":Q" (lambda () (interactive)
 						   (yas-expand-snippet "\\sqrt{$1}$0"))
+                    ":/" (lambda () (interactive)
+                           (yas-expand-snippet "\\frac{$1}{$2}$0"))
+					":b" (lambda () (interactive)
+						   (yas-expand-snippet "\\boxed{$1}$0"))
                     ;; bind to functions!
                     ;; "//" (lambda () (interactive)
                     ;;          (yas-expand-snippet "\\frac{$1}{$2}$0"))
