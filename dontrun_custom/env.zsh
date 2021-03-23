@@ -48,6 +48,8 @@ export MYVIMRC="$VIMCONFIG/vimrc"
 export VIMINIT='source $MYVIMRC'
 export IDEMODE=1
 
+export MAKEFLAGS="-j"
+
 #export FZF_CTRL_T_COMMAND="command find -L $([[ "${PWD##$HOME}" != "${PWD}" ]] && echo "$HOME" || echo "$PWD") -mindepth 1 \\( -path '*/\\.*' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
 #    -o -type f -print \
 #    -o -type d -print \

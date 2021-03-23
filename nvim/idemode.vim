@@ -88,7 +88,7 @@ endif
 " from https://www.linode.com/docs/tools-reference/tools/introduction-to-vim-customization/
 set ttyfast " speed up scrolling
 set scrolloff=5 " display 8 lines above and below cursor at all times
-set matchpairs+=<:>
+set matchpairs+=<:>,$:$
 
 " auto-toggle hybrid line numbers on buffer enter/leave
 " source: https://jeffkreeftmeijer.com/vim-number/

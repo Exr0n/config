@@ -108,7 +108,7 @@
  '(global-auto-revert-mode t)
  '(highlight-indent-guides-method 'character)
  '(org-agenda-files
-   '("~/org/stepup/seec/general_action_items.org" "~/materials/capsule/org/inbox.org"))
+   '("~/pass/quizes/21math530/quiz_review.org" "~/org/stepup/seec/general_action_items.org" "~/materials/capsule/org/inbox.org"))
  '(org-latex-default-packages-alist
    '(("AUTO" "inputenc" t
 	  ("pdflatex"))
@@ -133,7 +133,7 @@
 	 ("" "cancel" t)
 	 "\\setcounter{section}{-1}"))
  '(package-selected-packages
-   '(laas evil-smartparens yasnippet aas activity-watch-mode request focus company-lsp company all-the-icons-ivy-rich treemacs-all-the-icons lsp-ivy lsp-treemacs flycheck lsp-ui lsp-mode fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
+   '(hl-todo laas evil-smartparens yasnippet aas activity-watch-mode request focus company-lsp company all-the-icons-ivy-rich treemacs-all-the-icons lsp-ivy lsp-treemacs flycheck lsp-ui lsp-mode fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
  '(smartparens-global-mode nil)
  '(vlf-application 'dont-ask)
  '(warning-suppress-log-types '((use-package)))
@@ -200,6 +200,7 @@
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'org-mode-hook 'rainbow-delimeters-mode)
+(add-hook 'prog-mode-hook 'hl-todo-mode)
 ;; (use-package doom-themes
 ;; 			 :config
 ;; 			 ;; Global settings (defaults)
@@ -285,13 +286,15 @@
   (aas-set-snippets 'laas-mode
 					":B" (lambda () (interactive)
 						   (yas-expand-snippet "\\boxed{\\text{$1}}$0"))
-					":t" (lambda () (interactive)
+					";t" (lambda () (interactive)
 						   (yas-expand-snippet "\\text{ $1 }$0"))
 					":M" (lambda () (interactive)
 						   (yas-expand-snippet "\n\\[\\begin{aligned}\n    $1\n\\end{aligned}\\]\n$0"))
 					":m" (lambda () (interactive)
 						   ;; (yas-expand-snippet "\\( $1 \\)$0"))
 						   (yas-expand-snippet "\$$1\$$0"))
+					";m" (lambda () (interactive)
+						   (yas-expand-snippet "\( $1 \)$0"))
                     ;; set condition!
                     :cond #'texmathp ; expand only while in math
                     "supp" "\\supp"
@@ -300,8 +303,10 @@
                     "Olog" "O(\\log n)"
                     "Olon" "O(n \\log n)"
 
-					"hh" "\\left("
-					"tt" "\\right)"
+					"pi" "\pi"
+
+					"nn" "\\left("
+					"ss" "\\right)"
 
 					"FF" "\\mathbb{F}"
 					"CC" "\\mathbb{C}"
@@ -322,6 +327,10 @@
                            (yas-expand-snippet "\\frac{$1}{$2}$0"))
 					":b" (lambda () (interactive)
 						   (yas-expand-snippet "\\boxed{$1}$0"))
+					"tt" (lambda () (interactive)
+						   (yas-expand-snippet "\\begin{$1}$2\\end{$1}$0"))
+					"hh" (lambda () (interactive)
+						   (yas-expand-snippet "\\left$1\\right$1 $0"))
                     ;; bind to functions!
                     ;; "//" (lambda () (interactive)
                     ;;          (yas-expand-snippet "\\frac{$1}{$2}$0"))
