@@ -42,6 +42,7 @@ colors:
     #     magenta: '0xdb85f3'
     #     cyan:    '0x86f5e6'
     #     white:   '0xdbe7fb'
+
     # [challenger deep colors](https://github.com/challenger-deep-theme/alacritty/blob/master/challenger-deep.yml)
     # Default colors
     primary:
