@@ -41,7 +41,7 @@ function gutil {
     fi
     gpl
     git add ${1:-"."} &&\
-    git commit -S -v --allow-empty
+    git commit -v --allow-empty
     gp
 }
 alias gg='gutil'
@@ -73,6 +73,7 @@ alias sus='systemctl suspend'
 alias slep='xset dpms force off'
 alias pbcopy='xsel --clipboard --input'
 alias ss='import png:- | xclip -selection c -t image/png' # https://bbs.archlinux.org/viewtopic.php?id=163312
+alias yay='yay --noremovemake'
 alias pbpaste='xsel --clipboard --output'
 alias vidya='pkill xcape && xcape -e "Caps_Lock=Caps_Lock" && ~/Applications/Lunar*.AppImage && pkill xcape && xcape -e "Caps_Lock=Escape"'
 alias myip='curl -4 icanhazip.com; curl -6 icanhazip.com'
