@@ -1,4 +1,5 @@
 #!/bin/zsh
+xbindkeys
 
 # keyboard
 xset r rate 170 40
