@@ -18,7 +18,7 @@
 ;; (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 
 ;; keybinds
-(global-set-key (kbd "C-S-v") 'x-clipboard-yank)
+(global-set-key (kbd "C-S-v") 'clipboard-yank)
 (global-set-key (kbd "C-S-c") 'clipboard-kill-ring-save)
 
 ;;; clipboard (except keybinds, see keybind section)
@@ -108,7 +108,7 @@
  '(global-auto-revert-mode t)
  '(highlight-indent-guides-method 'character)
  '(org-agenda-files
-   '("~/pass/quizes/21math530/quiz_review.org" "~/org/stepup/seec/general_action_items.org" "~/materials/capsule/org/inbox.org"))
+   '("~/org/schoolwork_ibx.org" "~/org/usaypt2021/ypt2021_chain_ibx.org" "~/org/config_ibx.org" "~/org/projects_ibx.org" "~/materials/capsule/org/inbox.org" "~/org/networking_ibx.org" "~/pass/quizes/21math530/quiz_review.org" "~/org/stepup/seec/general_action_items.org"))
  '(org-latex-default-packages-alist
    '(("AUTO" "inputenc" t
 	  ("pdflatex"))
@@ -240,6 +240,9 @@
 							(olivetti-mode 1)
 							(olivetti-set-width 120)
 						   ))
+
+(add-hook 'org-mode-hook  (lambda ()
+							(flyspell-mode t)))
 ;; start at inbox
 (setq initial-buffer-choice (concat (getenv "HOME") "/materials/capsule/org/inbox.org"))
 
@@ -321,6 +324,8 @@
 					"Ll" "\\mathcal{L}"
 					"Mm" "\\mathcal{M}"
 
+					"inf" "\\infty"
+
 					":Q" (lambda () (interactive)
 						   (yas-expand-snippet "\\sqrt{$1}$0"))
                     ":/" (lambda () (interactive)
@@ -331,6 +336,10 @@
 						   (yas-expand-snippet "\\begin{$1}$2\\end{$1}$0"))
 					"hh" (lambda () (interactive)
 						   (yas-expand-snippet "\\left$1\\right$1 $0"))
+					"sum" (lambda () (interactive)
+						   (yas-expand-snippet "\\sum_{$1}^{$2} $0"))
+					"int" (lambda () (interactive)
+						   (yas-expand-snippet "\\int_{$1}^{$2} $3 dx $0"))
                     ;; bind to functions!
                     ;; "//" (lambda () (interactive)
                     ;;          (yas-expand-snippet "\\frac{$1}{$2}$0"))
