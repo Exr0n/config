@@ -40,6 +40,7 @@ Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'cespare/vim-toml'		" .toml syntax highlighting
 Plug 'luochen1990/rainbow'
 Plug 'airblade/vim-gitgutter'
+Plug 'rhysd/git-messenger.vim'
 Plug 'rickhowe/diffchar.vim'
 Plug 'Yggdroot/indentLine'
 let g:indentLine_char = '▏'
@@ -56,6 +57,8 @@ let g:rainbow_conf = {
 
 let g:gitgutter_highlight_linenrs = 1 " auto highlight change line numbers
 let g:gitgutter_preview_win_floating = 0 " Disable floating/popup window for <Leader>hp
+
+let g:git_messenger_include_diff = "current" " show git diff of commit in pop-up window by default
 
 " Rednering
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install' }
