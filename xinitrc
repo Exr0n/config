@@ -47,6 +47,8 @@ xset +fp /usr/share/fonts/local,/usr/share/fonts/TTF
 #feh --bg-fill --no-xinerama ~/snap/background.jpg
 /home/exr0n/projects/backdash/backdash &
 
+#sudo dmesg -w > "/home/exr0n/vol/storage/archive/dmesg_logs/$(date -Is).txt" &
+
 # go!
 #exec i3
 #xcompmgr&

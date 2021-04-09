@@ -5,6 +5,9 @@
 "~/.config/zsh_custom/bin/alt_active_setvar.zsh"
     Mod4 + c
 
+"import png:- | xclip -selection c -t image/png &" # TODO: BROKEN
+    Mod4 + r
+
 # homerow (apps + slep)
 "brave --incognito"
     Mod4 + d
@@ -18,7 +21,7 @@
 "emacsclient -nc -a=''"
     Mod4 + n
 
-"sleep 0.1; xset dpms force off"
+"sleep 0.2; xset dpms force off"
     Mod4 + s
 
 # arrowkeys TODO not working

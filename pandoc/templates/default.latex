@@ -27,6 +27,7 @@ $endfor$
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
+\usepackage{gensymb}
 
 \usepackage[normalem]{ulem}
 
@@ -34,6 +35,7 @@ $endfor$
 
 \usepackage{ifthen}
 \usepackage{trimspaces}
+\usepackage{setspace}
 
 \usepackage{graphicx}
 \usepackage{xesearch}
@@ -127,7 +129,7 @@ $endfor$
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-
+$header-includes$
 
 \usepackage[margin=1in]{geometry}
 
@@ -163,15 +165,18 @@ $endfor$
 %\rhead{\textrmlf{Compiled} \today \textrmlf{\ ({\#}$BUILDID$)}}    % original
 %\rhead{\textrmlf{Compiled }\#$BUILDID$\textrmlf{ on} \today }      % old date
 \rhead{
+  $if(date)$
   $if(BUILDID)$
   \textrmlf{Compiled }
   \#$BUILDID$
-  \textrmlf{ on}
+  \textrmlf{ }
   $endif$
-  $if(date)$
-  $date$
+  \textrmlf{on} $date$
   $else$
   \today
+  $endif$
+  $if(taproottypeessay)$
+  amazinaaaaaaaaaa
   $endif$
 }       % new date
 $if(author)$
@@ -221,6 +226,7 @@ $endif$
 \DeclareMathOperator{\orange}{\text{range}}
 \DeclareMathOperator{\ospan}{\text{span}}
 \DeclareMathOperator{\onull}{\text{null}}
+\DeclareMathOperator{\odim}{\text{dim}}
 
 \begin{document}
 
