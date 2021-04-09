@@ -103,6 +103,24 @@ $endfor$
 }
 
 \usepackage{mathspec}
+$if(mainfont)$
+ %\setmainfont[
+ %   ItalicFont     = $mainfont$-Italic,
+ %   BoldFont       = $mainfont$-Bold,
+ %   BoldItalicFont = $mainfont$-Bold-Italic]{$if(mainfontbase)$$mainfontbase$$else$$mainfont$$endif$}
+\setmainfont[Iosevka]
+%$if(fontbaselight)$
+% \newfontfamily\NHLight[
+%    ItalicFont     = $fontbaselight$-Light-Italic,
+%    BoldFont       = $fontbaselight$-Light,
+%    BoldItalicFont = $fontbaselight$-Light-Italic]{$fontbase$-Light}
+%$else$
+\newfontfamily\NHLight[
+  ItalicFont     = HelveticaNeue-LightItalic,
+  BoldFont       = HelveticaNeue-UltraLight,
+  BoldItalicFont = HelveticaNeue-UltraLightItalic]{HelveticaNeue-Light}
+%$endif$
+$else$
 \setmainfont[
   ItalicFont     = HelveticaNeue-Italic,
   BoldFont       = HelveticaNeue-Bold,
@@ -111,14 +129,7 @@ $endfor$
   ItalicFont     = HelveticaNeue-LightItalic,
   BoldFont       = HelveticaNeue-UltraLight,
   BoldItalicFont = HelveticaNeue-UltraLightItalic]{HelveticaNeue-Light}
-% \setmainfont[
-%    ItalicFont     = Iosevka-Aile-Italic,
-%    BoldFont       = Iosevka-Aile-Bold,
-%    BoldItalicFont = Iosevka-Aile-Bold-Italic]{Iosevka}
-% \newfontfamily\NHLight[
-%    ItalicFont     = Iosevka-Aile-Light-Italic,
-%    BoldFont       = Iosevka-Aile-Light,
-%    BoldItalicFont = Iosevka-Aile-Light-Italic]{Iosevka-Light}
+$endif$
 
 \newcommand\textrmlf[1]{{\NHLight#1}}
 \newcommand\textitlf[1]{{\NHLight\itshape#1}}
