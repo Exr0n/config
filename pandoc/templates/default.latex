@@ -43,6 +43,7 @@ $endfor$
 
 \usepackage{lastpage}
 
+\usepackage{physics}
 \usepackage{siunitx}
 \sisetup{per-mode=symbol}
 
@@ -104,32 +105,17 @@ $endfor$
 
 \usepackage{mathspec}
 $if(mainfont)$
- %\setmainfont[
- %   ItalicFont     = $mainfont$-Italic,
- %   BoldFont       = $mainfont$-Bold,
- %   BoldItalicFont = $mainfont$-Bold-Italic]{$if(mainfontbase)$$mainfontbase$$else$$mainfont$$endif$}
-\setmainfont[Iosevka]
-%$if(fontbaselight)$
-% \newfontfamily\NHLight[
-%    ItalicFont     = $fontbaselight$-Light-Italic,
-%    BoldFont       = $fontbaselight$-Light,
-%    BoldItalicFont = $fontbaselight$-Light-Italic]{$fontbase$-Light}
-%$else$
-\newfontfamily\NHLight[
-  ItalicFont     = HelveticaNeue-LightItalic,
-  BoldFont       = HelveticaNeue-UltraLight,
-  BoldItalicFont = HelveticaNeue-UltraLightItalic]{HelveticaNeue-Light}
-%$endif$
+\setmainfont{$mainfont$}
 $else$
 \setmainfont[
   ItalicFont     = HelveticaNeue-Italic,
   BoldFont       = HelveticaNeue-Bold,
   BoldItalicFont = HelveticaNeue-BoldItalic]{HelveticaNeue}
+$endif$
 \newfontfamily\NHLight[
   ItalicFont     = HelveticaNeue-LightItalic,
   BoldFont       = HelveticaNeue-UltraLight,
   BoldItalicFont = HelveticaNeue-UltraLightItalic]{HelveticaNeue-Light}
-$endif$
 
 \newcommand\textrmlf[1]{{\NHLight#1}}
 \newcommand\textitlf[1]{{\NHLight\itshape#1}}

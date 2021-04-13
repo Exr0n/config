@@ -55,3 +55,4 @@ xset +fp /usr/share/fonts/local,/usr/share/fonts/TTF
 slstatus&
 exec dwm
 
+/home/exr0n/.config/dontrun_custom/autostart.zsh &

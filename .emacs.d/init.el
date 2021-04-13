@@ -125,6 +125,7 @@
 	 ("" "amssymb" t nil)
 	 ("" "capt-of" nil nil)
 	 ("" "hyperref" nil nil)))
+ '(org-latex-packages-alist '(("" "cancel" t) ("" "physics" t)))
  '(package-selected-packages
    '(flyspell-correct-ivy org-fragtog hl-todo laas evil-smartparens yasnippet aas activity-watch-mode request focus company-lsp company all-the-icons-ivy-rich treemacs-all-the-icons lsp-ivy lsp-treemacs flycheck lsp-ui lsp-mode fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
  '(smartparens-global-mode nil)
@@ -169,8 +170,9 @@
 (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
 
 ;;; font
-(set-face-attribute 'default nil :height 180)
+(set-face-attribute 'default nil :height 220)
 (set-face-attribute 'default t :font "Iosevka Term SS12" :weight 'light)
+;; (set-face-attribute 'default t :font "Iosevka Term SS12" :weight 'light)
 ;; (set-face-attribute 'default t :font "Hack Nerd Font" :weight 'light)
 ;; (set-face-attribute 'default t :font "Roboto Mono" :weight 'light)
 ;; (set-face-attribute 'default t :font "Iosevka Nerd Font Mono:light") ; TODO: nerd font
@@ -182,36 +184,40 @@
 (global-visual-line-mode 1)
 
 ;;; modeline
-;; (require 'doom-modeline)
-;; (doom-modeline-mode 1)
 (use-package doom-modeline
-  :ensure t
-  :init (doom-modeline-mode 1))
+             :ensure t
+             :init (doom-modeline-mode 1))
 
 ;;; colors
-(load-theme 'doom-challenger-deep)
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'org-mode-hook 'rainbow-delimeters-mode)
-(add-hook 'prog-mode-hook 'hl-todo-mode)
-;; (use-package doom-themes
-;; 			 :config
-;; 			 ;; Global settings (defaults)
-;; 			 (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-;; 				   doom-themes-enable-italic t) ; if nil, italics is universally disabled
-;; 			 (load-theme 'doom-one t)
+(use-package rainbow-delimiters
+             :config
+	         (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+	         (add-hook 'org-mode-hook 'rainbow-delimeters-mode))
 
-;; 			 ;; Enable flashing mode-line on errors
-;; 			 (doom-themes-visual-bell-config)
+(use-package hl-todo-mode
+             :config
+             (add-hook 'prog-mode-hook 'hl-todo-mode))
 
-;; 			 ;; Enable custom neotree theme (all-the-icons must be installed!)
-;; 			 (doom-themes-neotree-config)
-;; 			 ;; or for treemacs users
-;; 			 (setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
-;; 			 (doom-themes-treemacs-config)
 
-;; 			 ;; Corrects (and improves) org-mode's native fontification.
-;; 			 (doom-themes-org-config))
+;; (load-theme 'doom-challenger-deep)
+(use-package doom-themes
+			 :config
+			 ;; Global settings (defaults)
+			 (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+				   doom-themes-enable-italic t) ; if nil, italics is universally disabled
+			 (load-theme 'doom-challenger-deep t)
+
+			 ;; Enable flashing mode-line on errors
+			 (doom-themes-visual-bell-config)
+
+			 ;; Enable custom neotree theme (all-the-icons must be installed!)
+			 (doom-themes-neotree-config)
+			 ;; or for treemacs users
+			 (setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
+			 (doom-themes-treemacs-config)
+
+			 ;; Corrects (and improves) org-mode's native fontification.
+			 (doom-themes-org-config))
 
 ;; org
 (require 'org)
@@ -271,7 +277,7 @@
 
 ; manual hooks because prev doesn't seem to be working
 (add-hook 'org-mode-hook 'laas-mode)
-;(add-hook 'org-mode-hook 'org-fragtog-mode)
+(add-hook 'org-mode-hook 'org-fragtog-mode)
 
 ;; (use-package laas)
 ; NOTE: customize org latex headers with describe-variable org-latex-packages-alist
@@ -300,59 +306,70 @@
                     "Olog" "O(\\log n)"
                     "Olon" "O(n \\log n)"
 
-					"pi" "\pi"
+					"tr " "^\\top"
 
-					"nn" "\\left("
+					" pi " "\\pi"
+
+					" nn" "\\left("
 					"ss" "\\right)"
 
-					"FF" "\\mathbb{F}"
-					"CC" "\\mathbb{C}"
-					"RR" "\\mathbb{R}"
-					"NN" "\\mathbb{N}"
-					"ZZ" "\\mathbb{Z}"
-					"QQ" "\\mathbb{Q}"
-					"HH" "\\mathbb{H}"
-					"PP" "\\mathbb{P}"
+					" FF " "\\mathbb{F}"
+					" CC " "\\mathbb{C}"
+					" RR " "\\mathbb{R}"
+					" NN " "\\mathbb{N}"
+					" ZZ " "\\mathbb{Z}"
+					" QQ " "\\mathbb{Q}"
+					" HH " "\\mathbb{H}"
+					" PP " "\\mathbb{P}"
 
-					"Pp" "\\mathcal{P}"
-					"Ll" "\\mathcal{L}"
-					"Mm" "\\mathcal{M}"
+					" Pp " "\\mathcal{P}"
+					" Ll " "\\mathcal{L}"
+					" Mm " "\\mathcal{M}"
+					" Dd " "\\mathcal{M}"
 
-					"inf" "\\infty"
+					" inf " "\\infty"
 
-					"sin" "\\sin"
-					"cos" "\\cos"
-					"tan" "\\tan"
-					"cot" "\\cot"
-					"sec" "\\sec"
-					"csc" "\\csc"
+					" sin " "\\sin"
+					" cos " "\\cos"
+					" tan " "\\tan"
+					" cot " "\\cot"
+					" sec " "\\sec"
+					" csc " "\\csc"
 
-					":Q" (lambda () (interactive)
-						   (yas-expand-snippet "\\sqrt{$1}$0"))
-                    ":/" (lambda () (interactive)
-                           (yas-expand-snippet "\\frac{$1}{$2}$0"))
-					":b" (lambda () (interactive)
-						   (yas-expand-snippet "\\boxed{$1}$0"))
-					"tt" (lambda () (interactive)
-						   (yas-expand-snippet "\\begin{$1}$2\\end{$1}$0"))
-					"hh" (lambda () (interactive)
-						   (yas-expand-snippet "\\left$1\\right$1 $0"))
-					"sum" (lambda () (interactive)
-						   (yas-expand-snippet "\\sum_{$1}^{$2} $0"))
-					"int" (lambda () (interactive)
-						   (yas-expand-snippet "\\int $1 dx $2$0"))
-					"dint" (lambda () (interactive)
-						   (yas-expand-snippet "\\int_{$1}^{$2} $3 dx$0"))
-					":t" (lambda () (interactive)
-						   (yas-expand-snippet "\\text{ $1 }$0"))
+					":Q"     (lambda () (interactive)
+							   (yas-expand-snippet "\\sqrt{$1}$0"))
+					":C"     (lambda () (interactive)
+							   (yas-expand-snippet "\\cancel{$1}$0"))
+					":c"     (lambda () (interactive)
+							   (yas-expand-snippet "\\cancelto{$1}{$2}$0"))
+					":V"     (lambda () (interactive)
+							   (yas-expand-snippet "\\lVert $1 \\rVert$0"))
+					":/"     (lambda () (interactive)
+							   (yas-expand-snippet "\\frac{$1}{$2}$0"))
+					":b"     (lambda () (interactive)
+							   (yas-expand-snippet "\\boxed{$1}$0"))
+					" tt"    (lambda () (interactive)
+							   (yas-expand-snippet "\\begin{$1}$2\\end{$1}$0"))
+					" hh"    (lambda () (interactive)
+							   (yas-expand-snippet "\\left$1\\right$1 $0"))
+					" sum "  (lambda () (interactive)
+							   (yas-expand-snippet "\\sum_{$1}^{$2} $0"))
+					" int "  (lambda () (interactive)
+							   (yas-expand-snippet "\\int $1 dx $2$0"))
+					" dint " (lambda () (interactive)
+							   (yas-expand-snippet "\\int_{$1}^{$2} $3 dx$0"))
+					" :t"    (lambda () (interactive)
+							   (yas-expand-snippet "\\text{ $1 }$0"))
 
-                    ;; bind to functions!
+					"ang"    (lambda () (interactive)
+							   (yas-expand-snippet "\\langle $1 \\rangle$0"))
+
+					;; bind to functions!
                     ;; "//" (lambda () (interactive)
                     ;;          (yas-expand-snippet "\\frac{$1}{$2}$0"))
                     ;; "Span" (lambda () (interactive)
                     ;;          (yas-expand-snippet "\\Span($1)$0"))))
 					))
-
 
 ;; activitywatch and other meta time tracking things
 (global-activity-watch-mode)

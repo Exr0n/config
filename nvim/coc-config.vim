@@ -5,7 +5,7 @@ set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 "   Coc Snippets
-imap <C-o> <Plug>(coc-snippets-expand)
+imap <C-l> <Plug>(coc-snippets-expand)
 let g:coc_snippet_next = 'jn'
 let g:coc_snippet_prev = 'jh'
 

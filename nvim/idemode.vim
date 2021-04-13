@@ -118,7 +118,7 @@ set listchars=eol:⏎,tab:→·,trail:·,extends:>,precedes:<
 set list
 
 "set filetype off
-"set filetype plugin indent on
+filetype plugin indent on
 
 " colors
 " fix neovim's weird highlight (https://github.com/neovim/neovim/issues/9019#issuecomment-521532103)
