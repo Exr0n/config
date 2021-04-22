@@ -1,0 +1,2 @@
+;;; Generated package description from activity-watch-mode.el  -*- no-byte-compile: t -*-
+(define-package "activity-watch-mode" "20200416.637" "Automatic time tracking extension." '((emacs "25") (request "0") (json "0") (cl-lib "0")) :commit "9d591c5ec9a2b2c7b55a754dd37c7434b2ef9fdc" :authors '(("Gabor Torok <gabor@20y.hu>, Alan Hamlett" . "alan@wakatime.com")) :maintainer '("Paul d'Hubert" . "paul.dhubert@ya.ru") :keywords '("calendar" "comm") :url "https://github.com/pauldub/activity-watch-mode")
