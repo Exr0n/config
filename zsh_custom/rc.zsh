@@ -61,7 +61,7 @@ alias mux='tmuxinator'
 
 #    toggl
 alias tl='pym toggl'
-alias t='pit2ya_crt' # github.com/exr0nprojects/pit2ya
+alias t='date +"%s" > $XDG_DATA_HOME/pit2ya/current.start; pit2ya_crt' # github.com/exr0nprojects/pit2ya
 alias tt='t && slep'
 alias pt='pit2ya_mod'
 #alias t='tl continue "$(tl -s ls -f description | tail -n +2 | fzf)"'
