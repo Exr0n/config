@@ -1,11 +1,55 @@
 ;; things TODO before I can daily drive emacs: vim-like foldmethod=manual with nesting
 ;; other niceties: smart tabs, invisible characters, find-file recursively, ivy-swiper,  lsp, ligatures, rename support, show documentation, calendar to emacs https://opensource.com/article/20/1/emacs-mail-calendar
 ;; snippets : yasnippet, see discord for example
+;; Custom
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("a3b6a3708c6692674196266aad1cb19188a6da7b4f961e1369a68f06577afa16" default))
+ '(fast-scroll-mode t)
+ '(global-auto-revert-mode t)
+ '(highlight-indent-guides-method 'character)
+ '(org-agenda-files
+   '("~/org/schoolwork_ibx.org" "~/org/usaypt2021/ypt2021_chain_ibx.org" "~/org/config_ibx.org" "~/org/projects_ibx.org" "~/materials/capsule/org/inbox.org" "~/org/networking_ibx.org" "~/pass/quizes/21math530/quiz_review.org" "~/org/stepup/seec/general_action_items.org"))
+ '(org-latex-default-packages-alist
+   '(("AUTO" "inputenc" t
+	  ("pdflatex"))
+	 ("T1" "fontenc" t
+	  ("pdflatex"))
+	 ("" "graphicx" t nil)
+	 ("" "grffile" t nil)
+	 ("" "longtable" nil nil)
+	 ("" "wrapfig" nil nil)
+	 ("" "rotating" nil nil)
+	 ("normalem" "ulem" t nil)
+	 ("" "amsmath" t nil)
+	 ("" "textcomp" t nil)
+	 ("" "amssymb" t nil)
+	 ("" "capt-of" nil nil)
+	 ("" "hyperref" nil nil)))
+ '(org-latex-packages-alist '(("" "cancel" t) ("" "physics" t)))
+ '(package-selected-packages
+   '(flyspell-correct-ivy org-fragtog hl-todo laas evil-smartparens yasnippet aas activity-watch-mode request focus company-lsp company all-the-icons-ivy-rich treemacs-all-the-icons lsp-ivy lsp-treemacs flycheck lsp-ui lsp-mode fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
+ '(smartparens-global-mode nil)
+ '(vlf-application 'dont-ask)
+ '(warning-suppress-log-types '((use-package)))
+ '(warning-suppress-types '((use-package))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(lsp-ui-sideline-symbol-info ((t (:extend t :background "#1e1c31" :foreground "#4d4c6a")))))
+
 ;; packages
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 (require 'use-package)
+(package-refresh-contents)
 
 (add-to-list 'load-path "~/.emacs.d/autoload")
 (load "olivetti.el")
@@ -40,10 +84,6 @@
 
 ;; (require 'smartparens-config)
 ;; (smartparens-global-mode t)
-
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
 
 ;; (require 'smooth-scrolling)				; slow, apparently https://www.reddit.com/r/emacs/comments/3kgv75/why_is_smooth_scrolling_so_slow/cuxk3a3?utm_source=share&utm_medium=web2x&context=3
 ;; (smooth-scrolling-mode 1)
@@ -95,49 +135,6 @@
 (require 'company)
 (require 'company-lsp)
 (push 'company-lsp company-backends)
-
-;; Custom
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("a3b6a3708c6692674196266aad1cb19188a6da7b4f961e1369a68f06577afa16" default))
- '(fast-scroll-mode t)
- '(global-auto-revert-mode t)
- '(highlight-indent-guides-method 'character)
- '(org-agenda-files
-   '("~/org/schoolwork_ibx.org" "~/org/usaypt2021/ypt2021_chain_ibx.org" "~/org/config_ibx.org" "~/org/projects_ibx.org" "~/materials/capsule/org/inbox.org" "~/org/networking_ibx.org" "~/pass/quizes/21math530/quiz_review.org" "~/org/stepup/seec/general_action_items.org"))
- '(org-latex-default-packages-alist
-   '(("AUTO" "inputenc" t
-	  ("pdflatex"))
-	 ("T1" "fontenc" t
-	  ("pdflatex"))
-	 ("" "graphicx" t nil)
-	 ("" "grffile" t nil)
-	 ("" "longtable" nil nil)
-	 ("" "wrapfig" nil nil)
-	 ("" "rotating" nil nil)
-	 ("normalem" "ulem" t nil)
-	 ("" "amsmath" t nil)
-	 ("" "textcomp" t nil)
-	 ("" "amssymb" t nil)
-	 ("" "capt-of" nil nil)
-	 ("" "hyperref" nil nil)))
- '(org-latex-packages-alist '(("" "cancel" t) ("" "physics" t)))
- '(package-selected-packages
-   '(flyspell-correct-ivy org-fragtog hl-todo laas evil-smartparens yasnippet aas activity-watch-mode request focus company-lsp company all-the-icons-ivy-rich treemacs-all-the-icons lsp-ivy lsp-treemacs flycheck lsp-ui lsp-mode fast-scroll evil-collection async olivetti highlight-indent-guides git-gutter magit counsel-fd swiper vlf evil-org use-package undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil))
- '(smartparens-global-mode nil)
- '(vlf-application 'dont-ask)
- '(warning-suppress-log-types '((use-package)))
- '(warning-suppress-types '((use-package))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(lsp-ui-sideline-symbol-info ((t (:extend t :background "#1e1c31" :foreground "#4d4c6a")))))
 
 ;; ability to redo things
 (global-undo-tree-mode)
