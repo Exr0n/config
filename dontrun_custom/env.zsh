@@ -25,6 +25,11 @@ export PATH="$HOME/.yarn/bin:$PATH"
 
 export PATH="$ZSH_CUSTOM/../scripts/wabt/bin:$PATH"
 
+if [[ `uname` != "Darwin" ]]; then
+    # linuxbrew
+    export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+fi
+
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -42,6 +47,7 @@ export CONFIG="$HOME/.config"
 export XDG_CONFIG_HOME="$CONFIG"
 export XDG_DATA_HOME="$HOME/.data"
 export ZSH_CUSTOM="$CONFIG/zsh_custom"
+export ZSH_THEME="powerlevel10k/powerlevel10k"
 export EDITOR="nvim"
 #   vim stuff
 export VIMROOT="$CONFIG/nvim"

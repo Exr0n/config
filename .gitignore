@@ -7,6 +7,10 @@ coc/extensions/node_modules
 coc/extensions/node_modules/**
 coc/history.json
 coc/snippets-mru
+coc/list-location-history.json
+dconf/user
+hotspotrc
+okularpartrc
 nvim/.netrwhist
 snap
 karabiner/automatic_backups
@@ -30,3 +34,4 @@ QtProject.conf
 Kite/*
 Condution/*
 Slack/*
+Unknown Organization/

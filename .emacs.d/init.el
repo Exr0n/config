@@ -354,6 +354,8 @@
 							   (yas-expand-snippet "\\left$1\\right$1 $0"))
 					" sum "  (lambda () (interactive)
 							   (yas-expand-snippet "\\sum_{$1}^{$2} $0"))
+					" lim "  (lambda () (interactive)
+							   (yas-expand-snippet "\\lim_{$1} $0"))
 					" int "  (lambda () (interactive)
 							   (yas-expand-snippet "\\int $1 dx $2$0"))
 					" dint " (lambda () (interactive)

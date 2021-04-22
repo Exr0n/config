@@ -71,11 +71,15 @@ alias pt='pit2ya_mod'
 
 alias sus='systemctl suspend'
 alias slep='xset dpms force off'
-alias pbcopy='xsel --clipboard --input'
-alias ss='import png:- | xclip -selection c -t image/png' # https://bbs.archlinux.org/viewtopic.php?id=163312
-alias yay='yay --noremovemake'
-alias pbpaste='xsel --clipboard --output'
-alias vidya='pkill xcape && xcape -e "Caps_Lock=Caps_Lock" && ~/Applications/Lunar*.AppImage && pkill xcape && xcape -e "Caps_Lock=Escape"'
+if [[ `uname` != "Darwin" ]]; then
+    alias pbcopy='xsel --clipboard --input'
+    alias ss='import png:- | xclip -selection c -t image/png' # https://bbs.archlinux.org/viewtopic.php?id=163312
+    alias pbpaste='xsel --clipboard --output'
+    alias yay='yay --noremovemake'
+    alias vidya='pkill xcape && xcape -e "Caps_Lock=Caps_Lock" && ~/Applications/Lunar*.AppImage && pkill xcape && xcape -e "Caps_Lock=Escape"'
+    # other bits
+    alias ql='mupdf'
+fi
 alias myip='curl -4 icanhazip.com; curl -6 icanhazip.com'
 
 #   custom alt active
@@ -93,9 +97,6 @@ alias cr='cargo run'
 # emaaaacs
 # alias emacs='open -a emacs --args $CAPSULEROOT/org/inbox.org'
 alias emacs='open -a emacs --args $CAPSULEROOT/org/inbox.org'
-
-# other bits
-alias ql='mupdf'
 
 # functions
 #    cd to parent directory of file, https://askubuntu.com/a/316632
