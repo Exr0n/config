@@ -3,9 +3,10 @@ git submodule init
 
 # Brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-brew install git-secret tig flake8 node yarn ack gnupg gcc gmp rustup ffmpeg tree wget tmux tmuxinator cmake fzf neovim go coreutils
+brew install git-secret tig flake8 node yarn ack gnupg gcc gmp rustup ffmpeg tree wget cmake fzf neovim go coreutils ag hyperfine
 brew install cmatrix sl fortune cowsay neofetch
 brew upgrade
+$(brew --prefix)/opt/fzf/install
 
 # [terminfo](https://github.com/tmux/tmux/issues/2226#issuecomment-633260085)
 infocmp -x tmux-256color > $HOME/deleteme
