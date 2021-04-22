@@ -63,7 +63,8 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function format          argument */
-    { run_command, "襤 %s | ",    "cat $HOME/.data/pit2ya/current.desc" },
+    { run_command, "襤 %s ",    "eval \"echo $(date -ud \"@$(( $(date +'%s') - $(cat $HOME/.data/pit2ya/current.start) ))\" +'$([[ $((%s/3600/24)) -gt 0 ]] && echo \"$((%s/3600/24)) day$([[ $((%s/3600/24)) -eq 1 ]] || echo 's' ), \")%T')\"" },
+    { run_command, "%s | ", "cat $HOME/.data/pit2ya/current.desc" },
 	{ datetime, "%s |",           " %a %d %b %T" },
     { cpu_perc, "  %s:",     NULL },
     { ram_perc, "%02s",     NULL },
