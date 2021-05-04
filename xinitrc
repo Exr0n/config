@@ -49,10 +49,11 @@ xset +fp /usr/share/fonts/local,/usr/share/fonts/TTF
 
 #sudo dmesg -w > "/home/exr0n/vol/storage/archive/dmesg_logs/$(date -Is).txt" &
 
+/home/exr0n/.config/dontrun_custom/autostart.zsh &
+
 # go!
 #exec i3
 #xcompmgr&
 slstatus&
 exec dwm
 
-/home/exr0n/.config/dontrun_custom/autostart.zsh &

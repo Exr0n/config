@@ -104,7 +104,7 @@
  '(global-auto-revert-mode t)
  '(highlight-indent-guides-method 'character)
  '(org-agenda-files
-   '("~/org/schoolwork_ibx.org" "~/org/usaypt2021/ypt2021_chain_ibx.org" "~/org/config_ibx.org" "~/org/projects_ibx.org" "~/materials/capsule/org/inbox.org" "~/org/networking_ibx.org" "~/pass/quizes/21math530/quiz_review.org" "~/org/stepup/seec/general_action_items.org"))
+   '("~/projects/Taproot/2020ISOS101/KBe21isos201retStoryOfScienceComputationalComplexity.org" "~/projects/Taproot/21math401/KBe21math401retHandout24EvaluatingDefiniteIntegrals.org" "~/org/schoolwork_ibx.org" "~/org/usaypt2021/ypt2021_chain_ibx.org" "~/org/config_ibx.org" "~/org/projects_ibx.org" "~/materials/capsule/org/inbox.org" "~/org/networking_ibx.org" "~/pass/quizes/21math530/quiz_review.org" "~/org/stepup/seec/general_action_items.org"))
  '(org-latex-default-packages-alist
    '(("AUTO" "inputenc" t
 	  ("pdflatex"))
