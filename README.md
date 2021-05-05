@@ -39,6 +39,13 @@ brew cask install whichspace
 # desktop bits
 sudo gem install iStats
 
+# symlinks
+ln -s texmf         $HOME/texmf
+ln -s .emacs.d      $HOME/.emacs.d
+ln -s pandoc        $HOME/.pandoc
+ln -s xbindkeysrc   $HOME/.xbindkeysrc
+ln -s xinitrc       $HOME/.xinitrc
+
 exit
 
 # Other notes
