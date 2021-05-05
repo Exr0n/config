@@ -30,7 +30,7 @@ if [[ `uname` != "Darwin" ]]; then
     export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 fi
 
-export PATH="$HOME/.cargo/bin:$PATH"
+#export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # custom bin

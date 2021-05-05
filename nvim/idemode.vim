@@ -39,6 +39,7 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'cespare/vim-toml'		" .toml syntax highlighting
 Plug 'luochen1990/rainbow'
+Plug 'jaxbot/semantic-highlight.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/git-messenger.vim'
 Plug 'rickhowe/diffchar.vim'
@@ -114,7 +115,7 @@ set ruler  " display current cursor "coordinates"
 set nosm   " don't show match
 " show invisibles
 set encoding=utf-8
-set listchars=eol:⏎,tab:→·,trail:·,extends:>,precedes:<
+set listchars=eol:⤶,tab:→·,trail:·,nbsp:▫,extends:>,precedes:<
 set list
 
 "set filetype off
@@ -143,11 +144,20 @@ let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 set regexpengine=1 " supposedly makes things faster
 colo challenger_deep
-highlight Comment cterm=italic gui=italic
-highlight Conditional cterm=italic gui=italic
-highlight Repeat cterm=italic gui=italic
-highlight Keyword cterm=italic gui=italic
+"highlight Comment       cterm=italic    gui=italic
+"highlight Conditional   cterm=italic    gui=italic
+"highlight Repeat        cterm=italic    gui=italic
+"highlight Keyword       cterm=italic    gui=italic
+highlight Type          cterm=italic    gui=italic
+highlight Identifier    cterm=bold      gui=bold
+highlight Function      cterm=bold      gui=bold
 
+" semantic highlight
+"autocmd FileType python,javascript,c,cpp,cuda,typescript,lisp,zsh,bash,sh,rust,go SemanticHighlightToggle
+autocmd BufNewFile,BufRead * SemanticHighlightToggle
+
+" neovim python path
+let g:python3_host_prog = $XDG_CONFIG_HOME . '/nvim/neovim_venv/bin/python'
 " neovide
 let g:neovide_cursor_animation_length=0.03
 let g:neovide_cursor_trail_length=0.9
@@ -229,8 +239,8 @@ let g:NERDDefaultAlign = 'left'
 let g:NERDCommentEmptyLines = 1
 
 "map cn to NERDTreeToggle
-nnoremap <Leader>d :NERDTreeToggle<CR>
-xnoremap <Leader>d :NERDTreeToggle<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
+xnoremap <Leader>n :NERDTreeToggle<CR>
 
 " git gutter jump to next hunk
 nmap <Leader>hn <Plug>(GitGutterNextHunk)
@@ -251,10 +261,11 @@ nnoremap <Leader>gd :Gvdiff<CR>
 nnoremap <Leader>gh :diffget //2<CR>
 nnoremap <Leader>gl :diffget //3<CR>
 
+nnoremap <Leader>s  :SemanticHighlightToggle<CR>
+
 " clipboard https://coderwall.com/p/v-st8w/vim-copy-to-system-clipboard-on-a-mac
 xmap <Leader>y :w !xsel --clipboard --input<CR><CR>
 nmap <Leader>y :w !xsel --clipboard --input<CR><CR>
-nmap <Leader>yy :%w !pbcopy<CR><CR>
 
 " additional control-o control-i mappings
 nnoremap <M-Left> <C-o>
