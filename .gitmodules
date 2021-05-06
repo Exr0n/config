@@ -23,3 +23,6 @@
 [submodule "suckless/dwm-flexipatch"]
 	path = suckless/dwm-flexipatch
 	url = https://github.com/exr0n/dwm-flexipatch
+[submodule ".emacs.d/autoload/math-at-point"]
+	path = .emacs.d/autoload/math-at-point
+	url = https://github.com/shankar2k/math-at-point

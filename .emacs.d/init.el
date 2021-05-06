@@ -280,13 +280,17 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
+(unbind-key "C-z")
+(use-package math-at-point
+  :load-path "autoload/math-at-point/math-at-point.el"
+  :ensure nil
+  :bind ("C-z" . math-at-point))
+
 (use-package laas
   :config ; do whatever here
   (aas-set-snippets 'laas-mode
 					":B" (lambda () (interactive)
 						   (yas-expand-snippet "\\boxed{\\text{$1}}$0"))
-					";t" (lambda () (interactive)
-						   (yas-expand-snippet "\\text{ $1 }$0"))
 					":M" (lambda () (interactive)
 						   (yas-expand-snippet "\n\\[\\begin{aligned}\n    $1\n\\end{aligned}\\]\n$0"))
 					":m" (lambda () (interactive)
