@@ -18,6 +18,7 @@ Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'easymotion/vim-easymotion'
 
 Plug 'tpope/vim-fugitive'
 
@@ -25,6 +26,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 
 "Plug 'dpc/vim-smarttabs'   // TODO: would be nice but doesn't actually work
+"Plug 'spiiph/vim-space'    // would also be nice of this worked
 
 "Decent
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -39,14 +41,15 @@ Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'cespare/vim-toml'		" .toml syntax highlighting
 Plug 'luochen1990/rainbow'
-Plug 'jaxbot/semantic-highlight.vim'
+"Plug 'jaxbot/semantic-highlight.vim'
+let g:gitgutter_map_keys = 0
 Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/git-messenger.vim'
 Plug 'rickhowe/diffchar.vim'
-Plug 'Yggdroot/indentLine'
 let g:indentLine_char = '▏'
 let g:indentLine_conceallevel = 1
 let g:indentLine_concealcursor = 'nv'
+Plug 'Yggdroot/indentLine'
 "   tmux integration
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -154,7 +157,7 @@ highlight Function      cterm=bold      gui=bold
 
 " semantic highlight
 "autocmd FileType python,javascript,c,cpp,cuda,typescript,lisp,zsh,bash,sh,rust,go SemanticHighlightToggle
-autocmd BufNewFile,BufRead * SemanticHighlightToggle
+"autocmd BufNewFile,BufRead * SemanticHighlightToggle
 
 " neovim python path
 let g:python3_host_prog = $XDG_CONFIG_HOME . '/nvim/neovim_venv/bin/python'
@@ -248,10 +251,14 @@ nmap ghn <Plug>(GitGutterNextHunk)
 nmap <Leader>hN <Plug>(GitGutterPrevHunk)
 nmap ghN <Plug>(GitGutterPrevHunk)
 nmap <Leader>HN <Plug>(GitGutterPrevHunk)
+nmap ghp <Plug>(GitGutterPrevHunk)
+nmap <Leader>hp <Plug>(GitGutterPreviewHunk)
 
 " git gutter stage/revert hunk because the default seems to be broken...
 nmap <Leader>hs <Plug>(GitGutterStageHunk)
 nmap <Leader>hr <Plug>(GitGutterRevertHunk)
+nmap <Leader>hu <Plug>(GitGutterUndoHunk)
+nmap <Leader>hv <Plug>(GitGutterPreviewHunk)
 
 " git conflict resolution via vim-fugitive (https://www.prodops.io/blog/solving-git-merge-conflicts-with-vim)
 " enter diff view
@@ -272,6 +279,12 @@ nnoremap <M-Left> <C-o>
 nnoremap <M-Right> <C-I>
 nnoremap <M-Left> <C-o>
 nnoremap <M-Right> <C-I>
+
+" easymotion
+nmap x <Plug>(easymotion-overwin-f2)
+let g:EasyMotion_smartcase = 1
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 nnoremap <C-x><C-s> :w<CR>
 inoremap <C-x><C-s> <Esc>:w<CR>a
