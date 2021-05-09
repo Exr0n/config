@@ -45,6 +45,7 @@ Plug 'luochen1990/rainbow'
 let g:gitgutter_map_keys = 0
 Plug 'airblade/vim-gitgutter'
 Plug 'rhysd/git-messenger.vim'
+Plug 'Shougo/echodoc.vim'
 Plug 'rickhowe/diffchar.vim'
 let g:indentLine_char = '▏'
 let g:indentLine_conceallevel = 1
