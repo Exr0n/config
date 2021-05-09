@@ -306,35 +306,38 @@
                     "Olog" "O(\\log n)"
                     "Olon" "O(n \\log n)"
 
-					"tr " "^\\top"
+					"tr " "^\\top "
 
-					" pi " "\\pi"
+					" pi " " \\pi "
 
-					" nn" "\\left("
-					"ss" "\\right)"
+					" ;c " " \\subseteq "
+					" ;C " " \\subsetneq "
 
-					" FF " "\\mathbb{F}"
-					" CC " "\\mathbb{C}"
-					" RR " "\\mathbb{R}"
-					" NN " "\\mathbb{N}"
-					" ZZ " "\\mathbb{Z}"
-					" QQ " "\\mathbb{Q}"
-					" HH " "\\mathbb{H}"
-					" PP " "\\mathbb{P}"
+					" nn" " \\left("
+					"ss " "\\right) "
 
-					" Pp " "\\mathcal{P}"
-					" Ll " "\\mathcal{L}"
-					" Mm " "\\mathcal{M}"
-					" Dd " "\\mathcal{M}"
+					" FF" " \\mathbb{F}"
+					" CC" " \\mathbb{C}"
+					" RR" " \\mathbb{R}"
+					" NN" " \\mathbb{N}"
+					" ZZ" " \\mathbb{Z}"
+					" QQ" " \\mathbb{Q}"
+					" HH" " \\mathbb{H}"
+					" PP" " \\mathbb{P}"
 
-					" inf " "\\infty"
+					" Pp" " \\mathcal{P}"
+					" Ll" " \\mathcal{L}"
+					" Mm" " \\mathcal{M}"
+					" Dd" " \\mathcal{M}"
 
-					" sin " "\\sin"
-					" cos " "\\cos"
-					" tan " "\\tan"
-					" cot " "\\cot"
-					" sec " "\\sec"
-					" csc " "\\csc"
+					" inf " " \\infty"
+
+					" sin " " \\sin "
+					" cos " " \\cos "
+					" tan " " \\tan "
+					" cot " " \\cot "
+					" sec " " \\sec "
+					" csc " " \\csc "
 
 					":Q"     (lambda () (interactive)
 							   (yas-expand-snippet "\\sqrt{$1}$0"))
@@ -349,22 +352,22 @@
 					":b"     (lambda () (interactive)
 							   (yas-expand-snippet "\\boxed{$1}$0"))
 					" tt"    (lambda () (interactive)
-							   (yas-expand-snippet "\\begin{$1}$2\\end{$1}$0"))
+							   (yas-expand-snippet " \\begin{$1}$2\\end{$1}$0"))
 					" hh"    (lambda () (interactive)
-							   (yas-expand-snippet "\\left$1\\right$1 $0"))
+							   (yas-expand-snippet " \\left$1\\right$1 $0"))
 					" sum "  (lambda () (interactive)
-							   (yas-expand-snippet "\\sum_{$1}^{$2} $0"))
+							   (yas-expand-snippet " \\sum_{$1}^{$2} $0"))
 					" lim "  (lambda () (interactive)
-							   (yas-expand-snippet "\\lim_{$1} $0"))
+							   (yas-expand-snippet " \\lim_{$1} $0"))
 					" int "  (lambda () (interactive)
-							   (yas-expand-snippet "\\int $1 dx $2$0"))
+							   (yas-expand-snippet " \\int $1 dx $2$0"))
 					" dint " (lambda () (interactive)
-							   (yas-expand-snippet "\\int_{$1}^{$2} $3 dx$0"))
-					" :t"    (lambda () (interactive)
-							   (yas-expand-snippet "\\text{ $1 }$0"))
+							   (yas-expand-snippet " \\int_{$1}^{$2} $3 dx$0"))
+					;; " :t"    (lambda () (interactive)
+					;; 		   (yas-expand-snippet " \\text{$1}$0"))
 
-					"ang"    (lambda () (interactive)
-							   (yas-expand-snippet "\\langle $1 \\rangle$0"))
+					" ang "    (lambda () (interactive)
+							   (yas-expand-snippet " \\langle $1 \\rangle$0"))
 
 					;; bind to functions!
                     ;; "//" (lambda () (interactive)
