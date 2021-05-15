@@ -72,3 +72,6 @@ colors:
        white:   '0x96a3dc'
 key_bindings:
     - { key: N, mods: Command, command: { program: "open", args: ["-nb", "io.alacritty"] } }
+    - { key: U, mods: Control,          action: ScrollPageUp                 }
+    - { key: D, mods: Control,          action: ScrollPageDown               }
+
