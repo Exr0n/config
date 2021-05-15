@@ -280,11 +280,10 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-(unbind-key "C-z")
 (use-package math-at-point
-  :load-path "autoload/math-at-point/math-at-point.el"
+  :load-path "autoload/math-at-point"
   :ensure nil
-  :bind ("C-z" . math-at-point))
+  :bind ("C-x C-z" . math-at-point))
 
 (use-package laas
   :config ; do whatever here
@@ -309,6 +308,8 @@
 					"tr " "^\\top "
 
 					" pi " " \\pi "
+					";;t" "\\theta"
+					";T" "\\Tau"
 
 					" ;c " " \\subseteq "
 					" ;C " " \\subsetneq "
@@ -363,8 +364,8 @@
 							   (yas-expand-snippet " \\int $1 dx $2$0"))
 					" dint " (lambda () (interactive)
 							   (yas-expand-snippet " \\int_{$1}^{$2} $3 dx$0"))
-					;; " :t"    (lambda () (interactive)
-					;; 		   (yas-expand-snippet " \\text{$1}$0"))
+					" :t"    (lambda () (interactive)
+							   (yas-expand-snippet " \\text{$1}$0"))
 
 					" ang "    (lambda () (interactive)
 							   (yas-expand-snippet " \\langle $1 \\rangle$0"))

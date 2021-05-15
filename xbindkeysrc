@@ -9,7 +9,8 @@
     Mod4 + r
 
 # homerow (apps + slep)
-"brave --incognito"
+#brave --incognito
+"firefox --private-window"
     Mod4 + d
 
 "firefox"

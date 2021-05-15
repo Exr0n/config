@@ -50,7 +50,7 @@ alias GG='gutil -A'
 alias py='python'
 alias pip='py -m pip'
 alias pym='py -m'
-alias venv='pym venv . && source bin/activate'
+alias venv='pym venv .venv && source .venv/bin/activate'
 alias ipy='ipython'
 #    screen stuff
 alias sl='screen -ls'
@@ -120,6 +120,7 @@ function chpwd () {	# auto called by zsh
 	echo "$(pwd)" >> $XDG_DATA_HOME/recent_git_dirs.csv
 
     [[ -f 'pyvenv.cfg' ]] && source bin/activate
+    [[ -f '.venv/pyvenv.cfg' ]] && source .venv/bin/activate
 }
 
 function run_generic () {

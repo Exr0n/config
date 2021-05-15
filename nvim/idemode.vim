@@ -25,6 +25,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 
+"    text objects, see https://blog.carbonfive.com/vim-text-objects-the-definitive-guide/
+Plug 'vim-scripts/argtextobj.vim'
+Plug 'michaeljsmith/vim-indent-object'
+
 "Plug 'dpc/vim-smarttabs'   // TODO: would be nice but doesn't actually work
 "Plug 'spiiph/vim-space'    // would also be nice of this worked
 

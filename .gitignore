@@ -8,6 +8,7 @@ coc/extensions/node_modules/**
 coc/history.json
 coc/snippets-mru
 coc/list-location-history.json
+coc/list*history.json
 dconf/user
 hotspotrc
 okularpartrc
