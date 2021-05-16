@@ -17,7 +17,7 @@ else
 fi
 
 if [[ -z $3 ]]; then
-    KBPREFIX="name"
+    KBPREFIX="$(basename "$(pwd)")"
     printf "${COLOR_Orange}Missing Prefix Argument! Using default ${COLOR_Green}'$KBPREFIX'${COLOR_None}\n"
 else
     KBPREFIX=$3

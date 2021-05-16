@@ -13,6 +13,8 @@ Plug 'preservim/nerdcommenter'
 Plug 'preservim/nerdtree'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tjdevries/coc-zsh'
+
 Plug 'honza/vim-snippets' " https://github.com/neoclide/coc-snippets/issues/126
 Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 
