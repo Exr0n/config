@@ -1,3 +1,11 @@
+
+;; macos specific
+(setq mac-option-modifier 'super)
+
+(global-set-key (kbd "s-c") 'kill-ring-save)
+(global-set-key (kbd "s-v") 'yank)
+
+
 ;; things TODO before I can daily drive emacs: vim-like foldmethod=manual with nesting
 ;; other niceties: figure out how indenting works, smart tabs, indent lines, invisible characters
 ;; packages
@@ -22,11 +30,11 @@
 (add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 
 ;; keybinds
-(global-set-key (kbd "C-S-v") 'x-clipboard-yank)
+(global-set-key (kbd "C-S-v") 'clipboard-yank)
 (global-set-key (kbd "C-S-c") 'clipboard-kill-ring-save)
 
 ;;; clipboard (except keybinds, see keybind section)
-;(setq x-select-enable-clipboard nil) ; don't touch external clipboard, from https://stackoverflow.com/a/24209883
+(setq x-select-enable-clipboard nil) ; don't touch external clipboard, from https://stackoverflow.com/a/24209883
 
 ;; editing TODO what got delete from here again?
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -41,7 +49,7 @@
 (setq make-backup-files nil)
 (setq create-lockfiles nil)
 ;; workgroups
-					; (require 'workgroups2); TODO: FIX
+										; (require 'workgroups2); TODO: FIX
 
 ;; Custom
 (custom-set-variables
@@ -52,13 +60,85 @@
  '(custom-safe-themes
    '("a3b6a3708c6692674196266aad1cb19188a6da7b4f961e1369a68f06577afa16" default))
  '(package-selected-packages
-   '(undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil)))
+   '(yasnippet-classic-snippets laas undo-tree aggressive-indent smart-tabs-mode evil-vimish-fold vimish-fold evil-surround workgroups2 smooth-scrolling doom-modeline ivy doom-themes evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+
+
+
+
+
+
+
+
+
+
+
+(use-package laas
+  :config ; do whatever here
+  (aas-set-snippets 'laas-mode
+					":B" (lambda () (interactive)
+						   (yas-expand-snippet "\\boxed{\\text{$1}}$0"))
+					":t" (lambda () (interactive)
+						   (yas-expand-snippet "\\text{ $1 }$0"))
+					":M" (lambda () (interactive)
+						   (yas-expand-snippet "\n\\[\\begin{aligned}\n    $1\n\\end{aligned}\\]\n$0"))
+					":m" (lambda () (interactive)
+						   ;; (yas-expand-snippet "\\( $1 \\)$0"))
+						   (yas-expand-snippet "\$$1\$$0"))
+                    ;; set condition!
+                    :cond #'texmathp ; expand only while in math
+                    "supp" "\\supp"
+                    "On" "O(n)"
+                    "O1" "O(1)"
+                    "Olog" "O(\\log n)"
+                    "Olon" "O(n \\log n)"
+
+					"hh" "\\left("
+					"tt" "\\right)"
+
+					"FF" "\\mathbb{F}"
+					"CC" "\\mathbb{C}"
+					"RR" "\\mathbb{R}"
+					"NN" "\\mathbb{N}"
+					"ZZ" "\\mathbb{Z}"
+					"QQ" "\\mathbb{Q}"
+					"HH" "\\mathbb{H}"
+					"PP" "\\mathbb{P}"
+
+					"Pp" "\\mathcal{P}"
+					"Ll" "\\mathcal{L}"
+					"Mm" "\\mathcal{M}"
+
+					":Q" (lambda () (interactive)
+						   (yas-expand-snippet "\\sqrt{$1}$0"))
+                    ":/" (lambda () (interactive)
+                           (yas-expand-snippet "\\frac{$1}{$2}$0"))
+					":b" (lambda () (interactive)
+						   (yas-expand-snippet "\\boxed{$1}$0"))
+                    ;; bind to functions!
+                    ;; "//" (lambda () (interactive)
+                    ;;          (yas-expand-snippet "\\frac{$1}{$2}$0"))
+                    ;; "Span" (lambda () (interactive)
+                    ;;          (yas-expand-snippet "\\Span($1)$0"))))
+					))
+
+
+
+
+
+
+
+
+
+
+
 
 ;; evil
 (require 'evil)
@@ -111,24 +191,24 @@
 
 ;;; colors
 (load-theme 'doom-challenger-deep)
-;(use-package doom-themes
-;             :config
-;             ;; Global settings (defaults)
-;             (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
-;                   doom-themes-enable-italic t) ; if nil, italics is universally disabled
-;             (load-theme 'doom-one t)
-;
-;             ;; Enable flashing mode-line on errors
-;             (doom-themes-visual-bell-config)
-;
-;             ;; Enable custom neotree theme (all-the-icons must be installed!)
-;             (doom-themes-neotree-config)
-;             ;; or for treemacs users
-;             (setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
-;             (doom-themes-treemacs-config)
-;
-;             ;; Corrects (and improves) org-mode's native fontification.
-;             (doom-themes-org-config))
+										;(use-package doom-themes
+										;             :config
+										;             ;; Global settings (defaults)
+										;             (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+										;                   doom-themes-enable-italic t) ; if nil, italics is universally disabled
+										;             (load-theme 'doom-one t)
+										;
+										;             ;; Enable flashing mode-line on errors
+										;             (doom-themes-visual-bell-config)
+										;
+										;             ;; Enable custom neotree theme (all-the-icons must be installed!)
+										;             (doom-themes-neotree-config)
+										;             ;; or for treemacs users
+										;             (setq doom-themes-treemacs-theme "doom-colors") ; use the colorful treemacs theme
+										;             (doom-themes-treemacs-config)
+										;
+										;             ;; Corrects (and improves) org-mode's native fontification.
+										;             (doom-themes-org-config))
 
 ;; start at inbox
 (setq initial-buffer-choice (concat (getenv "HOME") "/org/inbox.org"))
