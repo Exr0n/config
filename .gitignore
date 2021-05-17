@@ -11,3 +11,9 @@ nvim/.netrwhist
 snap
 karabiner/automatic_backups
 .emacs.d/calc.el
+discord/
+BraveSoftware/
+dingtalk/
+lunarclient/*
+!lunarclient/Preferences
+

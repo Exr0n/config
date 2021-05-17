@@ -6,6 +6,11 @@
 (package-initialize)
 
 ;; macos specific
+
+(add-to-list 'load-path (concat (getenv "XDG_CONFIG_HOME") "/dontrun_custom/elegant-emacs/"))
+(load "sanity.el")
+(load "elegance.el")
+
 (setq mac-command-modifier 'super mac-option-modifier 'meta)
 (global-set-key (kbd "s-c") 'kill-ring-save)
 (global-set-key (kbd "s-v") 'yank)
