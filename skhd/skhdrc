@@ -50,22 +50,22 @@ ctrl + rcmd - k             : yabai -m window   --warp north || echo failed #yab
 ctrl + rcmd - l             : yabai -m window   --warp east  || echo failed #yabai -m window
 
 # move window to space
-ctrl + lcmd + rcmd - 1      : yabai -m window   --space 1  | yabai -m space --focus 1
-ctrl + lcmd + rcmd - 2      : yabai -m window   --space 2  | yabai -m space --focus 2
-ctrl + lcmd + rcmd - 3      : yabai -m window   --space 3  | yabai -m space --focus 3
-ctrl + lcmd + rcmd - 4      : yabai -m window   --space 4  | yabai -m space --focus 4
-ctrl + lcmd + rcmd - 5      : yabai -m window   --space 5  | yabai -m space --focus 5
-ctrl + lcmd + rcmd - 0x0C   : yabai -m window   --space 6  | yabai -m space --focus 6
-ctrl + lcmd + rcmd - 0x0E   : yabai -m window   --space 7  | yabai -m space --focus 7
-ctrl + lcmd + rcmd - p      : yabai -m window   --space 8  | yabai -m space --focus 8
-ctrl + lcmd + rcmd - u      : yabai -m window   --space 9  | yabai -m space --focus 9
-ctrl + lcmd + rcmd - 0      : yabai -m window   --space 10 | yabai -m space --focus 10
-ctrl + lalt + rcmd - 1      : yabai -m window   --space 11 | yabai -m space --focus 11
-ctrl + lalt + rcmd - 2      : yabai -m window   --space 12 | yabai -m space --focus 12
-ctrl + lalt + rcmd - 3      : yabai -m window   --space 13 | yabai -m space --focus 13
-ctrl + lalt + rcmd - 4      : yabai -m window   --space 14 | yabai -m space --focus 14
-ctrl + lalt + rcmd - 5      : yabai -m window   --space 15 | yabai -m space --focus 15
-ctrl + lalt + rcmd - 6      : yabai -m window   --space 16 | yabai -m space --focus 16
+#ctrl + lcmd + rcmd - 1      : yabai -m window   --space 1  | yabai -m space --focus 1
+#ctrl + lcmd + rcmd - 2      : yabai -m window   --space 2  | yabai -m space --focus 2
+#ctrl + lcmd + rcmd - 3      : yabai -m window   --space 3  | yabai -m space --focus 3
+#ctrl + lcmd + rcmd - 4      : yabai -m window   --space 4  | yabai -m space --focus 4
+#ctrl + lcmd + rcmd - 5      : yabai -m window   --space 5  | yabai -m space --focus 5
+#ctrl + lcmd + rcmd - 0x0C   : yabai -m window   --space 6  | yabai -m space --focus 6
+#ctrl + lcmd + rcmd - 0x0E   : yabai -m window   --space 7  | yabai -m space --focus 7
+#ctrl + lcmd + rcmd - p      : yabai -m window   --space 8  | yabai -m space --focus 8
+#ctrl + lcmd + rcmd - u      : yabai -m window   --space 9  | yabai -m space --focus 9
+#ctrl + lcmd + rcmd - 0      : yabai -m window   --space 10 | yabai -m space --focus 10
+#ctrl + lalt + rcmd - 1      : yabai -m window   --space 11 | yabai -m space --focus 11
+#ctrl + lalt + rcmd - 2      : yabai -m window   --space 12 | yabai -m space --focus 12
+#ctrl + lalt + rcmd - 3      : yabai -m window   --space 13 | yabai -m space --focus 13
+#ctrl + lalt + rcmd - 4      : yabai -m window   --space 14 | yabai -m space --focus 14
+#ctrl + lalt + rcmd - 5      : yabai -m window   --space 15 | yabai -m space --focus 15
+#ctrl + lalt + rcmd - 6      : yabai -m window   --space 16 | yabai -m space --focus 16
 
 # swap spaces
 ctrl + lcmd + ralt - 1      : yabai -m window   --space 1  | yabai -m space --swap 1
@@ -86,18 +86,20 @@ ctrl + lalt + ralt - 5      : yabai -m window   --space 15 | yabai -m space --sw
 ctrl + lalt + ralt - 6      : yabai -m window   --space 16 | yabai -m space --swap 16
 
 # toggle float
-ctrl + lcmd - 0x0D             : yabai -m window --toggle float
+ctrl + lcmd - b             : yabai -m window --toggle float
 # toggle split direction
-ctrl +  cmd - a             : yabai -m window --toggle split
+ctrl +  cmd - m             : yabai -m window --toggle split
+
+ctrl +  cmd - z             : yabai -m window --toggle sticky
 
 # open specific applications
 ctrl + lcmd - d             : open -a Discord
 ctrl + lcmd - m             : open -a Messages
-ctrl + lcmd - t             : open -a TogglDesktop
+#ctrl + lcmd - t             : open -a TogglDesktop
 ctrl + lcmd - s             : open -a Spark
-ctrl + lcmd - n             : open -a emacs
-ctrl + lcmd - o             : open -n -a emacs --args ~/Desktop/materials/capsule/org/inbox.org
-ctrl + lcmd - e             : open -n -a alacritty
+#ctrl + lcmd - n             : open -a emacs
+ctrl + lcmd - n             : open -n -a emacs --args ~/org/inbox.org
+ctrl + lcmd - t             : open -n -a alacritty
 
 # vivaldi doesn't have control n/p for quick commands
 ctrl - n [

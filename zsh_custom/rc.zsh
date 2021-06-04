@@ -6,7 +6,6 @@ alias italics='echo -e "\e[3mitalics?\e[0m"' # TODO: REMOVE
 
 # Custom Aliases
 alias tsn='ts-node'
-alias trf='ssh exr0n@hop.exr0n.com -p 2222'
 alias pls='sudo'
 alias u='mkdir -p "$CAPSULEROOT/notes" && v "$CAPSULEROOT/notes/$(date +"%Y_%m_%d").md"'
 #    vim tmux integration
@@ -41,7 +40,6 @@ alias pym='python3 -m'
 #    screen stuff
 alias sl='screen -ls'
 alias ss='screen -S '
-alias s='trf'
 #    tmuxinator
 alias mux='tmuxinator'
 
